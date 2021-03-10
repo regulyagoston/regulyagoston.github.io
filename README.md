@@ -1,7 +1,7 @@
 ## Ágoston Reguly
 
 ### Quick bio
-  Currently I am a fifth-year Economics PhD student at the Department of Economics and Business in Central European University. My main research interests are in econometrics, policy evaluation with machine learning techniques and optimal survey designs. I have worked more than three years at the Hungarian Government Debt Management Agency as an expert analyst. 
+  I am a fifth-year Economics PhD student at the Department of Economics and Business in Central European University. My main research interests are in econometrics, policy evaluation with machine learning techniques and optimal survey designs. I have worked more than three years at the Hungarian Government Debt Management Agency as an expert analyst. 
   
 ### Papers
 - Heterogeneous treatment effects in regression discontinuity designs
