@@ -1,12 +1,12 @@
-## Ágoston Reguly - personal page
+## Ágoston Reguly
 
-### Quick bio:
-
+### Quick bio
+...
 ### Papers
 - Heterogeneous treatment effects in regression discontinuity designs
   - [working paper](https://github.com/regulyagoston/RD_tree/blob/main/Reguly_RD_CATE.pdf), [codes - TBA]()
-- Ordered Choice Modelling with Discretized Continuous Dependent Variable - joint paper with Felix Chan and László Mátyás
-- Modelling with Discretized Ordered Choice Covariates - joint paper with Felix Chan and László Mátyás
+- Ordered Choice Modelling with Discretized Continuous Dependent Variable - joint work with Felix Chan and László Mátyás
+- Modelling with Discretized Ordered Choice Covariates - joint work with Felix Chan and László Mátyás
 
 ### Teaching
 - Data Analysis 1 and 2 for Business Analytics at CEU (2020/21 Fall)
