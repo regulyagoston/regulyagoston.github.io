@@ -2,4 +2,6 @@ main:
   - title: "Home"
     url: README.md
   - title: "Papers"
-    url: _data/papers.md
+    url: /_data/papers.md
+  - title: "Teaching"
+    url: /_data/teaching.html
