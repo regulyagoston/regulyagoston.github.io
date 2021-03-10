@@ -8,7 +8,7 @@ github_username:  regulyagoston
 
 # Building settings
 markdown: kramdown
-theme: minima
-#theme: jekyll-theme-minimal
-#minimal_mistakes_skin: "contrast"
+#theme: minima
+theme: jekyll-theme-minimal
+minimal_mistakes_skin: "contrast"
 
