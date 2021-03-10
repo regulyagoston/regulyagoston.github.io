@@ -1,10 +1,10 @@
 # Basic options
-title: Ágoston Reguly
-author: Ágoston Reguly
-email: reguly_agoston@phd.ceu.edu
-description: Personal website
-logo: /assets/images/logo.jpg
-github_username: regulyagoston
+title:  Ágoston Reguly
+author:  Ágoston Reguly
+email:  reguly_agoston@phd.ceu.edu
+description:  Personal website
+logo:  /assets/images/logo.jpg
+github_username:  regulyagoston
 
 # Building settings
 theme: jekyll-theme-minimal
