@@ -17,7 +17,7 @@
     - Course descriptions for [DA-1](https://courses.ceu.edu/courses/2020-2021/data-analysis-1-exploration-business-analytics-track) and [DA-2](https://courses.ceu.edu/courses/2020-2021/data-analysis-2-finding-patterns-regressions-business-analytics-track)
 - Coding 1: Data Management and Analysis with R for Business Analytics at CEU (2020/21 Fall)
     - [Materials and codes](https://github.com/CEU-Economics-and-Business/ECBS-5208-Coding-1-Business-Analytics), [course description](https://courses.ceu.edu/courses/2020-2021/coding-1-data-management-and-analysis-r)
-- Data course for Executive MBA at CEU (2020 Summer)
+- Data course for Executive MBA at CEU (2020 Summer) - Jointly with Anand Murugesan
     - [webpage](https://emba.ceu.edu/) for EMBA at CEU
 - Mathematics and Informatics Pre-session for MS in Finance at CEU (2019/20 and 2020/21 Fall)
     - [course description](https://courses.ceu.edu/courses/2020-2021/presession-finance-mathematics-excel-4)
