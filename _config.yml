@@ -1,3 +1,5 @@
 theme: jekyll-theme-minimal
+minimal_mistakes_skin: "contrast"
 title: [Ágoston Reguly]
 description: [Personal website]
+logo: "/assets/images/logo.jpg"
