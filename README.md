@@ -5,7 +5,7 @@
   
 ### Papers
 - Heterogeneous treatment effects in regression discontinuity designs
-   -[working paper](https://github.com/regulyagoston/RD_tree/blob/main/Reguly_RD_CATE.pdf), [codes - TBA]()
+   -[working paper](https://github.com/regulyagoston/RD_tree/blob/main/Reguly_RD_CATE.pdf), codes - to be relased
 - Ordered Choice Modelling with Discretized Continuous Dependent Variable - joint work with Felix Chan and László Mátyás
    -[working paper](http://www.personal.ceu.hu/staff/matyas/LHS_December2020.pdf)
 - Modelling with Discretized Ordered Choice Covariates - joint work with Felix Chan and László Mátyás
@@ -25,7 +25,7 @@
 [Business Analytics program](https://economics.ceu.edu/program/master-science-business-analytics) in 2019 was #1 in Central Europe including Austria, Germany, and Switzerland, according to QS World University Rankings’ QS Business Masters Rankings. The program ranks #16 in Europe and #50 in the world, on par with HEC Montreal, Tilburg and UT Arlington. CEU excelled in thought leadership, diversity and value for money in particular, QS data showed. Data Analysis 1, 2 and Coding 1 are core courses of this program.
 
 ### Curriculum Vitae
-Here comes a link to CV
+...To-be-uploaded...
 
 ### Contact
 email: reguly_agoston at phd.ceu.edu
