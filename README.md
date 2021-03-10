@@ -1,37 +1,21 @@
-## Welcome to GitHub Pages
+## Ágoston Reguly - personal page
 
-You can use the [editor on GitHub](https://github.com/regulyagoston/regulyagoston.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+### Quick bio:
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Papers
+- Heterogeneous treatment effects in regression discontinuity designs
+  - [working paper](https://github.com/regulyagoston/RD_tree/blob/main/Reguly_RD_CATE.pdf), [codes - TBA]()
+- Ordered Choice Modelling with Discretized Continuous Dependent Variable - joint paper with Felix Chan and László Mátyás
+- Modelling with Discretized Ordered Choice Covariates - joint paper with Felix Chan and László Mátyás
 
-### Markdown
+### Teaching
+- Data Analysis 1 and 2 for Business Analytics at CEU (2020/21 Fall)
+- Coding 1: Data Management and Analysis with R for Business Analytics at CEU (2020/21 Fall)
+- Mathematics and Informatics Pre-session for MS in Finance at CEU (2019/20 and 2020/21 Fall)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Curriculum Vitae
+Here comes a link to CV
 
-```markdown
-Syntax highlighted code block
+### Personal
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/regulyagoston/regulyagoston.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### Contact
