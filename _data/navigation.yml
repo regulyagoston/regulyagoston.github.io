@@ -1,8 +1,3 @@
-docs_list_title: ACME Documentation
-docs:
-
-- title: Home
-  url: home.html
-
-- title: Papers
-  url: papers.html
+main:
+  - title: "Home"
+    url: readme.md
