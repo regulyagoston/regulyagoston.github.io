@@ -1,8 +1,8 @@
 ---
-layout: page
+layout: default
 title: About
 ---
-# About the project
+
 
 Something
 
