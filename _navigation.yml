@@ -1,0 +1,5 @@
+main:
+  - title: "Home"
+    url: https://regulyagoston.github.io/
+  - title: "About"
+    url: about.md
