@@ -4,12 +4,12 @@
   I am a fifth-year Economics PhD student at the Department of Economics and Business in Central European University. My main research interests are in econometrics, policy evaluation with machine learning techniques and optimal survey designs. I have worked more than three years at the Hungarian Government Debt Management Agency as an expert analyst. 
   
 ### Papers
-- Heterogeneous treatment effects in regression discontinuity designs
+- *Heterogeneous treatment effects in regression discontinuity designs*
    - [working paper](https://github.com/regulyagoston/RD_tree/blob/main/Reguly_RD_CATE.pdf), codes - to be relased
-- Ordered Choice Modelling with Discretized Continuous Dependent Variable - joint work with Felix Chan and László Mátyás
+- *Ordered Choice Modelling with Discretized Continuous Dependent Variable* - joint work with Felix Chan and László Mátyás
    - [working paper](http://www.personal.ceu.hu/staff/matyas/LHS_December2020.pdf)
-- Modelling with Discretized Ordered Choice Covariates - joint work with Felix Chan and László Mátyás
-   - [working paper](http://www.personal.ceu.hu/staff/matyas/RHS_January-7.pdf)
+- *Modelling with Discretized Ordered Choice Covariates* - joint work with Felix Chan and László Mátyás
+   -- [working paper](http://www.personal.ceu.hu/staff/matyas/RHS_January-7.pdf)
 
 ### Teaching
 - Data Analysis 1 and 2 for Business Analytics at CEU (2020/21 Fall)
