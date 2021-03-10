@@ -9,7 +9,7 @@
 - *Ordered Choice Modelling with Discretized Continuous Dependent Variable* - joint work with Felix Chan and László Mátyás
    - [working paper](http://www.personal.ceu.hu/staff/matyas/LHS_December2020.pdf)
 - *Modelling with Discretized Ordered Choice Covariates* - joint work with Felix Chan and László Mátyás
-   -- [working paper](http://www.personal.ceu.hu/staff/matyas/RHS_January-7.pdf)
+   - [working paper](http://www.personal.ceu.hu/staff/matyas/RHS_January-7.pdf)
 
 ### Teaching
 - Data Analysis 1 and 2 for Business Analytics at CEU (2020/21 Fall)
