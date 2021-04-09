@@ -21,17 +21,20 @@ layout: default
 - *Forecasting the Hungarian Nelson-Siegel Yield Curve with Mixed Factor Model* (2014) 
 	- Conference Paper: Hungarian Society of Economist Yearly Conference (2014, December 19) - *only in Hungarian*
 
-- *Happiness of Economic Man* – joint work with Katalin Martinás, Zsolt Gilányi, Veronika Poór
-	– The Happiness Compass, Chapter 19 Nova Science Publishers, 2014, editors: Francesco Sarracino 
+- *Happiness of Economic Man* (2014) – joint work with Katalin Martinás, Zsolt Gilányi, Veronika Poór
+	– The Happiness Compass, Chapter 19 Nova Science Publishers, editors: Francesco Sarracino 
 
-- *Reappraisal of Rational Choice Theory* – joint work with Katalin Martinás
-	- Interdisciplinary Description of Complex Systems (INDECS), 11(1), 2013 
+- *Reappraisal of Rational Choice Theory* (2013) – joint work with Katalin Martinás
+	- Interdisciplinary Description of Complex Systems (INDECS), 11(1)
 
 - *Behavioral models of pension systems, part II.* (2013)
 	- Economists’ Forum - *only in Hungarian*
 
 - *Behavioral models of pension systems, part I.* (2012)
 	- Economists’ Forum - *only in Hungarian*
+
+- *Behavioral models of pension systems* (2012)
+	- BA Thesis - *only in Hungarian*
 
 
 
