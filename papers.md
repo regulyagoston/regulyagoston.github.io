@@ -11,6 +11,8 @@ layout: default
    - [working paper](http://www.personal.ceu.hu/staff/matyas/RHS_January-7.pdf)
 
 # Former works
+- *Estimating *
+	-[published paper](https://akk.hu/download?path=9f434155-e7f9-427f-9006-97fc5c08a140.pdf) - only in Hungarian
 
 
 [back](./)
