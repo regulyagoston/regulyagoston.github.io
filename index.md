@@ -2,7 +2,7 @@
 layout: default
 ---
 
-### [Papers](./papers.md)  [Teaching](./teaching.md)  [CV](/.cv.md) [About me](./about_me.md)
+### [Papers](./papers.md)    [Teaching](./teaching.md)    [CV](/.cv.md)    [About me](./about_me.md)
 
 ## Quick bio
   I am a fifth-year Economics PhD student at the Department of Economics and Business in Central European University. My main research interests are in econometrics, policy evaluation with machine learning techniques and optimal survey designs. I have worked more than three years at the Hungarian Government Debt Management Agency as an expert analyst. 
