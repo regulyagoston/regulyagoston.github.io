@@ -16,7 +16,7 @@ layout: default
 	*only in Hungarian*
 
 - *Macroeconometric Modelling of Inflation, Wages and Money Supply: Implementing David F. Hendry's reduction theory to the Hungarian Economy between 1995 and 2014* (2015)
-	- MA thesis
+	- MA thesis - *only in Hungarian*
 
 - *Forecasting the Hungarian Nelson-Siegel Yield Curve with Mixed Factor Model* (2014) 
 	- Conference Paper: Hungarian Society of Economist Yearly Conference (2014, December 19) - *only in Hungarian*
