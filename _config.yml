@@ -11,6 +11,6 @@ theme: jekyll-theme-minimal
 
 # Additional
 # google_analytics:
-show_downloads: true
+#show_downloads: true
 logo: /assets/img/logo.jpg
 
