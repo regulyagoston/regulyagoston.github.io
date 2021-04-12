@@ -88,6 +88,6 @@ layout: default
 
 *`Last updated: 2020/04/12`*
 
-<a href="/assets/img/CV.pdf" download="reguly_cv"> <\a>
+<a href="/assets/img/CV.pdf" download="reguly_cv"> Download CV
 
 [back](./)
