@@ -65,13 +65,13 @@ layout: default
 
 ## Conferences and presentations
  - Brownbag Seminar Series at the Department of Economics and Business
- 	- 2021: *Heterogeneous treatment effects in regression discontinuity designs*
- 	- 2020: *Ordered Choice Modelling with Discretized Continuous Dependent Variable*
- 	- 2019: *Modelling with Discretized Ordered Choice Covariates*
+    - 2021: *Heterogeneous treatment effects in regression discontinuity designs*
+    - 2020: *Ordered Choice Modelling with Discretized Continuous Dependent Variable*
+    - 2019: *Modelling with Discretized Ordered Choice Covariates*
  - International Association for Applied Econometrics
- 	- 2019: *Modelling with Discretized Ordered Choice Covariates* - Cyprus
+    - 2019: *Modelling with Discretized Ordered Choice Covariates* - Cyprus
  - Hungarian Society of Economist Yearly Conference
- 	- 2014: *Forecasting the Hungarian Nelson-Siegel Yield Curve with Mixed Factor Model*  - Budapest
+    - 2014: *Forecasting the Hungarian Nelson-Siegel Yield Curve with Mixed Factor Model*  - Budapest
 
 ## Skills
  - **Language**
