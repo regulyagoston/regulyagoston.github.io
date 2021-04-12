@@ -89,7 +89,7 @@ layout: default
 *`Last updated: 2020/04/12`*
 
 <ul class="downloads">
-    <a href="/assets/img/CV.pdf" download="reguly_cv">
+    <a href="/assets/img/CV.pdf" download="reguly_cv"> <\a>
 </ul>
 
 [back](./)
