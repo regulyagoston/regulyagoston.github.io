@@ -2,12 +2,9 @@
 layout: default
 ---
 
-## Curriculum Vitae
+# Curriculum Vitae
 
-*`Last updated: 2020/04/12`*
-
-
-### Education
+## Education
  - 2016-present: Central European University, Budapest, Ph.D. in Economics
  - 2012-2015: MA in Economic Analysis at BME 
 	- Graduated with Cum Laude, ECTS weighted average: 4.65/5; ECTS: 162 of 120
@@ -17,14 +14,14 @@ layout: default
 	- Graduated with excellent degree, ECTS weighted average 4.02/5; ECTS: 256 of 210
  - 2003-2009 Franciscan High School of Szentendre, Hungary 
 
-### Working experience
+## Working experience
  - **Consultancy**: 
 	- Analysis on government security market for Hungarian State Treasury (2019)
  - **Hungarian Government Debt Management Agency**:
 	- 2013 - 2016: Expert Economic Analyst, I was responsible for periodical reports of the government security market and developing new methodologies for analysing and forecasting the Hungarian government yield curve. Furthermore I have contributed in the development of the new portfolio model.
 	- 2011. Sept - Oct: Intern, I was analysing the Hungarian pension systems and its possible effects on the Hungarian government security market.
 
-### Awards and Scholarships
+## Awards and Scholarships
  - **Award for Advanced Doctoral Studies**, 2019 CEU’s rector award for outstanding Ph.D. students
  - **Pro Scientia Golden Medal**, 2013 academic award for young scholars, given at the Hungarian Academy of Sciences.
  - **National Scientific Students' Association Conference Awards (OTDK)**
@@ -48,11 +45,11 @@ layout: default
 	- 2012 & 2013 Special Extended Scholarship of Economy and Social Sciences Faculty of Budapest University of Technology and Economics
 	- 2012 Hungarian Republic Fellowship (József Nádor)
 
-### Summer schools
+## Summer schools
  - 2015 July: Cambridge Econometrics Summer School, Timberlake Ltd.
  - 2014 July: Oxford Econometrics Summer School at Aix-en-Provance, Timberlake Ltd.
 
-### Skills
+## Skills
  - **Language** 
  	- *English*: TOEFL ibt: 104, B2 certificate, general (2008) and economics specific (2011)
     - *German*: B2 certificate, general, 2014
@@ -65,5 +62,6 @@ layout: default
 	- I have been sailing for fourteen years, and achieved 1st award in the National Competition of Jolle 25 class in 2007, 2009 and 2010.
 	- Nowadays in my spare time I have turned to mountaineering and rock climbing. Among many peaks in the Tatras and the Austrian Alps, in 2018 I have climbed Mount Blanc via the Cosmiques route. 
 
+*`Last updated: 2020/04/12`*
 
 [back](./)
