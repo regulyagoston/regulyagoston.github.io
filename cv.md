@@ -89,7 +89,7 @@ layout: default
 *`Last updated: 2020/04/12`*
 
 <ul class="downloads">
-    <li><a href="{{ <img src="{{site.logo | relative_url}}" alt="Logo" /> }}">Download <strong>CV in pdf</strong></a></li>
+    <li><a href="{{site.logo | relative_url}}" >Download <strong>CV in pdf</strong></a></li>
 </ul>
 
 [back](./)
