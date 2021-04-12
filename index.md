@@ -24,7 +24,9 @@ More information on the courses, I have tought are avaliable [here](./teaching.m
 
 ## [Curriculum Vitae](./cv.md)
 
-
+You can find my detailled CV [here](./cv.md) or 
+<a href="/assets/img/CV.pdf" download="reguly_cv"> download CV
+in pdf format.
 
 
 ## Contact

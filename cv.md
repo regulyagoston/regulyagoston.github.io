@@ -3,6 +3,7 @@ layout: default
 ---
 
 # Curriculum Vitae
+<a href="/assets/img/CV.pdf" download="reguly_cv"> Download CV
 
 ## Education
  - 2016-present: Central European University, Budapest, Ph.D. in Economics
