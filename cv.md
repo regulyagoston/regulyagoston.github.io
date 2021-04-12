@@ -74,8 +74,8 @@ layout: default
  	- 2014: *Forecasting the Hungarian Nelson-Siegel Yield Curve with Mixed Factor Model*  - Budapest
 
 ## Skills
- - **Language** 
- 	- *English*: TOEFL ibt: 104, B2 certificate, general (2008) and economics specific (2011)
+ - **Language**
+    - *English*: TOEFL ibt: 104, B2 certificate, general (2008) and economics specific (2011)
     - *German*: B2 certificate, general, 2014
  - **IT skills**: 
 	- *Proficient*: MatLab, R, Microsoft Office programs
@@ -87,5 +87,9 @@ layout: default
 	- Nowadays in my spare time I have turned to mountaineering and rock climbing. Among many peaks in the Tatras and the Austrian Alps, in 2018 I have climbed Mount Blanc via the Cosmiques route. 
 
 *`Last updated: 2020/04/12`*
+
+<ul class="downloads">
+    <li><a href="{{ site.github.zip_url }}">Download <strong>CV in pdf</strong></a></li>
+</ul>
 
 [back](./)
