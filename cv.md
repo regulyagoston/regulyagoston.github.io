@@ -75,7 +75,7 @@ layout: default
 
 ## Skills
  - **Language**
-    - *English*: TOEFL ibt: 104, B2 certificate, general (2008) and economics specific (2011)
+    - *English*: TOEFL ibt: 104; B2 certificates: general (2008) and economics specific (2011)
     - *German*: B2 certificate, general, 2014
  - **IT skills**: 
 	- *Proficient*: MatLab, R, Microsoft Office programs
