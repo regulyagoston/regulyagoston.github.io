@@ -21,6 +21,20 @@ layout: default
 	- 2013 - 2016: Expert Economic Analyst, I was responsible for periodical reports of the government security market and developing new methodologies for analysing and forecasting the Hungarian government yield curve. Furthermore I have contributed in the development of the new portfolio model.
 	- 2011. Sept - Oct: Intern, I was analysing the Hungarian pension systems and its possible effects on the Hungarian government security market.
 
+## Teaching experience
+ - **Data Analysis** - MS in Business Analytics at CEU
+ 	- 2020/21 - Lecturer for Data Analysis 1 and 2 
+ 	- 2018/19 – Teaching Assistant for Data Analysis 3 and 4. (lecturer: Gábor Békés)
+ - **Coding 1: Data Management and Analysis with R** - MS in Business Analytics at CEU
+ 	- 2020/21 - Lecturer
+ - **Data course** - Executive Master of Business Art (EMBA) at CEU
+ 	- 2020/21 - Joint lecturer with Anand Murugesan
+ - **Mathematics and Advanced Excel Pre-session** MS in Finance at CEU
+ 	- 2019/20 and 2020/21 - Lecturer
+ - **Mathematical Methods for Economists** - MA in Economics
+ 	- 2017/18 - Teaching Assistant
+
+
 ## Awards and Scholarships
  - **Award for Advanced Doctoral Studies**, 2019 CEU’s rector award for outstanding Ph.D. students
  - **Pro Scientia Golden Medal**, 2013 academic award for young scholars, given at the Hungarian Academy of Sciences.
@@ -48,6 +62,16 @@ layout: default
 ## Summer schools
  - 2015 July: Cambridge Econometrics Summer School, Timberlake Ltd.
  - 2014 July: Oxford Econometrics Summer School at Aix-en-Provance, Timberlake Ltd.
+
+## Conferences and presentations
+ - Brownbag Seminar Series at the Department of Economics and Business:
+ 	- 2021: *Heterogeneous treatment effects in regression discontinuity designs*
+ 	- 2020: *Ordered Choice Modelling with Discretized Continuous Dependent Variable*
+ 	- 2019: *Modelling with Discretized Ordered Choice Covariates*
+ - International Association for Applied Econometrics
+ 	- 2019: *Modelling with Discretized Ordered Choice Covariates* - Cyprus
+ - Hungarian Society of Economist Yearly Conference
+ 	- 2014: *Forecasting the Hungarian Nelson-Siegel Yield Curve with Mixed Factor Model*  - Budapest
 
 ## Skills
  - **Language** 
