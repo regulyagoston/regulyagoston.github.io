@@ -11,7 +11,7 @@ layout: default
    - [working paper](http://www.personal.ceu.hu/staff/matyas/RHS_January-7.pdf)
 
 # Published papers
-- *EConstructing Hungarian Zero-Coupon Yield Curve Models, Using Global Optimalization Methods* (2015)
+- *Constructing Hungarian Zero-Coupon Yield Curve Models, Using Global Optimalization Methods* (2015)
 	- [published paper](https://akk.hu/download?path=9f434155-e7f9-427f-9006-97fc5c08a140.pdf) - 
 	*only in Hungarian*
 
