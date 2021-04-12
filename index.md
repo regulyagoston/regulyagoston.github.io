@@ -7,7 +7,7 @@ layout: default
   
 ## [Papers](./papers.md)
 
-My most recent working paper is on honest causal trees and regression discontinuity design, which extends the potential outcome framework with machine learning techniques. 
+My most recent working paper is on honest causal trees and regression discontinuity design, which extends the potential outcome framework with machine learning techniques. My advisor in this topic is [Róbert Lieli](https://sites.google.com/site/robertplieli/).
 
 I have also two joint papers with [Felix Chan](https://staffportal.curtin.edu.au/staff/profile/view/felix-chan-885a727c/) (Curtin University, Australia) and [László Mátyás](http://www.personal.ceu.hu/staff/matyas/) (CEU) on modeling with interval data. These papers proposes new survey designs when the variable is observed through a discretization process, but one wants to point-identify parameters in the model.
 
