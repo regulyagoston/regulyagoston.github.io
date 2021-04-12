@@ -19,7 +19,7 @@ layout: default
 	- Analysis on government security market for Hungarian State Treasury (2019)
  - **Hungarian Government Debt Management Agency**
 	- 2013 - 2016: Expert Economic Analyst, I was responsible for periodical reports of the government security market and developing new methodologies for analysing and forecasting the Hungarian government yield curve. Furthermore I have contributed in the development of the new portfolio model.
-	- 2011. Sept - Oct: Intern, I was analysing the Hungarian pension systems and its possible effects on the Hungarian government security market.
+	- 2011 Sept - Oct: Intern, I was analysing the Hungarian pension systems and its possible effects on the Hungarian government security market.
 
 ## Teaching experience
  - **Data Analysis** - MS in Business Analytics at CEU
