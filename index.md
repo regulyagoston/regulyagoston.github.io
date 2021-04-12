@@ -25,9 +25,7 @@ More information on the courses, I have tought are avaliable [here](./teaching.m
 ## [Curriculum Vitae](./cv.md)
 
 You can find my detailled CV [here](./cv.md) or 
-<a download="reguly_cv" href="/assets/img/CV.pdf" title="download my CV">
- <src="/assets/img/CV.pdf">
-</a>
+<a href="./assets/img/CV.pdf" download="reguly_cv">download my CV</a>
 in pdf format.
 
 
