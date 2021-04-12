@@ -7,7 +7,7 @@ layout: default
 
 ## Education
  - 2016-present: Central European University, Budapest, Ph.D. in Economics
- - 2012-2015: MA in Economic Analysis at BME 
+ - 2012-2015: MA in Economic Analysis at Budapest University of Technology and Economics (BME)
 	- Graduated with Cum Laude, ECTS weighted average: 4.65/5; ECTS: 162 of 120
  - 2012 Sept – 2013. Feb: ERASMUS scholarship in Germany 
  	– Otto-Friedrich Universität Bamberg, focusing on behavioral economics
