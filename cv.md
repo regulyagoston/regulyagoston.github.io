@@ -15,9 +15,9 @@ layout: default
  - 2003-2009 Franciscan High School of Szentendre, Hungary 
 
 ## Working experience
- - **Consultancy**: 
+ - **Consultancy**
 	- Analysis on government security market for Hungarian State Treasury (2019)
- - **Hungarian Government Debt Management Agency**:
+ - **Hungarian Government Debt Management Agency**
 	- 2013 - 2016: Expert Economic Analyst, I was responsible for periodical reports of the government security market and developing new methodologies for analysing and forecasting the Hungarian government yield curve. Furthermore I have contributed in the development of the new portfolio model.
 	- 2011. Sept - Oct: Intern, I was analysing the Hungarian pension systems and its possible effects on the Hungarian government security market.
 
@@ -64,7 +64,7 @@ layout: default
  - 2014 July: Oxford Econometrics Summer School at Aix-en-Provance, Timberlake Ltd.
 
 ## Conferences and presentations
- - Brownbag Seminar Series at the Department of Economics and Business:
+ - Brownbag Seminar Series at the Department of Economics and Business
  	- 2021: *Heterogeneous treatment effects in regression discontinuity designs*
  	- 2020: *Ordered Choice Modelling with Discretized Continuous Dependent Variable*
  	- 2019: *Modelling with Discretized Ordered Choice Covariates*
@@ -78,9 +78,9 @@ layout: default
  	- *English*: TOEFL ibt: 104, B2 certificate, general (2008) and economics specific (2011)
     - *German*: B2 certificate, general, 2014
  - **IT skills**: 
-	- Proficient: MatLab, R, Microsoft Office programs
-	- Advanced: Python
-	- Intermediate: Stata, Eviews, SPSS, Mathematica
+	- *Proficient*: MatLab, R, Microsoft Office programs
+	- *Advanced*: Python
+	- *Intermediate*: Stata, Eviews, SPSS, Mathematica
 - **Driving license**: A and B categories
 - **Hobbies**:
 	- I have been sailing for fourteen years, and achieved 1st award in the National Competition of Jolle 25 class in 2007, 2009 and 2010.
