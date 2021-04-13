@@ -9,7 +9,7 @@ layout: default
  - 2016-present: Central European University, Budapest, Ph.D. in Economics
  - 2012-2015: MA in Economic Analysis at Budapest University of Technology and Economics (BME)
     - Graduated with Cum Laude, ECTS weighted average: 4.65/5; ECTS: 162 of 120
- - 2012 Sept – 2013. Feb: ERASMUS scholarship in Germany
+ - 2012 Sept – 2013 Feb: ERASMUS scholarship in Germany
     - Otto-Friedrich Universität Bamberg, focusing on behavioral economics
  - 2009-2012: BA in Management and Business Administration at BME
     - Graduated with excellent degree, ECTS weighted average 4.02/5; ECTS: 256 of 210
