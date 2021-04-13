@@ -82,7 +82,8 @@ layout: default
 	- *Proficient*: MatLab, R, Microsoft Office programs
 	- *Advanced*: Python
 	- *Intermediate*: Stata, Eviews, SPSS, Mathematica
-- **Driving license**: A and B categories
+- **Driving license**: 
+    - A and B categories
 - **Hobbies**:
 	- I have been sailing for fourteen years, and achieved 1st award in the National Competition of Jolle 25 class in 2007, 2009 and 2010.
 	- Nowadays in my spare time I have turned to mountaineering and rock climbing. Among many peaks in the Tatras and the Austrian Alps, in 2018 I have climbed Mount Blanc via the Cosmiques route. 
