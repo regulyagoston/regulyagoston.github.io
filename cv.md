@@ -24,16 +24,16 @@ layout: default
 
 ## Teaching experience
  - **Data Analysis** - MS in Business Analytics at CEU
- 	- 2020/21 - Lecturer for Data Analysis 1 and 2 
- 	- 2018/19 – Teaching Assistant for Data Analysis 3 and 4. (lecturer: Gábor Békés)
+    - 2020/21 - Lecturer for Data Analysis 1 and 2 
+    - 2018/19 – Teaching Assistant for Data Analysis 3 and 4. (lecturer: Gábor Békés)
  - **Coding 1: Data Management and Analysis with R** - MS in Business Analytics at CEU
- 	- 2020/21 - Lecturer
+    - 2020/21 - Lecturer
  - **Data course** - Executive Master of Business Art (EMBA) at CEU
- 	- 2020/21 - Joint lecturer with Anand Murugesan
+    - 2020/21 - Joint lecturer with Anand Murugesan
  - **Mathematics and Advanced Excel Pre-session** MS in Finance at CEU
- 	- 2019/20 and 2020/21 - Lecturer
+    - 2019/20 and 2020/21 - Lecturer
  - **Mathematical Methods for Economists** - MA in Economics
- 	- 2017/18 - Teaching Assistant
+    - 2017/18 - Teaching Assistant
 
 
 ## Awards and Scholarships
