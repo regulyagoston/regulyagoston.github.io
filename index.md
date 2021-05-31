@@ -18,7 +18,7 @@ See more on my publications [here](.papers.md).
 
 ## [Teaching](./teaching.md)
 
-In the past few years I have teached mathematics and data analysis related courses at CEU. I had the fortune to teach on four programs at CEU: MS in Business Analytics, MS in Finance, MA in Economics and Excecutive MBA.
+In the past few years I have teached mathematics and data analysis related courses at CEU. I had the fortune to teach on four programs at CEU: MS in Business Analytics, MS in Finance and Excecutive MBA.
 
 More information on the courses, I have tought are avaliable [here](./teaching.md).
 
