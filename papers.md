@@ -4,7 +4,7 @@ layout: default
 
 # Working Papers
 - *Heterogeneous treatment effects in regression discontinuity designs*
-   - [working paper](https://github.com/regulyagoston/RD_tree/raw/main/Reguly_RD_CATE.pdf), [codes](https://github.com/regulyagoston/RD_tree)
+   - [working paper](https://arxiv.org/abs/2106.11640), [codes](https://github.com/regulyagoston/RD_tree)
 - *Ordered Choice Modelling with Discretized Continuous Dependent Variable* - joint work with [Felix Chan](https://staffportal.curtin.edu.au/staff/profile/view/felix-chan-885a727c/) and [László Mátyás](http://www.personal.ceu.hu/staff/matyas/)
    - [working paper](http://www.personal.ceu.hu/staff/matyas/LHS_December2020.pdf), [codes](https://github.com/regulyagoston/Split-sampling)
 - *Modelling with Discretized Ordered Choice Covariates* - joint work with [Felix Chan](https://staffportal.curtin.edu.au/staff/profile/view/felix-chan-885a727c/) and [László Mátyás](http://www.personal.ceu.hu/staff/matyas/)
