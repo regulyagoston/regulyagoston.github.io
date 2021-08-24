@@ -3,7 +3,8 @@ layout: default
 ---
 
 ## Quick bio
-  I am a fifth-year Economics PhD student at the [Department of Economics and Business in Central European University](https://economics.ceu.edu/). My main research interests are in econometrics: policy evaluation with machine learning techniques and optimal survey designs. I have worked more than three years at the Hungarian Government Debt Management Agency as an expert analyst. 
+  I am finishing my PhD in Economics at the Department of [Economics and Business at Central European University](https://economics.ceu.edu/). My main research interests are in econometrics: policy evaluation with machine learning techniques and optimal survey designs. Currently, I am working on a paper with causal trees and bandwidth selection. Also, I have taught multiple courses at CEU such as data analysis or mathematics. Before CEU I have worked for more than three years at the Hungarian Government Debt Management Agency. 
+  
   
 ## [Papers](./papers.md)
 
