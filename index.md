@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+## Quick bio
+  I am a Postdoctoral Research Fellow at [Financial Services Innovation Lab (FSIL)](https://fintech.gatech.edu/#/), Scheller College of Business, Georgia Institute of Technology US and got my PhD in Economics at Central European University (CEU).
+  My research interests are in empirical finance and econometrics: *long-run effect of corporate events on a firm's performance*, *policy evaluation with machine learning techniques* and *traditional econometrics*. Currently, I am working on various projects: 
+  
+  - With [Sudheer Chava](https://fintech.gatech.edu/#/people)(Georgia Tech, FSIL) we investigate the long-term effect of M&A, IPO, SEO, and dividend announcements on firms' performance, using synthetic diff-in-diff methodology with multiple twists. 
+  - With [Felix Chan](https://staffportal.curtin.edu.au/staff/profile/view/felix-chan-885a727c/) (Curtin University, Australia) and [László Mátyás](http://www.personal.ceu.hu/staff/matyas/) (CEU) we propose a partially penalized (shrinkage) estimators for panel data, where the structure of the fixed effects (FEs) is unknown. We assess the magnitude of the bias for the parameter of interest if the assumed structure is false (e.g. additive time and individual FEs) and show significant improvement, when using our flexible method.
+  - With [Róbert Lieli](https://sites.google.com/site/robertplieli/) (CEU) we extend my former job market paper, proposing causal trees with bandwidth selection in the context of regression discontinuity designs to estimate heterogeneous treatment effects. 
+   
+  I have taught multiple courses at CEU such as data analysis and mathematics. Before CEU I worked for more than three years at the Hungarian Government Debt Management Agency. 
+  
+
+## [Working Papers](./papers.md)
+
+Apart from the above-mentioned projects, I have two joint papers with [Felix Chan](https://staffportal.curtin.edu.au/staff/profile/view/felix-chan-885a727c/) (Curtin University, Australia) and [László Mátyás](http://www.personal.ceu.hu/staff/matyas/) (CEU) on modeling with interval data. These papers propose new survey designs when the variable is observed through a discretization process, but one wants to point-identify parameters in the model.
+
+See more on my publications [here](.papers.md).
+
+
+## [Teaching](./teaching.md)
+
+In the past few years, I have taught mathematics and data analysis-related courses at CEU. I had the fortune to teach four programs at CEU: MS in Business Analytics, MS in Finance, and Executive MBA.
+
+In 2022 Spring, I developed a course material: [Coding for Data Analysis in R](https://github.com/gabors-data-analysis/da-coding-rstats), which is aimed to supplement the book *Data Analysis for Business, Economics, and Policy by Gábor Békés (CEU) and Gábor Kézdi (U. Michigan) Published on 6 May 2021 by Cambridge University Press* [gabors-data-analysis.com](https://gabors-data-analysis.com/) and Data Analytics courses at CEU.
+
+
+More information on the courses is available [here](./teaching.md).
+
+
+[//]: # (
+## Contact
+
+email: areguly6 at gatech.edu
