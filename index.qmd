@@ -46,4 +46,4 @@ More information on the courses is available [here](./teaching.html).
 
 ## Contact
 
-email: areguly6 at gatech.edu
+email: areguly6-at-gatech.edu
