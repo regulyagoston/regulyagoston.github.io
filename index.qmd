@@ -11,7 +11,7 @@ I am a Postdoctoral Research Fellow at [Financial Services Innovation Lab (FSIL)
 ::: columns
 ::: {.column width="30%"}
 
-![](images/logo.jpg){width=90%}
+![](./images/logo.jpg){width=90%}
 
 :::
 ::: {.column width="70%"}
