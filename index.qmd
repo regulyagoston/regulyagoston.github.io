@@ -36,9 +36,15 @@ See more on my publications [here](./papers.html).
 
 ## [Teaching](./teaching.html)
 
-In the past few years, I have taught mathematics and data analysis-related courses at CEU. I had the fortune to teach four programs at CEU: MS in Business Analytics, MS in Finance, and Executive MBA.
+- Learn coding & data analysis with R
+  - This course material guides you from basic statistics towards machine learning methods.
+  - See my course material and problem description with tasks+solutions at the following github repo: [Coding for Data Analysis in R](https://github.com/gabors-data-analysis/da-coding-rstats).
+  - This supplements the book *Data Analysis for Business, Economics, and Policy by Gábor Békés (CEU) and Gábor Kézdi (U. Michigan) Published on 6 May 2021 by Cambridge University Press*, and developed for Data Analytics courses at CEU. Check out [gabors-data-analysis.com](https://gabors-data-analysis.com/) for more detial.
+  - Thanks to Péter Duronelly and Ádám Víg you can access the same material in python as well [here](https://github.com/gabors-data-analysis/da-coding-python).
 
-In 2022 Spring, I developed a course material: [Coding for Data Analysis in R](https://github.com/gabors-data-analysis/da-coding-rstats), which is aimed to supplement the book *Data Analysis for Business, Economics, and Policy by Gábor Békés (CEU) and Gábor Kézdi (U. Michigan) Published on 6 May 2021 by Cambridge University Press* [gabors-data-analysis.com](https://gabors-data-analysis.com/) and Data Analytics courses at CEU.
+In the past, I have presented multiple places taught mathematics and data analysis-related courses at CEU. I had the fortune to teach four programs at CEU: MS in Business Analytics, MS in Finance, and Executive MBA.
+
+In 2022 Spring, 
 
 
 More information on the courses is available [here](./teaching.html).
