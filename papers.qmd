@@ -15,7 +15,9 @@ title: "Papers"
 # Published papers
 
 - *The Use of Machine Learning in Treatment Effect Estimation* (2022) - joint work with Robert Lieli (CEU) and Yu-Chin Hsu (National Central University and National Chengchi University)
-  - [published book chapter](https://link.springer.com/chapter/10.1007/978-3-031-15149-1_3), in: Chan, F., Matyas, L. (eds), Econometrics with Machine Learning. Advanced Studies in Theoretical and Applied Econometrics, vol 53. Springer, Cham (2022), pp. 79-109
+  - [published book chapter](https://link.springer.com/chapter/10.1007/978-3-031-15149-1_3), in: Chan, F., Matyas, L. (eds), Econometrics with Machine Learning. Advanced Studies in Theoretical and Applied Econometrics, vol 53. Springer, pp. 79-109
+
+### Publication from my BA/MA studies
 
 - *Constructing Hungarian Zero-Coupon Yield Curve Models, Using Global Optimalization Methods* (2015)
 	- [published paper](https://akk.hu/download?path=9f434155-e7f9-427f-9006-97fc5c08a140.pdf) - 
