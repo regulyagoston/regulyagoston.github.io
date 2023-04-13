@@ -4,6 +4,7 @@ project:
 
 website:
   title: "Ágoston Reguly"
+  favicon: "images/google-scholar.svg"
   google-analytics: "G-BGV4MVV5TE"
   sidebar:
     tools:
@@ -11,6 +12,8 @@ website:
         href: https://twitter.com/AgostonReguly
       - icon: github
         href: https://github.com/regulyagoston
+      - icon: mortarboard-fill
+        href: https://scholar.google.com/citations?user=w6283S8AAAAJ&hl=hu
     style: "docked"
     search: true
     contents:
