@@ -5,8 +5,8 @@ title: "Ágoston Reguly"
 
 ## Quick bio
 
-I am a Postdoctoral Research Fellow at [Financial Services Innovation Lab (FSIL)](https://fintech.gatech.edu/#/), Scheller College of Business, Georgia Institute of Technology US and got my PhD in Economics at Central European University (CEU).
-  My research interests are in empirical finance and econometrics: *long-run effect of corporate events on a firm's performance*, *policy evaluation with machine learning techniques* and *traditional econometrics*. 
+I am a Postdoctoral Research Fellow at [Financial Services Innovation Lab (FSIL)](https://fintech.gatech.edu/#/) part of Scheller College of Business at Georgia Institute of Technology. I received my PhD from Central European University (CEU).
+My research interests are in empirical finance and econometrics: *long-run effect of corporate events on firm's performance*, *policy evaluation with machine learning techniques* and *traditional econometrics*. 
 
 ::: columns
 ::: {.column width="30%"}
@@ -43,8 +43,6 @@ See more on my publications [here](./papers.html).
   - Thanks to Péter Duronelly and Ádám Víg you can access the same material in python as well [here](https://github.com/gabors-data-analysis/da-coding-python).
 
 In the past, I have presented multiple places taught mathematics and data analysis-related courses at CEU. I had the fortune to teach four programs at CEU: MS in Business Analytics, MS in Finance, and Executive MBA.
-
-In 2022 Spring, 
 
 
 More information on the courses is available [here](./teaching.html).
