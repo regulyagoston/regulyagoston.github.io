@@ -98,6 +98,9 @@ estimate heterogeneous treatment effects in regression discontinuity designs.
 	- 2012 Hungarian Republic Fellowship (József Nádor)
 
 ## Publications
+
+### Publication from my BA/MA studies
+
 - *Constructing Hungarian Zero-Coupon Yield Curve Models* - 2015
 	- National Scientific Students’ Association Conference (in Hungarian)
 - *Forecasting the Hungarian Nelson-Siegel Yield Curve with Mixed Factor Model* - 2014
