@@ -3,7 +3,7 @@ title: "Papers"
 ---
 
 # Working Papers
-- *Why do mergers and acquisitions lead to underperformance in the long-run?* - joint work with Sudheer Chava
+- *Measuring the long-run performance of mergers and acquisitions* - joint work with Sudheer Chava
     - [working paper](./papers/Chava_Reguly_MA_underperformance.pdf)
 - *Heterogeneous treatment effects in regression discontinuity designs*
    - [working paper](https://arxiv.org/abs/2106.11640), [codes](https://github.com/regulyagoston/RD_tree)
