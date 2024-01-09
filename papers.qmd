@@ -1,6 +1,7 @@
 ---
 title: "Papers"
 ---
+*Last update: 2023/01/09*
 
 # Working Papers
 - *Measuring the long-run performance of mergers and acquisitions* - joint work with Sudheer Chava

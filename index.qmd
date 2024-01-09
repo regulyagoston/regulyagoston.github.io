@@ -5,8 +5,7 @@ title: "Ágoston Reguly"
 
 ## Quick bio
 
-I am a Postdoctoral Research Fellow at [Financial Services Innovation Lab (FSIL)](https://fintech.gatech.edu/#/) part of Scheller College of Business at Georgia Institute of Technology. I received my PhD from Central European University (CEU).
-My research interests are in empirical finance and econometrics: *long-run effect of corporate events on firm's performance*, *policy evaluation with machine learning techniques* and *traditional econometrics*. 
+
 
 ::: columns
 ::: {.column width="30%"}
@@ -15,26 +14,20 @@ My research interests are in empirical finance and econometrics: *long-run effec
 
 :::
 ::: {.column width="70%"}
-Currently, I am working on various projects:   
+I am an Assistant Professor at the [Institute of Economics, Corvinus University of Budapest](https://www.uni-corvinus.hu/elerhetosegek/reguly-agoston/) (Corvinus) and a visiting faculty at Central European University (CEU). I am also an affiliated researcher at [Financial Services Innovation Lab (FSIL)](https://fintech.gatech.edu/#/) part of Scheller College of Business at Georgia Institute of Technology.
 
-  - With [Sudheer Chava](https://fintech.gatech.edu/#/people)(Georgia Tech, FSIL) we investigate the long-term effect of M&A on firms' performance, using synthetic diff-in-diff methodology with multiple twists. 
-  - With [Felix Chan](https://staffportal.curtin.edu.au/staff/profile/view/felix-chan-885a727c/) (Curtin University, Australia) and [László Mátyás](http://www.personal.ceu.hu/staff/matyas/) (CEU) we propose a partially penalized (shrinkage) estimators for panel data, where the structure of the fixed effects (FEs) is unknown. We assess the magnitude of the bias for the parameter of interest if the assumed structure is false (e.g. additive time and individual FEs) and show significant improvement, when using our flexible method.
-  - With [Róbert Lieli](https://sites.google.com/site/robertplieli/) (CEU) we extend my former job market paper, proposing causal trees with bandwidth selection in the context of regression discontinuity designs to estimate heterogeneous treatment effects.  
-  
- I have taught multiple courses at CEU such as data analysis and mathematics. Before CEU I worked for more than three years at the Hungarian Government Debt Management Agency.
-:::
+::: 
 :::
 
- 
+My research interests are in empirical finance and econometrics. My ongoing research covers topics on *the long-run market performance of mergers and acquisitions*, *policy evaluation with machine learning techniques* and *traditional econometrics*. 
 
-## [Working Papers](./papers.html)
-
-Apart from the above-mentioned projects, I have two joint papers with [Felix Chan](https://staffportal.curtin.edu.au/staff/profile/view/felix-chan-885a727c/) (Curtin University, Australia) and [László Mátyás](http://www.personal.ceu.hu/staff/matyas/) (CEU) on modeling with interval data. These papers propose new survey designs when the variable is observed through a discretization process, but one wants to point-identify parameters in the model.
-
-See more on my publications [here](./papers.html).
+See more on my research [here](./papers.html).
 
 
 ## [Teaching](./teaching.html)
+
+- Econometrics I for Applied Economists (BA) at Corvinus.
+- Prediction with Machine Learning methods -- Data Analysis 3 for Business Analitics (MSc) at CEU.
 
 - Learn coding & data analysis with R
   - This course material guides you from basic statistics towards machine learning methods.
@@ -42,12 +35,9 @@ See more on my publications [here](./papers.html).
   - This supplements the book *Data Analysis for Business, Economics, and Policy by Gábor Békés (CEU) and Gábor Kézdi (U. Michigan) Published on 6 May 2021 by Cambridge University Press*, and developed for Data Analytics courses at CEU. Check out [gabors-data-analysis.com](https://gabors-data-analysis.com/) for more detial.
   - Thanks to Péter Duronelly and Ádám Víg you can access the same material in python as well [here](https://github.com/gabors-data-analysis/da-coding-python).
 
-In the past, I have presented multiple places taught mathematics and data analysis-related courses at CEU. I had the fortune to teach four programs at CEU: MS in Business Analytics, MS in Finance, and Executive MBA.
-
-
 More information on the courses is available [here](./teaching.html).
 
 
 ## Contact
 
-email: areguly6-at-gatech.edu
+email: agoston.reguly-at-uni-corvinus.hu or areguly6-at-gatech.edu

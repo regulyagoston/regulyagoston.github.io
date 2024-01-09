@@ -6,23 +6,37 @@ format:
 ---
 
 # Curriculum Vitae
-*Last update: 2021/10/14*
+*Last update: 2024/01/09*
 
 [Download CV](https://regulyagoston.github.io/assets/img/CV.pdf)
 
 ## Research Interest
 
-Econometrics with special attention on using machine learning methods to identify heterogeneous treatment
-effects in potential outcome framework. Currently I am working on bandwidth selection with causal trees to
-estimate heterogeneous treatment effects in regression discontinuity designs.
+Applied econometrics in finance with special attention on using and improving machine learning methods.
+Currently, I am working on corporate events to better understand the implications of events.
 
-## Research Experience
- - **Research Assistant** - at CEU, collaborating with University of College London.
+## Current Positions
+
+- Assistant Professor -- Corvinus University at Budapest, Institute of Economics
+- Affiliated Researcher -- Georgia Institute of Technology (GT), FSIL at Scheller College of Business
+- Visiting Professor -- Central European University (CEU), Department of Business and Economics
+
+## Previous Positions and Research Experiences
+
+- *Postdoctoral research fellow* -- Georgia Institute of Technology (GT), FSIL at Scheller College of Business (2022-2023)
+- *Junior Researcher* -- Institute of Economics, Centre for Economic and Regional Studies (CERS)
+- *Research Assistant* - at CEU, collaborating with University of College London.
 	- Conducted research on econometric theory and applications of models where the dependent or explanatory variables are discretized due to surveys, but in fact, they are continuous. During the research, I have collaborated with [MaaSLab](https://www.ucl.ac.uk/bartlett/energy/research/energy-and-transport/maaslab) at the University of College London, a research group focusing on public transportation and faces challenges due to discretization when modeling.
 
-## Working Papers
-- [Heterogeneous Treatment Effects in Regression Discontinuity Designs](https://arxiv.org/abs/2106.11640) - *Job Market Paper*
+## Published and Working Papers
+
+- Long-term market performance of merger and acquisitions (WP) - *Joint with Sudheer Chava*
+- When and How Much Do Fixed Effects Matter? - *Joint with Felix Chan and László Mátyás*
+	- In: Matyas, L. (eds),The Econometrics of Multi-dimensional Panels 2nd Edition, Springer (2024), Chapter 2, pp. 39-60.
+- [Heterogeneous Treatment Effects in Regression Discontinuity Designs](https://arxiv.org/abs/2106.11640)
 	- The paper proposes a causal supervised machine learning algorithm to uncover treatment effect heterogeneity in classical regression discontinuity designs. Extending Athey and Imbens (2016) with leaf-by-leaf regression, I develop a criterion for building an honest “regression discontinuity tree”, where each leaf of the tree contains the RD estimate of treatment conditional on the values of some pre-treatment covariates.
+- The Use of Machine Learning in Treatment Effect Estimation (Published) 2022 -- *jointly with Robert Lieli (CEU) and Yu-Chin Hsu (National Central University and National Chengchi University)*
+	- In: Chan, F., Matyas, L. (eds), Econometrics with Machine Learning. Advanced Studies in Theoretical and Applied Econometrics, vol 53. Springer, Cham (2022), pp. 79-109.
 - [Modelling with Discretized Continuous Dependent Variable](https://github.com/regulyagoston/Split-sampling/blob/master/Modelling_with_DOC_Dependent_Variable.pdf) - *Joint with Felix Chan and László Mátyás*
 	- Extends the split sampling methodology of Reguly et. al. (2020) to linear models, when the outcome variable is observed through a discretization process.
 - [Modelling with Discretized Ordered Choice Covariates](https://github.com/regulyagoston/Split-sampling/blob/master/Modelling_with_DOC_Dependent_Variable.pdf) - 2020 - *Joint with Felix Chan and László Mátyás*
