@@ -16,12 +16,16 @@ title: "Ágoston Reguly"
 ::: {.column width="70%"}
 I am an Assistant Professor at the [Institute of Economics, Corvinus University of Budapest](https://www.uni-corvinus.hu/elerhetosegek/reguly-agoston/) (Corvinus) and a visiting faculty at Central European University (CEU). I am also an affiliated researcher at [Financial Services Innovation Lab (FSIL)](https://fintech.gatech.edu/#/) part of Scheller College of Business at Georgia Institute of Technology.
 
-::: 
-:::
+My research interests are in empirical finance and econometrics. My ongoing research covers topics on 
 
-My research interests are in empirical finance and econometrics. My ongoing research covers topics on *the long-run market performance of mergers and acquisitions*, *policy evaluation with machine learning techniques* and *traditional econometrics*. 
+- the long-run market performance of mergers and acquisitions, 
+- policy evaluation with machine learning techniques, and 
+- traditional econometrics. 
 
 See more on my research [here](./papers.html).
+
+::: 
+:::
 
 
 ## [Teaching](./teaching.html)
