@@ -6,7 +6,7 @@ title: "Papers"
 # Working Papers
 - *Measuring the long-run performance of mergers and acquisitions* - joint work with Sudheer Chava
     - [working paper](./papers/Chava_Reguly_MA_underperformance.pdf)
-- *Modelling with Discretized Variables* - joint work with Felix Chan](https://staffportal.curtin.edu.au/staff/profile/view/felix-chan-885a727c/) and [László Mátyás](http://www.personal.ceu.hu/staff/matyas/)
+- *Modelling with Discretized Variables* - joint work with [Felix Chan](https://staffportal.curtin.edu.au/staff/profile/view/felix-chan-885a727c/) and [László Mátyás](http://www.personal.ceu.hu/staff/matyas/)
 	- [working paper](), [codes](), [online supplement](./papers/DOC_online_supplement.pdf)
 	- Former versions of the paper: 
 		- *[Ordered Choice Modelling with Discretized Continuous Dependent Variable](http://www.personal.ceu.hu/staff/matyas/LHS_December2020.pdf)*
