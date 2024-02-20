@@ -6,7 +6,7 @@ title: "Papers"
 # Working Papers
 - *Measuring the long-run performance of mergers and acquisitions* - joint work with Sudheer Chava
     - [working paper](./papers/Chava_Reguly_MA_underperformance.pdf)
-- *Modelling with Discretized Variables* - joint work with [Felix Chan](https://staffportal.curtin.edu.au/staff/profile/view/felix-chan-885a727c/) and [László Mátyás](http://www.personal.ceu.hu/staff/matyas/)
+- *Modelling with Discretized Variables* - joint work with Felix Chan](https://staffportal.curtin.edu.au/staff/profile/view/felix-chan-885a727c/) and [László Mátyás](http://www.personal.ceu.hu/staff/matyas/)
 	- [working paper](), [codes](), [online supplement](./papers/DOC_online_supplement.pdf)
 	- Former versions of the paper: 
 		- *[Ordered Choice Modelling with Discretized Continuous Dependent Variable](http://www.personal.ceu.hu/staff/matyas/LHS_December2020.pdf)*
@@ -16,6 +16,8 @@ title: "Papers"
 
 # Published papers
 
+- *When and How Much Do Fixed Effects Matter?* (2024) - joint work with with Felix Chan (Curtin) and László Mátyás (CEU)
+	- [published book chapter](https://link.springer.com/chapter/10.1007/978-3-031-49849-7_2), in Matyas, L. (eds) The Econometrics of Multi-dimensional Panels. Advanced Studies in Theoretical and Applied Econometrics, vol 54. Springer, Cham.
 - *The Use of Machine Learning in Treatment Effect Estimation* (2022) - joint work with Robert Lieli (CEU) and Yu-Chin Hsu (National Central University and National Chengchi University)
   - [published book chapter](https://link.springer.com/chapter/10.1007/978-3-031-15149-1_3), in: Chan, F., Matyas, L. (eds), Econometrics with Machine Learning. Advanced Studies in Theoretical and Applied Econometrics, vol 53. Springer, pp. 79-109
 
