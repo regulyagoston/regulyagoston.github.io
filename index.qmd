@@ -10,7 +10,7 @@ title: "Ágoston Reguly"
 ::: columns
 ::: {.column width="30%"}
 
-![](./images/logo.jpg){width=90%}
+![](./assets/img/logo.jpg){width=90%}
 
 :::
 ::: {.column width="70%"}
