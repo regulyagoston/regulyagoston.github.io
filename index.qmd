@@ -29,7 +29,9 @@ See more on my research [here](./papers.html).
 
 ## News
 
+<!--
 - [2024-03-22] New working paper version of [Modelling with Discretized Varaibles]() is available on arxiv!
+-->
 - [2024-03-15] Our working paper on [The Long-Run Stock Market Performance of Mergers and Acquisitions](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4742401#paper-references-widget) is now available on SSRN!
 
 
