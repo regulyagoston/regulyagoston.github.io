@@ -14,7 +14,7 @@ title: "Ágoston Reguly"
 
 :::
 ::: {.column width="70%"}
-I am an Assistant Professor at the [Institute of Economics, Corvinus University of Budapest](https://www.uni-corvinus.hu/elerhetosegek/reguly-agoston/) (Corvinus) and a visiting faculty at Central European University (CEU). I am also an affiliated researcher at [Financial Services Innovation Lab (FSIL)](https://fintech.gatech.edu/#/) part of Scheller College of Business at Georgia Institute of Technology.
+I am an Assistant Professor at the [Institute of Economics, Corvinus University of Budapest](https://www.uni-corvinus.hu/elerhetosegek/reguly-agoston/) (Corvinus), an affiliated researcher at [Financial Services Innovation Lab (FSIL)](https://fintech.gatech.edu/#/) part of Scheller College of Business at Georgia Institute of Technology and a visiting faculty at Central European University (CEU).
 
 My research interests are in empirical finance and econometrics. My ongoing research covers topics on 
 
@@ -26,6 +26,11 @@ See more on my research [here](./papers.html).
 
 ::: 
 :::
+
+## News
+
+- [2024-03-22] New working paper version of [Modelling with Discretized Varaibles]() is available on arxiv!
+- [2024-03-15] Our working paper on [The Long-Run Stock Market Performance of Mergers and Acquisitions](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4742401#paper-references-widget) is now available on SSRN!
 
 
 ## [Teaching](./teaching.html)
