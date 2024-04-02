@@ -30,7 +30,7 @@ See more on my research [here](./papers.html).
 ## News
 
 - [2024-03-22] New working paper version of [Modelling with Discretized Varaibles](https://arxiv.org/abs/2403.15220) is available on arxiv!
-- [2024-03-15] Our working paper on [The Long-Run Stock Market Performance of Mergers and Acquisitions](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4742401#paper-references-widget) is now available on SSRN!
+- [2024-03-15] Our working paper on [The Long-Run Stock Market Performance of Mergers and Acquisitions](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4742401) is now available on SSRN!
 - [2024-02-02] Electronic version of [
 When and How Much Do Fixed Effects Matter?](https://link.springer.com/chapter/10.1007/978-3-031-49849-7_2) is now available. This is a book chapter from [The Econometrics of Multi-dimensional Panels](https://link.springer.com/book/10.1007/978-3-031-49849-7) (2024)  (Editor: Matyas, Publisher: Springer)
 
