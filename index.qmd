@@ -29,6 +29,7 @@ See more on my research [here](./papers.html).
 
 ## News
 
+- [2024-05-07] Beta version of `multisynthdid` package, which runs Synthetic Diff-in-Diffs with **multiple outcomes**. See more here [`multisynthdid`](./multisynthdid.html).
 - [2024-03-22] New working paper version of [Modelling with Discretized Varaibles](https://arxiv.org/abs/2403.15220) is available on arxiv!
 - [2024-03-15] Our working paper on [The Long-Run Stock Market Performance of Mergers and Acquisitions](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4742401) is now available on SSRN!
 - [2024-02-02] Electronic version of [
@@ -46,6 +47,11 @@ When and How Much Do Fixed Effects Matter?](https://link.springer.com/chapter/10
   - Thanks to Péter Duronelly and Ádám Víg you can access the same material in python as well [here](https://github.com/gabors-data-analysis/da-coding-python).
 
 More information on the courses is available [here](./teaching.html).
+
+## [Codes](./codes.html)
+
+- Multiple outcomes with synthetic difference-in-difference estimation. See more here [`multisynthdid`](./multisynthdid.html).
+  - Implements method used by [Chava and Reguly (2024)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4742401)
 
 
 ## Contact
