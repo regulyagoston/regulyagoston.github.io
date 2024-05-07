@@ -25,6 +25,9 @@ website:
       - section: "Research"
         contents:
           - papers.qmd
+      - section: "Codes"
+        contents: 
+          - codes.qmd
     
 
 format:

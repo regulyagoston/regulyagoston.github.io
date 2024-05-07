@@ -1,0 +1,109 @@
+---
+title: "Compare Synthetic Control methods which allows multiple outcomes"
+format: html
+---
+
+```{r, install_pkg, eval = FALSE}
+install.packages("MSCMT")
+install.packages("Synth")
+devtools::install_github("ebenmichael/augsynth")
+```
+
+
+```{r, packages, message=FALSE, warning=FALSE}
+library(MSCMT)
+library(Synth)
+library(augsynth)
+library(multisynthdid)
+library(tidyverse)
+```
+
+```{r, data}
+data("german_reunification")
+german_reunification$index <- as.integer(as.factor(german_reunification$country) )
+german_reunification <- as.data.frame(german_reunification)
+```
+
+## Classical Synthetic Control
+
+```{r, Synth}
+unit_ids <- unique(german_reunification$index)[-7]
+dataprep_out <-
+  dataprep(
+    foo = german_reunification,
+    predictors    = c("gdp","trade","infrate"),
+    dependent     = "gdp",
+    unit.variable = "index",
+    time.variable = "year",
+    treatment.identifier = 17,
+    controls.identifier = unit_ids[unit_ids != 17],
+    time.predictors.prior = 1981:1990,
+    time.optimize.ssr = 1960:1989,
+    unit.names.variable = "country",
+    time.plot = 1960:2003
+  )
+
+synth_out <- synth(dataprep_out)
+```
+
+## MSCMT package
+
+```{r, mscmt}
+df_m <- listFromLong(german_reunification, unit.variable="index", time.variable="year", unit.names.variable="country")
+
+# define the sum of all cases
+
+treatment.identifier <- "West Germany"
+controls.identifier  <- setdiff(colnames(df_m[[1]]),
+                                c(treatment.identifier))
+times.dep  <- cbind("gdp"            = c(1960,1989),
+                    "trade"          = c(1960,1989),
+                    "infrate"        = c(1960,1989))
+times.pred <- times.dep
+
+mscmt_res <- mscmt(df_m, treatment.identifier, controls.identifier, times.dep, times.pred, seed=1)
+```
+
+## Augmented Synthetic Control
+
+```{r, augmented}
+
+aug_syn <- augsynth( gdp + trade + infrate ~ W, index, year, 
+                     german_reunification, progfunc = 'none', scm = T  )
+summary(aug_syn)
+
+# Treatment
+augsyn_tau = predict(aug_syn,att=T)
+```
+```{r, multi_sdid}
+multi_sdid <- multi_sdid( gdp + infrate + trade ~ 1, 'W', 'country', 'year', german_reunification )
+
+summary.multi_sdid(multi_sdid)
+
+msdid_curve <- multi_synthdid_curves(multi_sdid$tau, complete = T)
+```
+
+## Comparison of GDP
+
+```{r, compare}
+df_plot <- german_reunification %>% 
+  filter( country == 'West Germany' ) %>% 
+  arrange( year ) %>% 
+  rename( `Realized GDP` = gdp )
+
+df_plot <- cbind(df_plot,
+                 tibble(SC = dataprep_out$Y0plot %*% synth_out$solution.w ),
+                 tibble(MSCMT = as.vector( mscmt_res$data.synth$gdp) ),
+                 tibble(Aug_Synth = df_plot$`Realized GDP`-augsyn_tau[,1] ),
+                 tibble(Multi_SDiD = df_plot$`Realized GDP` - msdid_curve$tau_curve[1,]) )
+
+df_plot2 <- df_plot %>% 
+  select( year, `Realized GDP`, SC, MSCMT, Aug_Synth, Multi_SDiD ) %>%  #
+  pivot_longer(!year, names_to = 'Method', values_to = 'GDP' )
+
+ggplot( df_plot2, aes( x = year, color = Method, y = GDP )) + 
+  geom_line( linewidth = 1 ) +
+  annotate("rect", xmin = 1960, xmax = 1990, ymin = 0, ymax = 35000,
+           alpha = .2)+
+  theme_bw()
+```

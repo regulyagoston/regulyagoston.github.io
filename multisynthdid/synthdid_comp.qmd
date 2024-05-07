@@ -1,0 +1,85 @@
+---
+title: "Comparison of the `multisynthdid` package with the classical `synthdid` package"
+author: "Agoston Reguly"
+format: html
+---
+
+## Comparison with German Reunification Data
+
+We will compare the effect of German Reunification on GDP with the classical `synthdid` package and our extended version for multiple outcomes.
+
+First, install the original package.
+```{r, eval = F}
+devtools::install_github("synth-inference/synthdid")
+```
+
+Load the packages.
+```{r, call, warning = F, message=F}
+library(multisynthdid)
+library(synthdid)
+library(kableExtra)
+```
+
+Get the imputed data for German reunification.
+
+```{r, get_data}
+data("german_reunification")
+```
+
+We estimate three models:
+
+- Synthetic Diff-in-Diffs using `gdp` as the outcome only
+- Multiple Synthetic Diff-in-Diff using `gdp`, `infrate` (inflation) and `trade` to get the weights
+- Multiple Synthetic Diff-in-Diff using `gdp` only to get a comparison to the original package result.
+
+```{r, estimation, cache=TRUE}
+# Original
+setup_sdid = panel.matrices(as.data.frame( german_reunification ), unit = 'country', time = 'year', outcome = 'gdp', treatment = 'W')
+sdid_tau = synthdid_estimate(setup_sdid$Y, setup_sdid$N0, setup_sdid$T0)
+sdid_se = sqrt(vcov(sdid_tau, method='placebo'))
+
+# Multi-outcome package estimated on GDP only -- should give the same result
+multi_chk <- multi_sdid( gdp ~ 1, 'W', 'country', 'year', german_reunification )
+
+# Multi estimated on multiple outcomes
+multi <- multi_sdid( gdp + infrate + trade ~ 1, 'W', 'country', 'year', german_reunification )
+```
+
+Summaries the results
+
+```{r, results, echo=FALSE}
+
+res <- matrix( c( c( sdid_tau[1], sdid_se ),  multi_chk$tau_all[,1],  multi$tau_all[,1] ), nrow = 2, ncol = 3 )
+colnames( res ) <- c('Original SDiD', 'Multi-outcome SDiD replicate', 'Multi-outcome SDiD')
+rownames( res ) <- c('Avg. Effect', 'SE')
+
+kable( res, title = 'Parameter estimates of different methods', digits = 2)
+
+```
+
+Note that the SE-s are slightly different for Original and replicated as it uses randomization with 200 replication. In case one uses higher replication number for the placebo SEs, the values converge to each other.
+
+## Increase number of repetition for SEs
+
+```{r, larger_SE, cache=TRUE}
+# Increase the replication with Original package
+sdid_se_large = sqrt(vcov(sdid_tau, method='placebo', replications = 1000 ))
+
+# With multiple outcome package
+multi_chk_large <- multi_sdid( gdp ~ 1, 'W', 'country', 'year', german_reunification, SE = T, se_replication = 1000 )
+
+```
+
+With 1000 replication we got a closer estimates to each other:
+
+```{r, SE_compare, echo = FALSE }
+
+se_comp = matrix( c( sdid_se, sdid_se_large, multi_chk$tau_all[2], multi_chk_large$tau_all[2] ), nrow = 2, ncol = 2 )
+colnames(se_comp) <- c('Original SDiD','Multi-SDiD')
+rownames(se_comp) <- c('200','1000')
+se_comp <- as.data.frame(se_comp)
+se_comp$`Abs. Diff` = abs(se_comp[,1] - se_comp[,2])
+
+kable( se_comp, title = 'Placebo Standard Errors of the two methods with increasing repetition number', digits = 2) 
+
+```
