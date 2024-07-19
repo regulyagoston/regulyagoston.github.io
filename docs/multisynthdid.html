@@ -317,7 +317,7 @@ gtag('config', 'G-BGV4MVV5TE', { 'anonymize_ip': true});
 </div>
 <p>The summary command will summarise the main estimates</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary.multi_sdid</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary.multisynthdid</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$estimate
 [1] "multi_synthdid_obj"
@@ -325,7 +325,7 @@ gtag('config', 'G-BGV4MVV5TE', { 'anonymize_ip': true});
 $tau
                      gdp  infrate     trade
 Avg. Treatment -1526.459 1.397776 0.3985817
-SE              1325.374 1.533869 4.3934360
+SE              1313.894 1.536156 4.3192313
 
 $dimensions
                                       [,1]
@@ -341,13 +341,21 @@ No. Outcomes                         3.000</code></pre>
 <p>To check the outcome variables and its synthetic counterparts visual investigation has been the norm with synthetic controls.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_outcomes</span>( res )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_line()`: Each group consists of only one observation.
+ℹ Do you need to adjust the group aesthetic?
+`geom_line()`: Each group consists of only one observation.
+ℹ Do you need to adjust the group aesthetic?
+`geom_line()`: Each group consists of only one observation.
+ℹ Do you need to adjust the group aesthetic?</code></pre>
+</div>
 <div class="cell-output-display">
 <p><img src="multisynthdid_files/figure-html/outcome_plots-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Finally one can check the treatment/gap plots with ot without placebo effects for inference.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_gaps</span>( res, <span class="at">placebo =</span> T )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_gaps</span>( res, <span class="at">placebo =</span> T )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="multisynthdid_files/figure-html/gaps-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -358,6 +366,7 @@ No. Outcomes                         3.000</code></pre>
 <p>We have compared our method to other synthetic control methods.</p>
 <p>One benchmark is the univariate synthetic difference-in-differences. See more <a href="./multisynthdid/synthdid_comp.html">here</a>.</p>
 <p>The other alternative is other synthetic control packages that can handle multiple outcomes or can estimate weights based on multiple (co)variates. See more <a href="./multisynthdid/multi_comp.html">here</a>.</p>
+<p><a href="./index.html">Homepage</a> <a href="./codes.html">Codes</a></p>
 
 
 </section>

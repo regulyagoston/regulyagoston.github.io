@@ -326,9 +326,9 @@ solution.w:
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>mscmt_res <span class="ot">&lt;-</span> <span class="fu">mscmt</span>(df_m, treatment.identifier, controls.identifier, times.dep, times.pred, <span class="at">seed=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>18:32:49: Number of 'sunny' donors: 16 out of 16
-18:32:49: Unrestricted outer optimum (obtained by ignoring all predictors) is 
-18:32:49: FEASIBLE even when respecting the predictors.
+<pre><code>10:58:03: Number of 'sunny' donors: 16 out of 16
+10:58:03: Unrestricted outer optimum (obtained by ignoring all predictors) is 
+10:58:03: FEASIBLE even when respecting the predictors.
 Final rmspe: 0.03346181, mspe (loss v): 0.001119693
 Optimal weights:
         USA     Austria Switzerland       Japan 
@@ -365,7 +365,7 @@ Average ATT Estimate:
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>multi_sdid <span class="ot">&lt;-</span> <span class="fu">multi_sdid</span>( gdp <span class="sc">+</span> infrate <span class="sc">+</span> trade <span class="sc">~</span> <span class="dv">1</span>, <span class="st">'W'</span>, <span class="st">'country'</span>, <span class="st">'year'</span>, german_reunification )</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary.multi_sdid</span>(multi_sdid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary.multisynthdid</span>(multi_sdid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$estimate
 [1] "multi_synthdid_obj"
@@ -373,7 +373,7 @@ Average ATT Estimate:
 $tau
                      gdp  infrate     trade
 Avg. Treatment -1526.459 1.397776 0.3985817
-SE              1264.900 1.366940 4.3651411
+SE              1310.014 1.473123 4.3954268
 
 $dimensions
                                       [,1]

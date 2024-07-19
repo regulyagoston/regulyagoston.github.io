@@ -86,7 +86,7 @@ res <- multi_sdid( gdp + infrate + trade ~ 1, 'W', 'country', 'year', german_reu
 The summary command will summarise the main estimates
 
 ```{r, results}
-summary.multi_sdid(res)
+summary.multisynthdid(res)
 ```
 
 To check the outcome variables and its synthetic counterparts visual investigation has been the norm with synthetic controls.
@@ -109,3 +109,5 @@ We have compared our method to other synthetic control methods.
 One benchmark is the univariate synthetic difference-in-differences. See more [here](./multisynthdid/synthdid_comp.html).
 
 The other alternative is other synthetic control packages that can handle multiple outcomes or can estimate weights based on multiple (co)variates. See more [here](./multisynthdid/multi_comp.html).
+
+[Homepage](./index.html) [Codes](./codes.html)

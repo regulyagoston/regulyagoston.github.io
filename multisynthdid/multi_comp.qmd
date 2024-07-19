@@ -78,7 +78,7 @@ augsyn_tau = predict(aug_syn,att=T)
 ```{r, multi_sdid}
 multi_sdid <- multi_sdid( gdp + infrate + trade ~ 1, 'W', 'country', 'year', german_reunification )
 
-summary.multi_sdid(multi_sdid)
+summary.multisynthdid(multi_sdid)
 
 msdid_curve <- multi_synthdid_curves(multi_sdid$tau, complete = T)
 ```

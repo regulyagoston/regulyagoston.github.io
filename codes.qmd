@@ -6,3 +6,5 @@ title: "Codes"
     - Installation and basic usage: [`multisynthdid.qmd`](./multisynthdid.qmd)
     - Comparison with univariate Synthetic Diff-in-Diffs: [`synthdid_comp.qmd`](./multisynthdid/synthdid_comp.html)
     - Comparison with other multi-outcome Synthetic Control methods: [`multi_comp.qmd`](./multisynthdid/multi_comp.html)
+
+[Back](./index.html)
