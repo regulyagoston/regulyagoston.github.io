@@ -1,0 +1,21 @@
+---
+title: "Econometrics for Applied Economists at Corvinus"
+---
+
+# Welcome to Econometrics I at CUB
+
+# Homeworks with R
+
+## Autograding homeworks with R
+
+You can find the autograding [HERE](/teaching/autograde/app_fin.R)
+
+
+## Homework I
+
+
+
+
+[Teaching](./teaching.html) 
+
+[Homepage](./index.html)
