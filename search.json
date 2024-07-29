@@ -1,5 +1,208 @@
 [
   {
+    "objectID": "multisynthdid.html",
+    "href": "multisynthdid.html",
+    "title": "The multisynthdid package",
+    "section": "",
+    "text": "FIRST BETA VERSION\nAll comments are more than welcomed! Please submit them to the issues section here: https://github.com/regulyagoston/multisynthdid/issues"
+  },
+  {
+    "objectID": "multisynthdid.html#how-is-it-different-from-classical-synthetic-diff-in-diffs",
+    "href": "multisynthdid.html#how-is-it-different-from-classical-synthetic-diff-in-diffs",
+    "title": "The multisynthdid package",
+    "section": "How is it different from classical Synthetic Diff-in-Diffs",
+    "text": "How is it different from classical Synthetic Diff-in-Diffs\nArkhangelsky et al (2021) introduces synthetic control that allows time and unit fixed effects while creating ‘’synthetic control’’ for the (expected) treated unit.\nOther Synthetic Control methods allows to use ‘’covariates’’ that they use to calculate the weights. Note however these variables are unaffected by the treatment. Nice paper on the issue is by Botosaru and Ferman (2019).\nHere we allow to estimate the weights for the control donor pool by using multiple outcome that are affected by the treatment. We also allow pre-event time specific weights that reduces the bias in the estimator.\n\\[ \\hat Y_{it}(1) = \\sum_{i'} \\omega_{i'} Y_{i't} - \\hat \\delta _{pre} \\]\n\\[ \\hat \\delta_{pre} = \\sum_{t=1}^{T_{pre}} \\left( \\hat\\lambda_{t}Y_{i,t} - \\sum_{i'} \\hat \\omega_{i'} \\hat\\lambda_{t} Y_{i't}\\right) - \\hat\\lambda_{0,i} \\]\nwhere the individual unit-weights \\(\\omega_{i'}\\) and the pre-treatment time weigths \\(\\lambda_{t}\\) are estimated by using multiple outcomes. Their optimal values are the solution of the following optimization problem:\n\\[\\hat\\omega_{i'} = \\left( \\hat\\omega_0^K, \\hat\\omega_{i'} \\right) = arg\\min_{\\omega_0\\in \\mathbb{R}, \\omega \\in \\Omega} \\sum_{t=1}^{T_{pre}}\n\\left[ \\Big(\\omega_0 + \\sum_{i'} \\omega_{i'} Y_{i',t} - Y_{i,t} \\Big)^{'} \\hat \\Sigma_t^{-1} \\Big( \\omega_0 + \\sum_{i'} \\omega_{i'} Y_{i',t} - Y_{i,t} \\Big) \\right] + \\zeta^2 T_{pre} \\sum_{i'}\\omega^2_{i'}\\]\nand\n\\[ \\left( \\hat\\lambda_0, \\hat\\lambda \\right) = arg\\min_{\\lambda_0 \\in \\mathbb{R}, \\lambda \\in \\Lambda}\n    \\sum_{i'} \\Bigg[ \\left(\\lambda_0+\\sum_{t=1}^{T_{pre}}\\lambda_{t} Y_{i',t} - \\frac{1}{T_{post}}\\sum_{t=0}^{T_{post}} Y_{i',t}\\right)^{'}\n    \\hat{\\Sigma}^{-1} \\left(\\lambda_0+\\sum_{t=1}^{T_{pre}}\\lambda_{t} Y_{i',t} - \\frac{1}{T_{post}}\\sum_{t=0}^{T_{post}} Y_{i',t}\\right) \\Bigg]\\]\nwhere \\(Y\\) is \\(J \\times T\\), \\(i\\) is the treated units and \\(i'\\) are the controls and during the optimization we constraint both weights to sums up to 1. See more in Chava and Reguly (2024)\nIntuitively it uses information from \\(J\\) outcome and calculate unit specific weigths \\(\\omega_{-i}\\) that minimize the Mahalanobis distance from the treated (average) unit, where the scaler is coming from time specific var-covar matrices. Similarly to Arkhangelsky et al (2021) we add a (ridge-style) penalty term that shifts weights toward zero.\nFor the time specific weights we use the same approach but scale with unit-specific var-covar matrices."
+  },
+  {
+    "objectID": "multisynthdid.html#installation",
+    "href": "multisynthdid.html#installation",
+    "title": "The multisynthdid package",
+    "section": "Installation",
+    "text": "Installation\nTo install this package, first ensure that devtools is installed with\n\ninstall.packages(\"devtools\")\n\nthen install the package from GitHub with\n\ndevtools::install_github(\"regulyagoston/multisynthdid\")"
+  },
+  {
+    "objectID": "multisynthdid.html#example-with-german-reunification-data",
+    "href": "multisynthdid.html#example-with-german-reunification-data",
+    "title": "The multisynthdid package",
+    "section": "Example with German Reunification Data",
+    "text": "Example with German Reunification Data\nA simple example is to estimate the effect of German Reunification.\n\nlibrary(multisynthdid)\n\nGet the imputed data for German reunification.\n\ndata(\"german_reunification\")\n\nOne can easily run the estimation via the main function:\n\nres &lt;- multi_sdid( gdp + infrate + trade ~ 1, 'W', 'country', 'year', german_reunification )\n\nThe summary command will summarise the main estimates\n\nsummary.multisynthdid(res)\n\n$estimate\n[1] \"multi_synthdid_obj\"\n\n$tau\n                     gdp  infrate     trade\nAvg. Treatment -1526.459 1.397776 0.3985817\nSE              1113.220 1.567475 4.3581915\n\n$dimensions\n                                      [,1]\nNo. Treated units                    1.000\nNo. Control pool                    16.000\nEffective no. controls               8.668\nNo. Post-treatment periods          14.000\nNo. Pre-treatment periods           30.000\nEffective no. pre-treatment periods  1.000\nNo. Outcomes                         3.000\n\n\nTo check the outcome variables and its synthetic counterparts visual investigation has been the norm with synthetic controls.\n\nplot_outcomes( res )\n\n`geom_line()`: Each group consists of only one observation.\nℹ Do you need to adjust the group aesthetic?\n`geom_line()`: Each group consists of only one observation.\nℹ Do you need to adjust the group aesthetic?\n`geom_line()`: Each group consists of only one observation.\nℹ Do you need to adjust the group aesthetic?\n\n\n\n\n\nFinally one can check the treatment/gap plots with ot without placebo effects for inference.\n\nplot_gaps( res, placebo = T )"
+  },
+  {
+    "objectID": "multisynthdid.html#comparison-to-other-methods",
+    "href": "multisynthdid.html#comparison-to-other-methods",
+    "title": "The multisynthdid package",
+    "section": "Comparison to other methods",
+    "text": "Comparison to other methods\nWe have compared our method to other synthetic control methods.\nOne benchmark is the univariate synthetic difference-in-differences. See more here.\nThe other alternative is other synthetic control packages that can handle multiple outcomes or can estimate weights based on multiple (co)variates. See more here.\nHomepage Codes"
+  },
+  {
+    "objectID": "multisynthdid/synthdid_comp.html",
+    "href": "multisynthdid/synthdid_comp.html",
+    "title": "Comparison of the multisynthdid package with the classical synthdid package",
+    "section": "",
+    "text": "We will compare the effect of German Reunification on GDP with the classical synthdid package and our extended version for multiple outcomes.\nFirst, install the original package.\n\ndevtools::install_github(\"synth-inference/synthdid\")\n\nLoad the packages.\n\nlibrary(multisynthdid)\nlibrary(synthdid)\nlibrary(kableExtra)\n\nGet the imputed data for German reunification.\n\ndata(\"german_reunification\")\n\nWe estimate three models:\n\nSynthetic Diff-in-Diffs using gdp as the outcome only\nMultiple Synthetic Diff-in-Diff using gdp, infrate (inflation) and trade to get the weights\nMultiple Synthetic Diff-in-Diff using gdp only to get a comparison to the original package result.\n\n\n# Original\nsetup_sdid = panel.matrices(as.data.frame( german_reunification ), unit = 'country', time = 'year', outcome = 'gdp', treatment = 'W')\nsdid_tau = synthdid_estimate(setup_sdid$Y, setup_sdid$N0, setup_sdid$T0)\nsdid_se = sqrt(vcov(sdid_tau, method='placebo'))\n\n# Multi-outcome package estimated on GDP only -- should give the same result\nmulti_chk &lt;- multi_sdid( gdp ~ 1, 'W', 'country', 'year', german_reunification )\n\n# Multi estimated on multiple outcomes\nmulti &lt;- multi_sdid( gdp + infrate + trade ~ 1, 'W', 'country', 'year', german_reunification )\n\nSummaries the results\n\n\n\n\n\n\n\n\n\n\n\n\nOriginal SDiD\nMulti-outcome SDiD replicate\nMulti-outcome SDiD\n\n\n\n\nAvg. Effect\n-1471.39\n-1471.39\n-1526.46\n\n\nSE\n1434.65\n1552.74\n1474.69\n\n\n\n\n\nNote that the SE-s are slightly different for Original and replicated as it uses randomization with 200 replication. In case one uses higher replication number for the placebo SEs, the values converge to each other."
+  },
+  {
+    "objectID": "multisynthdid/synthdid_comp.html#comparison-with-german-reunification-data",
+    "href": "multisynthdid/synthdid_comp.html#comparison-with-german-reunification-data",
+    "title": "Comparison of the multisynthdid package with the classical synthdid package",
+    "section": "",
+    "text": "We will compare the effect of German Reunification on GDP with the classical synthdid package and our extended version for multiple outcomes.\nFirst, install the original package.\n\ndevtools::install_github(\"synth-inference/synthdid\")\n\nLoad the packages.\n\nlibrary(multisynthdid)\nlibrary(synthdid)\nlibrary(kableExtra)\n\nGet the imputed data for German reunification.\n\ndata(\"german_reunification\")\n\nWe estimate three models:\n\nSynthetic Diff-in-Diffs using gdp as the outcome only\nMultiple Synthetic Diff-in-Diff using gdp, infrate (inflation) and trade to get the weights\nMultiple Synthetic Diff-in-Diff using gdp only to get a comparison to the original package result.\n\n\n# Original\nsetup_sdid = panel.matrices(as.data.frame( german_reunification ), unit = 'country', time = 'year', outcome = 'gdp', treatment = 'W')\nsdid_tau = synthdid_estimate(setup_sdid$Y, setup_sdid$N0, setup_sdid$T0)\nsdid_se = sqrt(vcov(sdid_tau, method='placebo'))\n\n# Multi-outcome package estimated on GDP only -- should give the same result\nmulti_chk &lt;- multi_sdid( gdp ~ 1, 'W', 'country', 'year', german_reunification )\n\n# Multi estimated on multiple outcomes\nmulti &lt;- multi_sdid( gdp + infrate + trade ~ 1, 'W', 'country', 'year', german_reunification )\n\nSummaries the results\n\n\n\n\n\n\n\n\n\n\n\n\nOriginal SDiD\nMulti-outcome SDiD replicate\nMulti-outcome SDiD\n\n\n\n\nAvg. Effect\n-1471.39\n-1471.39\n-1526.46\n\n\nSE\n1434.65\n1552.74\n1474.69\n\n\n\n\n\nNote that the SE-s are slightly different for Original and replicated as it uses randomization with 200 replication. In case one uses higher replication number for the placebo SEs, the values converge to each other."
+  },
+  {
+    "objectID": "multisynthdid/synthdid_comp.html#increase-number-of-repetition-for-ses",
+    "href": "multisynthdid/synthdid_comp.html#increase-number-of-repetition-for-ses",
+    "title": "Comparison of the multisynthdid package with the classical synthdid package",
+    "section": "Increase number of repetition for SEs",
+    "text": "Increase number of repetition for SEs\n\n# Increase the replication with Original package\nsdid_se_large = sqrt(vcov(sdid_tau, method='placebo', replications = 1000 ))\n\n# With multiple outcome package\nmulti_chk_large &lt;- multi_sdid( gdp ~ 1, 'W', 'country', 'year', german_reunification, SE = T, se_replication = 1000 )\n\nWith 1000 replication we got a closer estimates to each other:\n\n\n\n\n\n\nOriginal SDiD\nMulti-SDiD\nAbs. Diff\n\n\n\n\n200\n1434.65\n1552.74\n118.09\n\n\n1000\n1522.92\n1466.60\n56.32"
+  },
+  {
+    "objectID": "teaching/Econometrics_I/econ_I_AE_2425.html",
+    "href": "teaching/Econometrics_I/econ_I_AE_2425.html",
+    "title": "Econometrics I for Applied Economics at Corvinus – 22024/25 Fall",
+    "section": "",
+    "text": "Please submit your codes to Moodle. This page aims to enhance your learning experience by displaying your homework assignments and providing an autograding option to help you improve your work and receive feedback before the submission deadline.\nRules:"
+  },
+  {
+    "objectID": "teaching/Econometrics_I/econ_I_AE_2425.html#homework-with-r",
+    "href": "teaching/Econometrics_I/econ_I_AE_2425.html#homework-with-r",
+    "title": "Econometrics I for Applied Economics at Corvinus – 22024/25 Fall",
+    "section": "Homework with R",
+    "text": "Homework with R\n\nHomework I"
+  },
+  {
+    "objectID": "teaching/Econometrics_I/econ_I_AE_2425.html#autograding-homeworks-with-r",
+    "href": "teaching/Econometrics_I/econ_I_AE_2425.html#autograding-homeworks-with-r",
+    "title": "Econometrics I for Applied Economics at Corvinus – 22024/25 Fall",
+    "section": "Autograding homeworks with R",
+    "text": "Autograding homeworks with R\nYou can find the autograding HERE.\n\nThis is a beta version; every feedback and comment are more than welcomed!\nAt the moment, we use a free server that offers 25 hours of run time per month. If we exceed the server’s monthly usage limit, we need to:\n\nWe need your feedback if replacement under a different domain is needed.\nworst case: wait for the next month and play the ‘’tragedy of commons game’’ better."
+  },
+  {
+    "objectID": "teaching/Econometrics_I/econ_I_AE_2425.html#back",
+    "href": "teaching/Econometrics_I/econ_I_AE_2425.html#back",
+    "title": "Econometrics I for Applied Economics at Corvinus – 22024/25 Fall",
+    "section": "Back",
+    "text": "Back\nTeaching\nHomepage"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Ágoston Reguly",
+    "section": "",
+    "text": "I am an Assistant Professor at the Institute of Economics, Corvinus University of Budapest (Corvinus), an affiliated researcher at Financial Services Innovation Lab (FSIL) part of Scheller College of Business at Georgia Institute of Technology and a visiting faculty at Central European University (CEU).\nMy research interests are in empirical finance and econometrics. My ongoing research covers topics on\n\nthe long-run market performance of mergers and acquisitions,\npolicy evaluation with machine learning techniques, and\ntraditional econometrics.\n\nSee more on my research here."
+  },
+  {
+    "objectID": "index.html#quick-bio",
+    "href": "index.html#quick-bio",
+    "title": "Ágoston Reguly",
+    "section": "",
+    "text": "I am an Assistant Professor at the Institute of Economics, Corvinus University of Budapest (Corvinus), an affiliated researcher at Financial Services Innovation Lab (FSIL) part of Scheller College of Business at Georgia Institute of Technology and a visiting faculty at Central European University (CEU).\nMy research interests are in empirical finance and econometrics. My ongoing research covers topics on\n\nthe long-run market performance of mergers and acquisitions,\npolicy evaluation with machine learning techniques, and\ntraditional econometrics.\n\nSee more on my research here."
+  },
+  {
+    "objectID": "index.html#news",
+    "href": "index.html#news",
+    "title": "Ágoston Reguly",
+    "section": "News",
+    "text": "News\n\n[2024-05-07] Beta version of multisynthdid package, which runs Synthetic Diff-in-Diffs with multiple outcomes. See more here multisynthdid.\n[2024-03-22] New working paper version of Modelling with Discretized Varaibles is available on arxiv!\n[2024-03-15] Our working paper on The Long-Run Stock Market Performance of Mergers and Acquisitions is now available on SSRN!\n[2024-02-02] Electronic version of When and How Much Do Fixed Effects Matter? is now available. This is a book chapter from The Econometrics of Multi-dimensional Panels (2024) (Editor: Matyas, Publisher: Springer)"
+  },
+  {
+    "objectID": "index.html#teaching",
+    "href": "index.html#teaching",
+    "title": "Ágoston Reguly",
+    "section": "Teaching",
+    "text": "Teaching\n\nEconometrics I for Applied Economists (BA) at Corvinus.\nPrediction with Machine Learning methods – Data Analysis 3 for Business Analitics (MSc) at CEU.\nLearn coding & data analysis with R\n\nThis course material guides you from basic statistics towards machine learning methods.\nSee my course material and problem description with tasks+solutions at the following github repo: Coding for Data Analysis in R.\nThis supplements the book Data Analysis for Business, Economics, and Policy by Gábor Békés (CEU) and Gábor Kézdi (U. Michigan) Published on 6 May 2021 by Cambridge University Press, and developed for Data Analytics courses at CEU. Check out gabors-data-analysis.com for more detial.\nThanks to Péter Duronelly and Ádám Víg you can access the same material in python as well here.\n\n\nMore information on the courses is available here."
+  },
+  {
+    "objectID": "index.html#codes",
+    "href": "index.html#codes",
+    "title": "Ágoston Reguly",
+    "section": "Codes",
+    "text": "Codes\n\nMultiple outcomes with synthetic difference-in-difference estimation. See more here multisynthdid.\n\nImplements method used by Chava and Reguly (2024)"
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "Ágoston Reguly",
+    "section": "Contact",
+    "text": "Contact\nemail: agoston.reguly-at-uni-corvinus.hu or areguly6-at-gatech.edu"
+  },
+  {
+    "objectID": "papers.html",
+    "href": "papers.html",
+    "title": "Papers",
+    "section": "",
+    "text": "Last update: 2024/03/22\n\nWorking Papers\n\nMeasuring the long-run performance of mergers and acquisitions - joint work with Sudheer Chava\n\nworking paper\n\nModelling with Discretized Variables - joint work with Felix Chan and László Mátyás\n\nworking paper, codes, online supplement\n\nHeterogeneous treatment effects in regression discontinuity designs\n\nworking paper, codes\n\n\n\n\nPublished papers\n\nWhen and How Much Do Fixed Effects Matter? (2024) - joint work with with Felix Chan (Curtin) and László Mátyás (CEU)\n\npublished book chapter, in Matyas, L. (eds) The Econometrics of Multi-dimensional Panels. Advanced Studies in Theoretical and Applied Econometrics, vol 54. Springer, Cham.\n\nThe Use of Machine Learning in Treatment Effect Estimation (2022) - joint work with Robert Lieli (CEU) and Yu-Chin Hsu (National Central University and National Chengchi University)\n\npublished book chapter, in: Chan, F., Matyas, L. (eds), Econometrics with Machine Learning. Advanced Studies in Theoretical and Applied Econometrics, vol 53. Springer, pp. 79-109\n\n\n\nPublication from my BA/MA studies\n\nConstructing Hungarian Zero-Coupon Yield Curve Models, Using Global Optimalization Methods (2015)\n\npublished paper - only in Hungarian\n\nMacroeconometric Modelling of Inflation, Wages and Money Supply: Implementing David F. Hendry’s reduction theory to the Hungarian Economy between 1995 and 2014 (2015)\n\nMA thesis - only in Hungarian\n\nForecasting the Hungarian Nelson-Siegel Yield Curve with Mixed Factor Model (2014)\n\nConference Paper: Hungarian Society of Economist Yearly Conference (2014, December 19) - only in Hungarian\n\nHappiness of Economic Man (2014) – joint work with Katalin Martinás, Zsolt Gilányi, Veronika Poór – The Happiness Compass, Chapter 19 Nova Science Publishers, editors: Francesco Sarracino\nReappraisal of Rational Choice Theory (2013) – joint work with Katalin Martinás\n\nInterdisciplinary Description of Complex Systems (INDECS), 11(1)\n\nBehavioral models of pension systems, part II. (2013)\n\nEconomists’ Forum - only in Hungarian\n\nBehavioral models of pension systems, part I. (2012)\n\nEconomists’ Forum - only in Hungarian\n\nBehavioral models of pension systems (2012)\n\nBA Thesis - only in Hungarian"
+  },
+  {
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching",
+    "section": "",
+    "text": "Updated: 2024/07/29"
+  },
+  {
+    "objectID": "teaching.html#courses-at-corvinus-cub",
+    "href": "teaching.html#courses-at-corvinus-cub",
+    "title": "Teaching",
+    "section": "Courses at Corvinus (CUB)",
+    "text": "Courses at Corvinus (CUB)\n\nEconometrics I for Applied Economics\n\nCurrent teaching materials HERE"
+  },
+  {
+    "objectID": "teaching.html#teaching-at-central-european-university-ceu",
+    "href": "teaching.html#teaching-at-central-european-university-ceu",
+    "title": "Teaching",
+    "section": "Teaching at Central European University (CEU)",
+    "text": "Teaching at Central European University (CEU)\n\nData Analysis 1, 2 or 3 for Business Analytics at CEU\n\nBased on Békés-Kézdi (2021): Data Analysis for Business, Ecnonomics and Policy - CUP\nCourse descriptions for DA-1 (2020-21), DA-2 (2020-21, 2024-25) or DA-3 (2023-24)\n\nCoding 1: Data Management and Analysis with R for Business Analytics at CEU (2020/21 and 2021/22 Fall)\n\nMaterials and codes, course description\nIn 2021/22 Fall I have tought similar material for Finance students.\n\nData course for Executive MBA at CEU (2020 Summer) - Jointly with Anand Murugesan\n\nwebpage for EMBA at CEU\n\nMathematics and Informatics Pre-session for MS in Finance at CEU (2019/20 and 2020/21 Fall)\n\ncourse description"
+  },
+  {
+    "objectID": "codes.html",
+    "href": "codes.html",
+    "title": "Codes",
+    "section": "",
+    "text": "multisynthdid package\n\nInstallation and basic usage: multisynthdid.qmd\nComparison with univariate Synthetic Diff-in-Diffs: synthdid_comp.qmd\nComparison with other multi-outcome Synthetic Control methods: multi_comp.qmd\n\n\nBack"
+  },
+  {
+    "objectID": "teaching/Econometrics_I/homework_I.html",
+    "href": "teaching/Econometrics_I/homework_I.html",
+    "title": "Homework I – Econometrics I 2024/25 Fall",
+    "section": "",
+    "text": "Homework I – Econometrics I 2024/25 Fall\nQ-01) Add the command which clears the environment\n\n# Clear environment\n\nQ-02) Create a string variable, which states: This is my first assignment in R!\n\nstr_var &lt;-\n\nQ-03) Create vector gdppc, which contains the values of: 12, 18, 25, 13, 16 and 14\n\ngdppc &lt;-\n\nQ-04) Multiply this vector with 10,000 and name it as gdppc_10\n\ngdppc_10 &lt;-\n\nQ-05) Create an other vector called lifeexp with values of: 62, 68, 73, 65, 66 and 69\n\nlifeexp &lt;-\n\nQ-06) Calculate the average of lifeexp as avg_le\n\navg_le &lt;-\n\nQ-07) Calculate the average of gdppc as avg_gdppc\n\navg_gdppc &lt;-\n\nQ-08) Store the two vectors in a data.frame() object and call it df. Use their names for colnames.\n\ndf &lt;-\n\nQ-09) Calculate the covariance matrix of df with the function cov() and name it as vcov.\n\nvcov &lt;-\n\nQ-10) Take the covariance of lifeexp and gdppc and divide by the variance of the gdppc. Name it beta! Hint: check your vcov variable and use indexing to get the appropropriate elements.\n\nbeta &lt;-"
+  },
+  {
+    "objectID": "multisynthdid/multi_comp.html",
+    "href": "multisynthdid/multi_comp.html",
+    "title": "Compare Synthetic Control methods which allows multiple outcomes",
+    "section": "",
+    "text": "install.packages(\"MSCMT\")\ninstall.packages(\"Synth\")\ndevtools::install_github(\"ebenmichael/augsynth\")\nlibrary(MSCMT)\nlibrary(Synth)\nlibrary(augsynth)\nlibrary(multisynthdid)\nlibrary(tidyverse)\ndata(\"german_reunification\")\ngerman_reunification$index &lt;- as.integer(as.factor(german_reunification$country) )\ngerman_reunification &lt;- as.data.frame(german_reunification)"
+  },
+  {
+    "objectID": "multisynthdid/multi_comp.html#classical-synthetic-control",
+    "href": "multisynthdid/multi_comp.html#classical-synthetic-control",
+    "title": "Compare Synthetic Control methods which allows multiple outcomes",
+    "section": "Classical Synthetic Control",
+    "text": "Classical Synthetic Control\n\nunit_ids &lt;- unique(german_reunification$index)[-7]\ndataprep_out &lt;-\n  dataprep(\n    foo = german_reunification,\n    predictors    = c(\"gdp\",\"trade\",\"infrate\"),\n    dependent     = \"gdp\",\n    unit.variable = \"index\",\n    time.variable = \"year\",\n    treatment.identifier = 17,\n    controls.identifier = unit_ids[unit_ids != 17],\n    time.predictors.prior = 1981:1990,\n    time.optimize.ssr = 1960:1989,\n    unit.names.variable = \"country\",\n    time.plot = 1960:2003\n  )\n\nsynth_out &lt;- synth(dataprep_out)\n\n\nX1, X0, Z1, Z0 all come directly from dataprep object.\n\n\n**************** \n searching for synthetic control unit  \n \n\n**************** \n**************** \n**************** \n\nMSPE (LOSS V): 25490.84 \n\nsolution.v:\n 0.8782577 0.1213023 0.0004399473 \n\nsolution.w:\n 0.009213684 0.03014281 0.01528837 0.01577015 0.01249197 0.007024813 0.009557229 0.3023965 0.1640184 0.009600453 0.01275447 0.007048682 0.008689053 0.2884409 0.01233855 0.095224"
+  },
+  {
+    "objectID": "multisynthdid/multi_comp.html#mscmt-package",
+    "href": "multisynthdid/multi_comp.html#mscmt-package",
+    "title": "Compare Synthetic Control methods which allows multiple outcomes",
+    "section": "MSCMT package",
+    "text": "MSCMT package\n\ndf_m &lt;- listFromLong(german_reunification, unit.variable=\"index\", time.variable=\"year\", unit.names.variable=\"country\")\n\n# define the sum of all cases\n\ntreatment.identifier &lt;- \"West Germany\"\ncontrols.identifier  &lt;- setdiff(colnames(df_m[[1]]),\n                                c(treatment.identifier))\ntimes.dep  &lt;- cbind(\"gdp\"            = c(1960,1989),\n                    \"trade\"          = c(1960,1989),\n                    \"infrate\"        = c(1960,1989))\ntimes.pred &lt;- times.dep\n\nmscmt_res &lt;- mscmt(df_m, treatment.identifier, controls.identifier, times.dep, times.pred, seed=1)\n\n14:04:44: Number of 'sunny' donors: 16 out of 16\n14:04:44: Unrestricted outer optimum (obtained by ignoring all predictors) is \n14:04:44: FEASIBLE even when respecting the predictors.\nFinal rmspe: 0.03346181, mspe (loss v): 0.001119693\nOptimal weights:\n        USA     Austria Switzerland       Japan \n 0.26457047  0.49918982  0.17248101  0.06375869"
+  },
+  {
+    "objectID": "multisynthdid/multi_comp.html#augmented-synthetic-control",
+    "href": "multisynthdid/multi_comp.html#augmented-synthetic-control",
+    "title": "Compare Synthetic Control methods which allows multiple outcomes",
+    "section": "Augmented Synthetic Control",
+    "text": "Augmented Synthetic Control\n\naug_syn &lt;- augsynth( gdp + trade + infrate ~ W, index, year, \n                     german_reunification, progfunc = 'none', scm = T  )\n\nMultiple outcomes and one treatment time found. Running augsynth_multiout.\n\nsummary(aug_syn)\n\n\nCall:\naugsynth_multiout(form = form, unit = !!enquo(unit), time = !!enquo(time), \n    t_int = t_int, data = data, progfunc = \"none\", scm = ..2)\n\nOverall L2 Imbalance (Scaled):0.450  (0.296)\n\nAverage ATT Estimate:\n  Outcome      Estimate lower_bound upper_bound p_val   Pre.RMSE\n1     gdp -2360.7643331          NA          NA     0 310.710322\n2   trade     8.0726848          NA          NA     0   7.290110\n3 infrate    -0.4014653          NA          NA     0   1.930879\n\n# Treatment\naugsyn_tau = predict(aug_syn,att=T)\n\n\nmulti_sdid &lt;- multi_sdid( gdp + infrate + trade ~ 1, 'W', 'country', 'year', german_reunification )\n\nsummary.multisynthdid(multi_sdid)\n\n$estimate\n[1] \"multi_synthdid_obj\"\n\n$tau\n                     gdp  infrate     trade\nAvg. Treatment -1526.459 1.397776 0.3985817\nSE              1278.830 1.534328 4.3976276\n\n$dimensions\n                                      [,1]\nNo. Treated units                    1.000\nNo. Control pool                    16.000\nEffective no. controls               8.668\nNo. Post-treatment periods          14.000\nNo. Pre-treatment periods           30.000\nEffective no. pre-treatment periods  1.000\nNo. Outcomes                         3.000\n\nmsdid_curve &lt;- multi_synthdid_curves(multi_sdid$tau, complete = T)"
+  },
+  {
+    "objectID": "multisynthdid/multi_comp.html#comparison-of-gdp",
+    "href": "multisynthdid/multi_comp.html#comparison-of-gdp",
+    "title": "Compare Synthetic Control methods which allows multiple outcomes",
+    "section": "Comparison of GDP",
+    "text": "Comparison of GDP\n\ndf_plot &lt;- german_reunification %&gt;% \n  filter( country == 'West Germany' ) %&gt;% \n  arrange( year ) %&gt;% \n  rename( `Realized GDP` = gdp )\n\ndf_plot &lt;- cbind(df_plot,\n                 tibble(SC = dataprep_out$Y0plot %*% synth_out$solution.w ),\n                 tibble(MSCMT = as.vector( mscmt_res$data.synth$gdp) ),\n                 tibble(Aug_Synth = df_plot$`Realized GDP`-augsyn_tau[,1] ),\n                 tibble(Multi_SDiD = df_plot$`Realized GDP` - msdid_curve$tau_curve[1,]) )\n\ndf_plot2 &lt;- df_plot %&gt;% \n  select( year, `Realized GDP`, SC, MSCMT, Aug_Synth, Multi_SDiD ) %&gt;%  #\n  pivot_longer(!year, names_to = 'Method', values_to = 'GDP' )\n\nggplot( df_plot2, aes( x = year, color = Method, y = GDP )) + \n  geom_line( linewidth = 1 ) +\n  annotate(\"rect\", xmin = 1960, xmax = 1990, ymin = 0, ymax = 35000,\n           alpha = .2)+\n  theme_bw()"
+  },
+  {
     "objectID": "cv.html",
     "href": "cv.html",
     "title": "CV",
@@ -96,61 +299,5 @@
     "title": "CV",
     "section": "",
     "text": "Language\n\nEnglish: TOEFL ibt: 104; B2 certificates: general (2008) and economics specific (2011)\nGerman: B2 certificate, general, 2014\n\nIT skills:\n\nProficient: MatLab, R\nAdvanced: Python, Microsoft Office programs\nIntermediate: Stata, Eviews, SPSS, Mathematica\n\nDriving license:\n\nA and B categories\n\nHobbies:\n\nI have been sailing for fourteen years, and achieved 1st award in the National Competition of Jolle 25 class in 2007, 2009 and 2010.\nNowadays in my spare time I have turned to mountaineering and rock climbing. Among many peaks in the Tatras and the Austrian Alps, in 2018 I have climbed Mount Blanc via the Cosmiques route.\n\n\n Download CV\nback"
-  },
-  {
-    "objectID": "papers.html",
-    "href": "papers.html",
-    "title": "Papers",
-    "section": "",
-    "text": "Last update: 2024/03/22\n\nWorking Papers\n\nMeasuring the long-run performance of mergers and acquisitions - joint work with Sudheer Chava\n\nworking paper\n\nModelling with Discretized Variables - joint work with Felix Chan and László Mátyás\n\nworking paper, codes, online supplement\n\nHeterogeneous treatment effects in regression discontinuity designs\n\nworking paper, codes\n\n\n\n\nPublished papers\n\nWhen and How Much Do Fixed Effects Matter? (2024) - joint work with with Felix Chan (Curtin) and László Mátyás (CEU)\n\npublished book chapter, in Matyas, L. (eds) The Econometrics of Multi-dimensional Panels. Advanced Studies in Theoretical and Applied Econometrics, vol 54. Springer, Cham.\n\nThe Use of Machine Learning in Treatment Effect Estimation (2022) - joint work with Robert Lieli (CEU) and Yu-Chin Hsu (National Central University and National Chengchi University)\n\npublished book chapter, in: Chan, F., Matyas, L. (eds), Econometrics with Machine Learning. Advanced Studies in Theoretical and Applied Econometrics, vol 53. Springer, pp. 79-109\n\n\n\nPublication from my BA/MA studies\n\nConstructing Hungarian Zero-Coupon Yield Curve Models, Using Global Optimalization Methods (2015)\n\npublished paper - only in Hungarian\n\nMacroeconometric Modelling of Inflation, Wages and Money Supply: Implementing David F. Hendry’s reduction theory to the Hungarian Economy between 1995 and 2014 (2015)\n\nMA thesis - only in Hungarian\n\nForecasting the Hungarian Nelson-Siegel Yield Curve with Mixed Factor Model (2014)\n\nConference Paper: Hungarian Society of Economist Yearly Conference (2014, December 19) - only in Hungarian\n\nHappiness of Economic Man (2014) – joint work with Katalin Martinás, Zsolt Gilányi, Veronika Poór – The Happiness Compass, Chapter 19 Nova Science Publishers, editors: Francesco Sarracino\nReappraisal of Rational Choice Theory (2013) – joint work with Katalin Martinás\n\nInterdisciplinary Description of Complex Systems (INDECS), 11(1)\n\nBehavioral models of pension systems, part II. (2013)\n\nEconomists’ Forum - only in Hungarian\n\nBehavioral models of pension systems, part I. (2012)\n\nEconomists’ Forum - only in Hungarian\n\nBehavioral models of pension systems (2012)\n\nBA Thesis - only in Hungarian"
-  },
-  {
-    "objectID": "teaching.html",
-    "href": "teaching.html",
-    "title": "Teaching",
-    "section": "",
-    "text": "Data Analysis 1 and 2 for Business Analytics at CEU (2020/21 Fall)\n\nBased on Békés-Kézdi (2021): Data Analysis for Business, Ecnonomics and Policy - CUP\nCourse descriptions for DA-1 and DA-2\n\nCoding 1: Data Management and Analysis with R for Business Analytics at CEU (2020/21 and 2021/22 Fall)\n\nMaterials and codes, course description\nIn 2021/22 Fall I am also teaching similar material for Finance students.\n\nData course for Executive MBA at CEU (2020 Summer) - Jointly with Anand Murugesan\n\nwebpage for EMBA at CEU\n\nMathematics and Informatics Pre-session for MS in Finance at CEU (2019/20 and 2020/21 Fall)\n\ncourse description\n\n\nBusiness Analytics program in 2019 was #1 in Central Europe including Austria, Germany, and Switzerland, according to QS World University Rankings’ QS Business Masters Rankings. The program ranks #16 in Europe and #50 in the world, on par with HEC Montreal, Tilburg and UT Arlington. CEU excelled in thought leadership, diversity and value for money in particular, QS data showed. Data Analysis 1, 2 and Coding 1 are core courses of this program."
-  },
-  {
-    "objectID": "teaching.html#prior-teaching-at-ceu",
-    "href": "teaching.html#prior-teaching-at-ceu",
-    "title": "Teaching",
-    "section": "",
-    "text": "Data Analysis 1 and 2 for Business Analytics at CEU (2020/21 Fall)\n\nBased on Békés-Kézdi (2021): Data Analysis for Business, Ecnonomics and Policy - CUP\nCourse descriptions for DA-1 and DA-2\n\nCoding 1: Data Management and Analysis with R for Business Analytics at CEU (2020/21 and 2021/22 Fall)\n\nMaterials and codes, course description\nIn 2021/22 Fall I am also teaching similar material for Finance students.\n\nData course for Executive MBA at CEU (2020 Summer) - Jointly with Anand Murugesan\n\nwebpage for EMBA at CEU\n\nMathematics and Informatics Pre-session for MS in Finance at CEU (2019/20 and 2020/21 Fall)\n\ncourse description\n\n\nBusiness Analytics program in 2019 was #1 in Central Europe including Austria, Germany, and Switzerland, according to QS World University Rankings’ QS Business Masters Rankings. The program ranks #16 in Europe and #50 in the world, on par with HEC Montreal, Tilburg and UT Arlington. CEU excelled in thought leadership, diversity and value for money in particular, QS data showed. Data Analysis 1, 2 and Coding 1 are core courses of this program."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Ágoston Reguly",
-    "section": "",
-    "text": "I am an Assistant Professor at the Institute of Economics, Corvinus University of Budapest (Corvinus), an affiliated researcher at Financial Services Innovation Lab (FSIL) part of Scheller College of Business at Georgia Institute of Technology and a visiting faculty at Central European University (CEU).\nMy research interests are in empirical finance and econometrics. My ongoing research covers topics on\n\nthe long-run market performance of mergers and acquisitions,\npolicy evaluation with machine learning techniques, and\ntraditional econometrics.\n\nSee more on my research here."
-  },
-  {
-    "objectID": "index.html#quick-bio",
-    "href": "index.html#quick-bio",
-    "title": "Ágoston Reguly",
-    "section": "",
-    "text": "I am an Assistant Professor at the Institute of Economics, Corvinus University of Budapest (Corvinus), an affiliated researcher at Financial Services Innovation Lab (FSIL) part of Scheller College of Business at Georgia Institute of Technology and a visiting faculty at Central European University (CEU).\nMy research interests are in empirical finance and econometrics. My ongoing research covers topics on\n\nthe long-run market performance of mergers and acquisitions,\npolicy evaluation with machine learning techniques, and\ntraditional econometrics.\n\nSee more on my research here."
-  },
-  {
-    "objectID": "index.html#news",
-    "href": "index.html#news",
-    "title": "Ágoston Reguly",
-    "section": "News",
-    "text": "News\n\n[2024-03-22] New working paper version of Modelling with Discretized Varaibles is available on arxiv!\n[2024-03-15] Our working paper on The Long-Run Stock Market Performance of Mergers and Acquisitions is now available on SSRN!\n[2024-02-02] Electronic version of When and How Much Do Fixed Effects Matter? is now available. This is a book chapter from The Econometrics of Multi-dimensional Panels (2024) (Editor: Matyas, Publisher: Springer)"
-  },
-  {
-    "objectID": "index.html#teaching",
-    "href": "index.html#teaching",
-    "title": "Ágoston Reguly",
-    "section": "Teaching",
-    "text": "Teaching\n\nEconometrics I for Applied Economists (BA) at Corvinus.\nPrediction with Machine Learning methods – Data Analysis 3 for Business Analitics (MSc) at CEU.\nLearn coding & data analysis with R\n\nThis course material guides you from basic statistics towards machine learning methods.\nSee my course material and problem description with tasks+solutions at the following github repo: Coding for Data Analysis in R.\nThis supplements the book Data Analysis for Business, Economics, and Policy by Gábor Békés (CEU) and Gábor Kézdi (U. Michigan) Published on 6 May 2021 by Cambridge University Press, and developed for Data Analytics courses at CEU. Check out gabors-data-analysis.com for more detial.\nThanks to Péter Duronelly and Ádám Víg you can access the same material in python as well here.\n\n\nMore information on the courses is available here."
-  },
-  {
-    "objectID": "index.html#contact",
-    "href": "index.html#contact",
-    "title": "Ágoston Reguly",
-    "section": "Contact",
-    "text": "Contact\nemail: agoston.reguly-at-uni-corvinus.hu or areguly6-at-gatech.edu"
   }
 ]

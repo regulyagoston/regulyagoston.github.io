@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Agoston Reguly">
 
-<title>Ágoston Reguly</title>
+<title>Ágoston Reguly - Comparison of the multisynthdid package with the classical synthdid package</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +21,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./images/google-scholar.svg" rel="icon" type="image/svg+xml">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/google-scholar.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -71,7 +106,7 @@ gtag('config', 'G-BGV4MVV5TE', { 'anonymize_ip': true});
 </script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar docked">
@@ -83,7 +118,9 @@ gtag('config', 'G-BGV4MVV5TE', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Ágoston Reguly</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Ágoston Reguly
+      </li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -98,7 +135,7 @@ gtag('config', 'G-BGV4MVV5TE', { 'anonymize_ip': true});
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Ágoston Reguly</a> 
+      <a href="../">Ágoston Reguly</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://twitter.com/AgostonReguly" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-twitter"></i></a>
     <a href="https://github.com/regulyagoston" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
@@ -115,7 +152,7 @@ gtag('config', 'G-BGV4MVV5TE', { 'anonymize_ip': true});
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Ágoston Reguly</span></a>
   </div>
 </li>
@@ -130,13 +167,13 @@ gtag('config', 'G-BGV4MVV5TE', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cv.html" class="sidebar-item-text sidebar-link">
+  <a href="../cv.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">CV</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./teaching.html" class="sidebar-item-text sidebar-link">
+  <a href="../teaching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Teaching</span></a>
   </div>
 </li>
@@ -153,7 +190,7 @@ gtag('config', 'G-BGV4MVV5TE', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./papers.html" class="sidebar-item-text sidebar-link">
+  <a href="../papers.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Papers</span></a>
   </div>
 </li>
@@ -170,7 +207,7 @@ gtag('config', 'G-BGV4MVV5TE', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./codes.html" class="sidebar-item-text sidebar-link">
+  <a href="../codes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Codes</span></a>
   </div>
 </li>
@@ -186,11 +223,8 @@ gtag('config', 'G-BGV4MVV5TE', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#quick-bio" id="toc-quick-bio" class="nav-link active" data-scroll-target="#quick-bio">Quick bio</a></li>
-  <li><a href="#news" id="toc-news" class="nav-link" data-scroll-target="#news">News</a></li>
-  <li><a href="#teaching" id="toc-teaching" class="nav-link" data-scroll-target="#teaching">Teaching</a></li>
-  <li><a href="#codes" id="toc-codes" class="nav-link" data-scroll-target="#codes">Codes</a></li>
-  <li><a href="#contact" id="toc-contact" class="nav-link" data-scroll-target="#contact">Contact</a></li>
+  <li><a href="#comparison-with-german-reunification-data" id="toc-comparison-with-german-reunification-data" class="nav-link active" data-scroll-target="#comparison-with-german-reunification-data">Comparison with German Reunification Data</a></li>
+  <li><a href="#increase-number-of-repetition-for-ses" id="toc-increase-number-of-repetition-for-ses" class="nav-link" data-scroll-target="#increase-number-of-repetition-for-ses">Increase number of repetition for SEs</a></li>
   </ul>
 </nav>
     </div>
@@ -199,13 +233,19 @@ gtag('config', 'G-BGV4MVV5TE', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Ágoston Reguly</h1>
+<h1 class="title">Comparison of the <code>multisynthdid</code> package with the classical <code>synthdid</code> package</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Agoston Reguly </p>
+          </div>
+  </div>
     
   
     
@@ -214,59 +254,116 @@ gtag('config', 'G-BGV4MVV5TE', { 'anonymize_ip': true});
 
 </header>
 
-<section id="quick-bio" class="level2">
-<h2 class="anchored" data-anchor-id="quick-bio">Quick bio</h2>
-<div class="columns">
-<div class="column" style="width:30%;">
-<p><img src="./assets/img/logo.jpg" class="img-fluid" style="width:90.0%"></p>
-</div><div class="column" style="width:70%;">
-<p>I am an Assistant Professor at the <a href="https://www.uni-corvinus.hu/elerhetosegek/reguly-agoston/">Institute of Economics, Corvinus University of Budapest</a> (Corvinus), an affiliated researcher at <a href="https://fintech.gatech.edu/#/">Financial Services Innovation Lab (FSIL)</a> part of Scheller College of Business at Georgia Institute of Technology and a visiting faculty at Central European University (CEU).</p>
-<p>My research interests are in empirical finance and econometrics. My ongoing research covers topics on</p>
+<section id="comparison-with-german-reunification-data" class="level2">
+<h2 class="anchored" data-anchor-id="comparison-with-german-reunification-data">Comparison with German Reunification Data</h2>
+<p>We will compare the effect of German Reunification on GDP with the classical <code>synthdid</code> package and our extended version for multiple outcomes.</p>
+<p>First, install the original package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"synth-inference/synthdid"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Load the packages.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(multisynthdid)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(synthdid)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Get the imputed data for German reunification.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"german_reunification"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We estimate three models:</p>
 <ul>
-<li>the long-run market performance of mergers and acquisitions,</li>
-<li>policy evaluation with machine learning techniques, and</li>
-<li>traditional econometrics.</li>
+<li>Synthetic Diff-in-Diffs using <code>gdp</code> as the outcome only</li>
+<li>Multiple Synthetic Diff-in-Diff using <code>gdp</code>, <code>infrate</code> (inflation) and <code>trade</code> to get the weights</li>
+<li>Multiple Synthetic Diff-in-Diff using <code>gdp</code> only to get a comparison to the original package result.</li>
 </ul>
-<p>See more on my research <a href="./papers.html">here</a>.</p>
+<div class="cell" data-hash="synthdid_comp_cache/html/estimation_a60442701bef74558ac0e37015b2a591">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Original</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>setup_sdid <span class="ot">=</span> <span class="fu">panel.matrices</span>(<span class="fu">as.data.frame</span>( german_reunification ), <span class="at">unit =</span> <span class="st">'country'</span>, <span class="at">time =</span> <span class="st">'year'</span>, <span class="at">outcome =</span> <span class="st">'gdp'</span>, <span class="at">treatment =</span> <span class="st">'W'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>sdid_tau <span class="ot">=</span> <span class="fu">synthdid_estimate</span>(setup_sdid<span class="sc">$</span>Y, setup_sdid<span class="sc">$</span>N0, setup_sdid<span class="sc">$</span>T0)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>sdid_se <span class="ot">=</span> <span class="fu">sqrt</span>(<span class="fu">vcov</span>(sdid_tau, <span class="at">method=</span><span class="st">'placebo'</span>))</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Multi-outcome package estimated on GDP only -- should give the same result</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>multi_chk <span class="ot">&lt;-</span> <span class="fu">multi_sdid</span>( gdp <span class="sc">~</span> <span class="dv">1</span>, <span class="st">'W'</span>, <span class="st">'country'</span>, <span class="st">'year'</span>, german_reunification )</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Multi estimated on multiple outcomes</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>multi <span class="ot">&lt;-</span> <span class="fu">multi_sdid</span>( gdp <span class="sc">+</span> infrate <span class="sc">+</span> trade <span class="sc">~</span> <span class="dv">1</span>, <span class="st">'W'</span>, <span class="st">'country'</span>, <span class="st">'year'</span>, german_reunification )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Summaries the results</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 18%">
+<col style="width: 39%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Original SDiD</th>
+<th style="text-align: right;">Multi-outcome SDiD replicate</th>
+<th style="text-align: right;">Multi-outcome SDiD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Avg. Effect</td>
+<td style="text-align: right;">-1471.39</td>
+<td style="text-align: right;">-1471.39</td>
+<td style="text-align: right;">-1526.46</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SE</td>
+<td style="text-align: right;">1434.65</td>
+<td style="text-align: right;">1552.74</td>
+<td style="text-align: right;">1474.69</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
+<p>Note that the SE-s are slightly different for Original and replicated as it uses randomization with 200 replication. In case one uses higher replication number for the placebo SEs, the values converge to each other.</p>
 </section>
-<section id="news" class="level2">
-<h2 class="anchored" data-anchor-id="news">News</h2>
-<ul>
-<li>[2024-05-07] Beta version of <code>multisynthdid</code> package, which runs Synthetic Diff-in-Diffs with <strong>multiple outcomes</strong>. See more here <a href="./multisynthdid.html"><code>multisynthdid</code></a>.</li>
-<li>[2024-03-22] New working paper version of <a href="https://arxiv.org/abs/2403.15220">Modelling with Discretized Varaibles</a> is available on arxiv!</li>
-<li>[2024-03-15] Our working paper on <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4742401">The Long-Run Stock Market Performance of Mergers and Acquisitions</a> is now available on SSRN!</li>
-<li>[2024-02-02] Electronic version of <a href="https://link.springer.com/chapter/10.1007/978-3-031-49849-7_2">When and How Much Do Fixed Effects Matter?</a> is now available. This is a book chapter from <a href="https://link.springer.com/book/10.1007/978-3-031-49849-7">The Econometrics of Multi-dimensional Panels</a> (2024) (Editor: Matyas, Publisher: Springer)</li>
-</ul>
-</section>
-<section id="teaching" class="level2">
-<h2 class="anchored" data-anchor-id="teaching"><a href="./teaching.html">Teaching</a></h2>
-<ul>
-<li><p><a href="./teaching/Econometrics_I/econ_I_AE_2425.html">Econometrics I for Applied Economists (BA)</a> at Corvinus.</p></li>
-<li><p>Prediction with Machine Learning methods – Data Analysis 3 for Business Analitics (MSc) at CEU.</p></li>
-<li><p>Learn coding &amp; data analysis with R</p>
-<ul>
-<li>This course material guides you from basic statistics towards machine learning methods.</li>
-<li>See my course material and problem description with tasks+solutions at the following github repo: <a href="https://github.com/gabors-data-analysis/da-coding-rstats">Coding for Data Analysis in R</a>.</li>
-<li>This supplements the book <em>Data Analysis for Business, Economics, and Policy by Gábor Békés (CEU) and Gábor Kézdi (U. Michigan) Published on 6 May 2021 by Cambridge University Press</em>, and developed for Data Analytics courses at CEU. Check out <a href="https://gabors-data-analysis.com/">gabors-data-analysis.com</a> for more detial.</li>
-<li>Thanks to Péter Duronelly and Ádám Víg you can access the same material in python as well <a href="https://github.com/gabors-data-analysis/da-coding-python">here</a>.</li>
-</ul></li>
-</ul>
-<p>More information on the courses is available <a href="./teaching.html">here</a>.</p>
-</section>
-<section id="codes" class="level2">
-<h2 class="anchored" data-anchor-id="codes"><a href="./codes.html">Codes</a></h2>
-<ul>
-<li>Multiple outcomes with synthetic difference-in-difference estimation. See more here <a href="./multisynthdid.html"><code>multisynthdid</code></a>.
-<ul>
-<li>Implements method used by <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4742401">Chava and Reguly (2024)</a></li>
-</ul></li>
-</ul>
-</section>
-<section id="contact" class="level2">
-<h2 class="anchored" data-anchor-id="contact">Contact</h2>
-<p>email: agoston.reguly-at-uni-corvinus.hu or areguly6-at-gatech.edu</p>
+<section id="increase-number-of-repetition-for-ses" class="level2">
+<h2 class="anchored" data-anchor-id="increase-number-of-repetition-for-ses">Increase number of repetition for SEs</h2>
+<div class="cell" data-hash="synthdid_comp_cache/html/larger_SE_12075417d9c75f706720c07898c34335">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Increase the replication with Original package</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sdid_se_large <span class="ot">=</span> <span class="fu">sqrt</span>(<span class="fu">vcov</span>(sdid_tau, <span class="at">method=</span><span class="st">'placebo'</span>, <span class="at">replications =</span> <span class="dv">1000</span> ))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># With multiple outcome package</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>multi_chk_large <span class="ot">&lt;-</span> <span class="fu">multi_sdid</span>( gdp <span class="sc">~</span> <span class="dv">1</span>, <span class="st">'W'</span>, <span class="st">'country'</span>, <span class="st">'year'</span>, german_reunification, <span class="at">SE =</span> T, <span class="at">se_replication =</span> <span class="dv">1000</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>With 1000 replication we got a closer estimates to each other:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Original SDiD</th>
+<th style="text-align: right;">Multi-SDiD</th>
+<th style="text-align: right;">Abs. Diff</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">200</td>
+<td style="text-align: right;">1434.65</td>
+<td style="text-align: right;">1552.74</td>
+<td style="text-align: right;">118.09</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1000</td>
+<td style="text-align: right;">1522.92</td>
+<td style="text-align: right;">1466.60</td>
+<td style="text-align: right;">56.32</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 
 </section>
