@@ -1,21 +1,31 @@
 ---
-title: "Econometrics for Applied Economists at Corvinus"
+title: "Econometrics I for Applied Economics at Corvinus -- 22024/25 Fall"
 ---
 
-# Welcome to Econometrics I at CUB
+Please submit your codes to Moodle. This page aims to enhance your learning experience by displaying your homework assignments and providing an autograding option to help you improve your work and receive feedback before the submission deadline.
 
-# Homeworks with R
+
+**Rules:**
+
+- name your R-script as ''*neptuncode_hwXX.R*''.
+- E.g., ''*asd123_hw01.R*'' for the first homework with neptun code asd123.
+- Autograding is to give you feedback, not to evaluate your codes. We do not track or store your codes on the provided website.
+
+## Homework with R
+
+- [Homework I](./homework_I.qmd)
 
 ## Autograding homeworks with R
 
-You can find the autograding [HERE](/teaching/autograde/app_fin.R)
+You can find the autograding [HERE](https://cub101metrics.shinyapps.io/autograder_shiny_io/).
 
+- This is a beta version; every feedback and comment are more than welcomed!
+- At the moment, we use a free server that offers 25 hours of run time per month. If we exceed the server's monthly usage limit, we need to:
+    - We need your feedback if replacement under a different domain is needed.
+    - worst case: wait for the next month and play the ''tragedy of commons game'' better.
 
-## Homework I
+## Back
 
-
-
-
-[Teaching](./teaching.html) 
+[Teaching](./teaching.html)
 
 [Homepage](./index.html)

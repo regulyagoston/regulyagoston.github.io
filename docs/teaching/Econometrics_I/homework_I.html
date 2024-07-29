@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Ágoston Reguly - Autograder</title>
+<title>Ágoston Reguly – homework_i</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -218,349 +218,64 @@ gtag('config', 'G-BGV4MVV5TE', { 'anonymize_ip': true});
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#homework-i-econometrics-i-202425-fall" id="toc-homework-i-econometrics-i-202425-fall" class="nav-link active" data-scroll-target="#homework-i-econometrics-i-202425-fall">Homework I – Econometrics I 2024/25 Fall</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Autograder</h1>
-</div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
-
-<div class="cell" data-context="setup">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shinyjs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'shinyjs'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:shiny':
-
-    runExample</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:methods':
-
-    removeClass, show</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>path_dir <span class="ot">&lt;-</span> <span class="st">'~/Documents/Personal/Webpage/regulyagoston.github.io/teaching/autograde/'</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">paste0</span>(path_dir,<span class="st">'/grader_r/grade.r'</span>))</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">paste0</span>(path_dir,<span class="st">'/grader_r/uni_grader.R'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="homework-i-econometrics-i-202425-fall" class="level1">
+<h1>Homework I – Econometrics I 2024/25 Fall</h1>
+<p>Q-01) Add the command which clears the environment</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>mints <span class="ot">=</span> <span class="dv">1</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>neptun_codes <span class="ot">=</span> <span class="fu">c</span>(<span class="st">'asd123'</span>,<span class="st">'gvk123'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clear environment</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell card bg-light p-2 g-col-24 g-col-lg-7">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">useShinyjs</span>(),</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">br</span>(), </span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">br</span>(),</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fluidPage</span>(</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">h3</span>(<span class="st">"Upload R-script"</span>),</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fileInput</span>(<span class="st">'inFile'</span>, <span class="st">'Choose file'</span>),</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">actionButton</span>(<span class="st">'reset'</span>, <span class="st">'Reset'</span>),</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">h3</span>(<span class="st">"Script status:"</span>),</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">verbatimTextOutput</span>(<span class="st">"summary"</span>),</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">verbatimTextOutput</span>(<span class="st">"chck_name"</span>)</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">br</span>(), </span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">br</span>(),</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fluidPage</span>(</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">h3</span>(<span class="st">"Select Assignment"</span>),</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">selectInput</span>(<span class="st">"assign"</span>, <span class="st">"Assignment:"</span>,</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>                <span class="fu">c</span>(<span class="st">"Assignment 1"</span> <span class="ot">=</span> <span class="st">"as1"</span>,</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"Assignment 2"</span> <span class="ot">=</span> <span class="st">"as2"</span>,</span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"Assignment 3"</span> <span class="ot">=</span> <span class="st">"as3"</span>)),</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">br</span>(),</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fluidRow</span>(</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>      <span class="fu">actionButton</span>(<span class="st">'grade'</span>, <span class="st">'Autograde'</span>, <span class="at">class =</span> <span class="st">"btn-primary"</span>),</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>      <span class="co">#actionButton("stop", "Stop", class = "btn-danger"),</span></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>      <span class="fu">actionButton</span>(<span class="st">'grade_reset'</span>, <span class="st">'Reset'</span>)</span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">h6</span>(<span class="fu">paste</span>(<span class="st">'Autograding can take up to '</span>, mints, <span class="st">' minutes maximum.'</span>)),</span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">h6</span>(<span class="st">'After that it will exit and not evaluate your code.'</span>),</span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">br</span>(),</span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">h3</span>(<span class="st">"Grade status:"</span>),</span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tableOutput</span>(<span class="st">"grade_res"</span>),</span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">verbatimTextOutput</span>(<span class="st">"grade_sum"</span>)</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>) <span class="co"># close fluid page</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>Q-02) Create a string variable, which states: <code>This is my first assignment in R!</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#shinyApp(ui, server)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>str_var <span class="ot">&lt;-</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>
-<script type="application/shiny-prerendered" data-context="server-start">
-library(shiny)
-library(shinyjs)
-library(stringr)
-path_dir <- '~/Documents/Personal/Webpage/regulyagoston.github.io/teaching/autograde/'
-source(paste0(path_dir,'/grader_r/grade.r'))
-source(paste0(path_dir,'/grader_r/uni_grader.R'))
-</script>
- 
-<script type="application/shiny-prerendered" data-context="server">
-
-server <- function(input, output, session) {
-  
-  
-  ########################
-  # Handle uploaded file
-  # Reset submitted script
-  values <- reactiveValues(
-    upload_state = NULL
-  )
-  
-  # New upload
-  observeEvent(input$inFile, {
-    values$upload_state <- 'Uploaded'
-  })
-  
-  observeEvent(input$reset, {
-    shinyjs::reset()
-    values$upload_state <- NULL
-    hide("grade_res")
-    hide("grade_sum")
-  })
-  
-  
-  file_input <- reactive({
-    if (is.null(values$upload_state)) {
-      return("No file uploaded.")
-    } else if (values$upload_state == 'Uploaded') {
-      return(input$inFile)
-    }
-  })
-  
-  ##
-  # Output for file upload
-  output$summary <- renderText({
-    txt = ifelse( values$upload_state == 'Uploaded' , 
-                  paste("Uploaded file:", file_input()$name ),
-                file_input() )
-    return(txt)
-  })
-  
-  ##
-  # Check validity of uploaded name
-  output$chck_name <- renderText({
-    
-    # chck function
-    chck_name <- function( inputfile ){
-      tryCatch({
-        any( substr( file_input()$name, 0, 6 ) == neptun_codes )
-      }, 
-      error = function( e )
-        NULL
-      )
-    }
-
-    txt = ifelse( !is.null( chck_name ),
-                  ifelse( chck_name(),
-                          'Valid script name!',
-                          'Invalid script name! Use your neptun code as the first 6 character of your submission file!' ),
-                  'No file uploaded!')
-                  
-    return(txt)
-    
-    #if ( values$upload_state == 'Uploaded' ){
-    #  chck = any( substr( file_input()$name, 0, 6 ) == neptun_codes )
-    #  if ( chck ){
-    #    txt = 'Valid script name!'
-    #  } else{
-    #    txt = 'Invalid script name! Use your neptun code as the first 6 character of your submission file!'
-    #  }
-    #} else{
-    #  txt = ''
-    #}
-    
-  })
-  
-  ########################
-  # Process uploaded file
-
-  grading <- eventReactive( input$grade, {
-    if ( is.character( file_input ) ){
-      
-      showNotification("No script file uploaded!")
-      overflow = F
-      grade_res = NULL
-      
-    } else{
-      
-      showNotification("Grading in progress!")
-        
-      # Process input
-      #script = readLines( input$inFile$datapath )
-      path_file = file_input()$datapath
-          
-      # Start grading
-      if ( input$assign == 'as1' ){
-        Mytestfile <- paste0(path_dir, "/solutions/grader_week01.R")   
-      } else if ( input$assign == 'as2' ){
-        Mytestfile <- paste0(path_dir, "/solutions/grader_week02.R")
-      }
-          
-      # Eval function
-      grade <- function( path_file, Mytestfile ){
-          tryCatch({
-            calc_one_Grade( path_file, Mytestfile,
-                            suppress_warnings = F,
-                            verbose = TRUE )
-            }, 
-            error = function( e )
-                NULL
-          )
-      }
-          
-      setTimeLimit( elapsed = mints*60 ) # After x minutes it will shut downe
-      st=Sys.time()
-      grade_res <- grade( path_file, Mytestfile )
-      et = Sys.time() - st
-      setTimeLimit( elapsed = Inf )
-          
-      overflow = F
-      if ( et >= mints ){
-          grade_res = NULL
-          overflow =T 
-      }
-          
-      if ( !is.null( grade_res ) ){
-         # Remove ID
-         grade_res[,1] = NULL
-             
-         # Inform
-         showNotification("Grading is done!")
-      } else{
-         
-          # Inform
-          showNotification(paste("Grading takes more than ", mints,
-                                  " minutes! Revise your code!") )
-      }
-    }
-    return( list( grade_res = grade_res, overflow = overflow ) )
-  })
-  
-  ######
-  # Reset autogrades
-  observeEvent(input$grade_reset,{
-    #shinyjs::reset("grading")
-    hide("grade_res")
-    hide("grade_sum")
-  })
-  
-  
-  ######
-  # Grading show output
-  
-  # Detailed table
-  output$grade_res <- renderTable({
-    grading()$grade_res
-  }, rownames = T)
-  
-  # Final point
-  output$grade_sum <- renderText({
-    if ( is.null(values$upload_state) ){
-      txt = 'No file uploaded!'
-    } else {
-      withProgress(
-        message='Grading in progress',
-        detail='Grading in progress',
-        value = 10,
-        {
-          gr <- grading()
-          #for ( i in seq(0,mints,by=100)){
-            incProgress(1/mints, detail = paste("Grading in progress!"))  
-          #}
-          
-        }
-      )
-      if ( !gr$overflow ){
-        txt = paste0( 'Overall points: ', sum( gr$grade_res[1,] ) , '/', ncol( gr$grade_res ) )    
-      } else{
-        txt = paste("Grading takes more than ", mints,
-                    " minutes! Revise your code!")
-        hide("grade_res")
-      }
-      
-    }
-    return(txt)
-  })
-  
-  hide("grade_res")
-  hide("grade_sum")
-  observeEvent(input$grade,{
-    show("grade_res")
-    show("grade_sum")
-    
-  })
-  
-  
-} # close server
-</script>
- 
-<script type="application/shiny-prerendered" data-context="server-extras">
-ojs_define <- function(..., .session = shiny::getDefaultReactiveDomain()) {
-  quos <- rlang::enquos(...)
-  vars <- rlang::list2(...)
-  nm <- names(vars)
-  if (is.null(nm)) {
-    nm <- rep_len("", length(vars))
-  }
-  mapply(function(q, nm, val) {
-    # Infer name, if possible
-    if (nm == "") {
-      tryCatch({
-        nm <- rlang::as_name(q)
-      }, error = function(e) {
-        code <- paste(collapse = "\n", deparse(rlang::f_rhs(q)))
-        stop("ojs_define() could not create a name for the argument: ", code)
-      })
-    }
-    .session$output[[nm]] <- val
-    outputOptions(.session$output, nm, suspendWhenHidden = FALSE)
-    .session$sendCustomMessage("ojs-export", list(name = nm))
-    NULL
-  }, quos, nm, vars, SIMPLIFY = FALSE, USE.NAMES = FALSE)
-  invisible()
-}
-</script>
-</p>
-<!--html_preserve-->
-<script type="application/shiny-prerendered" data-context="dependencies">
-{"type":"list","attributes":{},"value":[]}
-</script>
-<!--/html_preserve-->
-<!--html_preserve-->
-
-<script type="application/shiny-prerendered" data-context="execution_dependencies">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41]}},"value":[{"type":"character","attributes":{},"value":["base","bslib","cachem","cli","compiler","datasets","digest","evaluate","fastmap","glue","graphics","grDevices","htmltools","htmlwidgets","httpuv","jquerylib","jsonlite","knitr","later","lifecycle","magrittr","memoise","methods","mime","promises","R6","Rcpp","rlang","rmarkdown","rstudioapi","sass","shiny","shinyjs","stats","stringi","stringr","tools","utils","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["4.4.0","0.7.0","1.0.8","3.6.3","4.4.0","4.4.0","0.6.35","0.23","1.1.1","1.7.0","4.4.0","4.4.0","0.5.8.1","1.6.4","1.6.15","0.1.4","1.8.8","1.46","1.3.2","1.0.4","2.0.3","2.0.1","4.4.0","0.12","1.3.0","2.5.1","1.0.12","1.1.4","2.26","0.16.0","0.4.9","1.8.1.1","2.1.0","4.4.0","1.8.4","1.5.1","4.4.0","4.4.0","0.43","1.8-4","2.3.8"]}]}]}
-</script>
-<!--/html_preserve-->
+<p>Q-03) Create vector <code>gdppc</code>, which contains the values of: 12, 18, 25, 13, 16 and 14</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gdppc <span class="ot">&lt;-</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Q-04) Multiply this vector with 10,000 and name it as <code>gdppc_10</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>gdppc_10 <span class="ot">&lt;-</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Q-05) Create an other vector called <code>lifeexp</code> with values of: 62, 68, 73, 65, 66 and 69</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>lifeexp <span class="ot">&lt;-</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Q-06) Calculate the average of lifeexp as <code>avg_le</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>avg_le <span class="ot">&lt;-</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Q-07) Calculate the average of gdppc as <code>avg_gdppc</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>avg_gdppc <span class="ot">&lt;-</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Q-08) Store the two vectors in a <code>data.frame()</code> object and call it <code>df</code>. Use their names for colnames.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Q-09) Calculate the covariance matrix of <code>df</code> with the function <code>cov()</code> and name it as <code>vcov</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>vcov <span class="ot">&lt;-</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Q-10) Take the covariance of <code>lifeexp</code> and <code>gdppc</code> and divide by the variance of the <code>gdppc</code>. Name it <code>beta</code>! Hint: check your <code>vcov</code> variable and use indexing to get the appropropriate elements.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">&lt;-</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -37,7 +37,7 @@ When and How Much Do Fixed Effects Matter?](https://link.springer.com/chapter/10
 
 ## [Teaching](./teaching.html)
 
-- [Econometrics I for Applied Economists (BA)](./teaching/econ_I_AE_2425.html) at Corvinus.
+- [Econometrics I for Applied Economists (BA)](./teaching/Econometrics_I/econ_I_AE_2425.html) at Corvinus.
 - Prediction with Machine Learning methods -- Data Analysis 3 for Business Analitics (MSc) at CEU.
 
 - Learn coding & data analysis with R
