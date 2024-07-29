@@ -52,3 +52,5 @@ Hint: check your `vcov` variable and use indexing to get the appropropriate elem
 ```{r, eval = FALSE}
 beta <-
 ```
+
+[Back to homeworks](./econ_I_AE_2425.qmd)

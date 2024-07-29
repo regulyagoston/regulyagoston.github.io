@@ -1,5 +1,5 @@
 ---
-title: "Teaching"
+title: "Courses"
 ---
 
 Updated: 2024/07/29
@@ -7,7 +7,7 @@ Updated: 2024/07/29
 ## Courses at Corvinus (CUB)
 
 - Econometrics I for Applied Economics
-    - Current teaching materials [HERE](./teaching/econ_I_AE_2425.html)
+    - Current teaching materials [HERE](./teaching/Econometrics_I/econ_I_AE_2425.html)
 
 ## Teaching at Central European University (CEU)
 

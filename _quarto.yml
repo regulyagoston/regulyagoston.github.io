@@ -18,9 +18,8 @@ website:
     search: true
     contents:
       - index.qmd
-      - section: "About me"
+      - section: "Teaching"
         contents:
-          - cv.qmd
           - teaching.qmd
       - section: "Research"
         contents:
@@ -28,6 +27,7 @@ website:
       - section: "Codes"
         contents: 
           - codes.qmd
+      - cv.qmd
     
 
 format:

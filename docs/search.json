@@ -25,7 +25,7 @@
     "href": "multisynthdid.html#example-with-german-reunification-data",
     "title": "The multisynthdid package",
     "section": "Example with German Reunification Data",
-    "text": "Example with German Reunification Data\nA simple example is to estimate the effect of German Reunification.\n\nlibrary(multisynthdid)\n\nGet the imputed data for German reunification.\n\ndata(\"german_reunification\")\n\nOne can easily run the estimation via the main function:\n\nres &lt;- multi_sdid( gdp + infrate + trade ~ 1, 'W', 'country', 'year', german_reunification )\n\nThe summary command will summarise the main estimates\n\nsummary.multisynthdid(res)\n\n$estimate\n[1] \"multi_synthdid_obj\"\n\n$tau\n                     gdp  infrate     trade\nAvg. Treatment -1526.459 1.397776 0.3985817\nSE              1113.220 1.567475 4.3581915\n\n$dimensions\n                                      [,1]\nNo. Treated units                    1.000\nNo. Control pool                    16.000\nEffective no. controls               8.668\nNo. Post-treatment periods          14.000\nNo. Pre-treatment periods           30.000\nEffective no. pre-treatment periods  1.000\nNo. Outcomes                         3.000\n\n\nTo check the outcome variables and its synthetic counterparts visual investigation has been the norm with synthetic controls.\n\nplot_outcomes( res )\n\n`geom_line()`: Each group consists of only one observation.\nℹ Do you need to adjust the group aesthetic?\n`geom_line()`: Each group consists of only one observation.\nℹ Do you need to adjust the group aesthetic?\n`geom_line()`: Each group consists of only one observation.\nℹ Do you need to adjust the group aesthetic?\n\n\n\n\n\nFinally one can check the treatment/gap plots with ot without placebo effects for inference.\n\nplot_gaps( res, placebo = T )"
+    "text": "Example with German Reunification Data\nA simple example is to estimate the effect of German Reunification.\n\nlibrary(multisynthdid)\n\nGet the imputed data for German reunification.\n\ndata(\"german_reunification\")\n\nOne can easily run the estimation via the main function:\n\nres &lt;- multi_sdid( gdp + infrate + trade ~ 1, 'W', 'country', 'year', german_reunification )\n\nThe summary command will summarise the main estimates\n\nsummary.multisynthdid(res)\n\n$estimate\n[1] \"multi_synthdid_obj\"\n\n$tau\n                     gdp  infrate     trade\nAvg. Treatment -1526.459 1.397776 0.3985817\nSE              1426.881 1.520277 4.4136682\n\n$dimensions\n                                      [,1]\nNo. Treated units                    1.000\nNo. Control pool                    16.000\nEffective no. controls               8.668\nNo. Post-treatment periods          14.000\nNo. Pre-treatment periods           30.000\nEffective no. pre-treatment periods  1.000\nNo. Outcomes                         3.000\n\n\nTo check the outcome variables and its synthetic counterparts visual investigation has been the norm with synthetic controls.\n\nplot_outcomes( res )\n\n`geom_line()`: Each group consists of only one observation.\nℹ Do you need to adjust the group aesthetic?\n`geom_line()`: Each group consists of only one observation.\nℹ Do you need to adjust the group aesthetic?\n`geom_line()`: Each group consists of only one observation.\nℹ Do you need to adjust the group aesthetic?\n\n\n\n\n\nFinally one can check the treatment/gap plots with ot without placebo effects for inference.\n\nplot_gaps( res, placebo = T )"
   },
   {
     "objectID": "multisynthdid.html#comparison-to-other-methods",
@@ -58,28 +58,35 @@
   {
     "objectID": "teaching/Econometrics_I/econ_I_AE_2425.html",
     "href": "teaching/Econometrics_I/econ_I_AE_2425.html",
-    "title": "Econometrics I for Applied Economics at Corvinus – 22024/25 Fall",
+    "title": "Econometrics I",
     "section": "",
-    "text": "Please submit your codes to Moodle. This page aims to enhance your learning experience by displaying your homework assignments and providing an autograding option to help you improve your work and receive feedback before the submission deadline.\nRules:"
+    "text": "Please submit your codes to Moodle. This page aims to enhance your learning experience by displaying your homework assignments and providing an autograding option to help you improve your work and receive feedback before the submission deadline.\nRules:\n\nname your R-script as ’‘neptuncode_hwXX.R’’.\nE.g., ’‘asd123_hw01.R’’ for the first homework with neptun code asd123.\nAutograding is to give you feedback, not to evaluate your codes. We do not track or store your codes on the provided website."
+  },
+  {
+    "objectID": "teaching/Econometrics_I/econ_I_AE_2425.html#econometrics-i-for-applied-economics-at-cub-202425-fall",
+    "href": "teaching/Econometrics_I/econ_I_AE_2425.html#econometrics-i-for-applied-economics-at-cub-202425-fall",
+    "title": "Econometrics I",
+    "section": "",
+    "text": "Please submit your codes to Moodle. This page aims to enhance your learning experience by displaying your homework assignments and providing an autograding option to help you improve your work and receive feedback before the submission deadline.\nRules:\n\nname your R-script as ’‘neptuncode_hwXX.R’’.\nE.g., ’‘asd123_hw01.R’’ for the first homework with neptun code asd123.\nAutograding is to give you feedback, not to evaluate your codes. We do not track or store your codes on the provided website."
   },
   {
     "objectID": "teaching/Econometrics_I/econ_I_AE_2425.html#homework-with-r",
     "href": "teaching/Econometrics_I/econ_I_AE_2425.html#homework-with-r",
-    "title": "Econometrics I for Applied Economics at Corvinus – 22024/25 Fall",
+    "title": "Econometrics I",
     "section": "Homework with R",
     "text": "Homework with R\n\nHomework I"
   },
   {
     "objectID": "teaching/Econometrics_I/econ_I_AE_2425.html#autograding-homeworks-with-r",
     "href": "teaching/Econometrics_I/econ_I_AE_2425.html#autograding-homeworks-with-r",
-    "title": "Econometrics I for Applied Economics at Corvinus – 22024/25 Fall",
+    "title": "Econometrics I",
     "section": "Autograding homeworks with R",
     "text": "Autograding homeworks with R\nYou can find the autograding HERE.\n\nThis is a beta version; every feedback and comment are more than welcomed!\nAt the moment, we use a free server that offers 25 hours of run time per month. If we exceed the server’s monthly usage limit, we need to:\n\nWe need your feedback if replacement under a different domain is needed.\nworst case: wait for the next month and play the ‘’tragedy of commons game’’ better."
   },
   {
     "objectID": "teaching/Econometrics_I/econ_I_AE_2425.html#back",
     "href": "teaching/Econometrics_I/econ_I_AE_2425.html#back",
-    "title": "Econometrics I for Applied Economics at Corvinus – 22024/25 Fall",
+    "title": "Econometrics I",
     "section": "Back",
     "text": "Back\nTeaching\nHomepage"
   },
@@ -135,21 +142,21 @@
   {
     "objectID": "teaching.html",
     "href": "teaching.html",
-    "title": "Teaching",
+    "title": "Courses",
     "section": "",
     "text": "Updated: 2024/07/29"
   },
   {
     "objectID": "teaching.html#courses-at-corvinus-cub",
     "href": "teaching.html#courses-at-corvinus-cub",
-    "title": "Teaching",
+    "title": "Courses",
     "section": "Courses at Corvinus (CUB)",
     "text": "Courses at Corvinus (CUB)\n\nEconometrics I for Applied Economics\n\nCurrent teaching materials HERE"
   },
   {
     "objectID": "teaching.html#teaching-at-central-european-university-ceu",
     "href": "teaching.html#teaching-at-central-european-university-ceu",
-    "title": "Teaching",
+    "title": "Courses",
     "section": "Teaching at Central European University (CEU)",
     "text": "Teaching at Central European University (CEU)\n\nData Analysis 1, 2 or 3 for Business Analytics at CEU\n\nBased on Békés-Kézdi (2021): Data Analysis for Business, Ecnonomics and Policy - CUP\nCourse descriptions for DA-1 (2020-21), DA-2 (2020-21, 2024-25) or DA-3 (2023-24)\n\nCoding 1: Data Management and Analysis with R for Business Analytics at CEU (2020/21 and 2021/22 Fall)\n\nMaterials and codes, course description\nIn 2021/22 Fall I have tought similar material for Finance students.\n\nData course for Executive MBA at CEU (2020 Summer) - Jointly with Anand Murugesan\n\nwebpage for EMBA at CEU\n\nMathematics and Informatics Pre-session for MS in Finance at CEU (2019/20 and 2020/21 Fall)\n\ncourse description"
   },
@@ -165,7 +172,7 @@
     "href": "teaching/Econometrics_I/homework_I.html",
     "title": "Homework I – Econometrics I 2024/25 Fall",
     "section": "",
-    "text": "Homework I – Econometrics I 2024/25 Fall\nQ-01) Add the command which clears the environment\n\n# Clear environment\n\nQ-02) Create a string variable, which states: This is my first assignment in R!\n\nstr_var &lt;-\n\nQ-03) Create vector gdppc, which contains the values of: 12, 18, 25, 13, 16 and 14\n\ngdppc &lt;-\n\nQ-04) Multiply this vector with 10,000 and name it as gdppc_10\n\ngdppc_10 &lt;-\n\nQ-05) Create an other vector called lifeexp with values of: 62, 68, 73, 65, 66 and 69\n\nlifeexp &lt;-\n\nQ-06) Calculate the average of lifeexp as avg_le\n\navg_le &lt;-\n\nQ-07) Calculate the average of gdppc as avg_gdppc\n\navg_gdppc &lt;-\n\nQ-08) Store the two vectors in a data.frame() object and call it df. Use their names for colnames.\n\ndf &lt;-\n\nQ-09) Calculate the covariance matrix of df with the function cov() and name it as vcov.\n\nvcov &lt;-\n\nQ-10) Take the covariance of lifeexp and gdppc and divide by the variance of the gdppc. Name it beta! Hint: check your vcov variable and use indexing to get the appropropriate elements.\n\nbeta &lt;-"
+    "text": "Homework I – Econometrics I 2024/25 Fall\nQ-01) Add the command which clears the environment\n\n# Clear environment\n\nQ-02) Create a string variable, which states: This is my first assignment in R!\n\nstr_var &lt;-\n\nQ-03) Create vector gdppc, which contains the values of: 12, 18, 25, 13, 16 and 14\n\ngdppc &lt;-\n\nQ-04) Multiply this vector with 10,000 and name it as gdppc_10\n\ngdppc_10 &lt;-\n\nQ-05) Create an other vector called lifeexp with values of: 62, 68, 73, 65, 66 and 69\n\nlifeexp &lt;-\n\nQ-06) Calculate the average of lifeexp as avg_le\n\navg_le &lt;-\n\nQ-07) Calculate the average of gdppc as avg_gdppc\n\navg_gdppc &lt;-\n\nQ-08) Store the two vectors in a data.frame() object and call it df. Use their names for colnames.\n\ndf &lt;-\n\nQ-09) Calculate the covariance matrix of df with the function cov() and name it as vcov.\n\nvcov &lt;-\n\nQ-10) Take the covariance of lifeexp and gdppc and divide by the variance of the gdppc. Name it beta! Hint: check your vcov variable and use indexing to get the appropropriate elements.\n\nbeta &lt;-\n\nBack to homeworks"
   },
   {
     "objectID": "multisynthdid/multi_comp.html",
@@ -186,14 +193,14 @@
     "href": "multisynthdid/multi_comp.html#mscmt-package",
     "title": "Compare Synthetic Control methods which allows multiple outcomes",
     "section": "MSCMT package",
-    "text": "MSCMT package\n\ndf_m &lt;- listFromLong(german_reunification, unit.variable=\"index\", time.variable=\"year\", unit.names.variable=\"country\")\n\n# define the sum of all cases\n\ntreatment.identifier &lt;- \"West Germany\"\ncontrols.identifier  &lt;- setdiff(colnames(df_m[[1]]),\n                                c(treatment.identifier))\ntimes.dep  &lt;- cbind(\"gdp\"            = c(1960,1989),\n                    \"trade\"          = c(1960,1989),\n                    \"infrate\"        = c(1960,1989))\ntimes.pred &lt;- times.dep\n\nmscmt_res &lt;- mscmt(df_m, treatment.identifier, controls.identifier, times.dep, times.pred, seed=1)\n\n14:04:44: Number of 'sunny' donors: 16 out of 16\n14:04:44: Unrestricted outer optimum (obtained by ignoring all predictors) is \n14:04:44: FEASIBLE even when respecting the predictors.\nFinal rmspe: 0.03346181, mspe (loss v): 0.001119693\nOptimal weights:\n        USA     Austria Switzerland       Japan \n 0.26457047  0.49918982  0.17248101  0.06375869"
+    "text": "MSCMT package\n\ndf_m &lt;- listFromLong(german_reunification, unit.variable=\"index\", time.variable=\"year\", unit.names.variable=\"country\")\n\n# define the sum of all cases\n\ntreatment.identifier &lt;- \"West Germany\"\ncontrols.identifier  &lt;- setdiff(colnames(df_m[[1]]),\n                                c(treatment.identifier))\ntimes.dep  &lt;- cbind(\"gdp\"            = c(1960,1989),\n                    \"trade\"          = c(1960,1989),\n                    \"infrate\"        = c(1960,1989))\ntimes.pred &lt;- times.dep\n\nmscmt_res &lt;- mscmt(df_m, treatment.identifier, controls.identifier, times.dep, times.pred, seed=1)\n\n14:27:55: Number of 'sunny' donors: 16 out of 16\n14:27:55: Unrestricted outer optimum (obtained by ignoring all predictors) is \n14:27:55: FEASIBLE even when respecting the predictors.\nFinal rmspe: 0.03346181, mspe (loss v): 0.001119693\nOptimal weights:\n        USA     Austria Switzerland       Japan \n 0.26457047  0.49918982  0.17248101  0.06375869"
   },
   {
     "objectID": "multisynthdid/multi_comp.html#augmented-synthetic-control",
     "href": "multisynthdid/multi_comp.html#augmented-synthetic-control",
     "title": "Compare Synthetic Control methods which allows multiple outcomes",
     "section": "Augmented Synthetic Control",
-    "text": "Augmented Synthetic Control\n\naug_syn &lt;- augsynth( gdp + trade + infrate ~ W, index, year, \n                     german_reunification, progfunc = 'none', scm = T  )\n\nMultiple outcomes and one treatment time found. Running augsynth_multiout.\n\nsummary(aug_syn)\n\n\nCall:\naugsynth_multiout(form = form, unit = !!enquo(unit), time = !!enquo(time), \n    t_int = t_int, data = data, progfunc = \"none\", scm = ..2)\n\nOverall L2 Imbalance (Scaled):0.450  (0.296)\n\nAverage ATT Estimate:\n  Outcome      Estimate lower_bound upper_bound p_val   Pre.RMSE\n1     gdp -2360.7643331          NA          NA     0 310.710322\n2   trade     8.0726848          NA          NA     0   7.290110\n3 infrate    -0.4014653          NA          NA     0   1.930879\n\n# Treatment\naugsyn_tau = predict(aug_syn,att=T)\n\n\nmulti_sdid &lt;- multi_sdid( gdp + infrate + trade ~ 1, 'W', 'country', 'year', german_reunification )\n\nsummary.multisynthdid(multi_sdid)\n\n$estimate\n[1] \"multi_synthdid_obj\"\n\n$tau\n                     gdp  infrate     trade\nAvg. Treatment -1526.459 1.397776 0.3985817\nSE              1278.830 1.534328 4.3976276\n\n$dimensions\n                                      [,1]\nNo. Treated units                    1.000\nNo. Control pool                    16.000\nEffective no. controls               8.668\nNo. Post-treatment periods          14.000\nNo. Pre-treatment periods           30.000\nEffective no. pre-treatment periods  1.000\nNo. Outcomes                         3.000\n\nmsdid_curve &lt;- multi_synthdid_curves(multi_sdid$tau, complete = T)"
+    "text": "Augmented Synthetic Control\n\naug_syn &lt;- augsynth( gdp + trade + infrate ~ W, index, year, \n                     german_reunification, progfunc = 'none', scm = T  )\n\nMultiple outcomes and one treatment time found. Running augsynth_multiout.\n\nsummary(aug_syn)\n\n\nCall:\naugsynth_multiout(form = form, unit = !!enquo(unit), time = !!enquo(time), \n    t_int = t_int, data = data, progfunc = \"none\", scm = ..2)\n\nOverall L2 Imbalance (Scaled):0.450  (0.296)\n\nAverage ATT Estimate:\n  Outcome      Estimate lower_bound upper_bound p_val   Pre.RMSE\n1     gdp -2360.7643331          NA          NA     0 310.710322\n2   trade     8.0726848          NA          NA     0   7.290110\n3 infrate    -0.4014653          NA          NA     0   1.930879\n\n# Treatment\naugsyn_tau = predict(aug_syn,att=T)\n\n\nmulti_sdid &lt;- multi_sdid( gdp + infrate + trade ~ 1, 'W', 'country', 'year', german_reunification )\n\nsummary.multisynthdid(multi_sdid)\n\n$estimate\n[1] \"multi_synthdid_obj\"\n\n$tau\n                     gdp  infrate     trade\nAvg. Treatment -1526.459 1.397776 0.3985817\nSE              1340.875 1.588531 4.2371690\n\n$dimensions\n                                      [,1]\nNo. Treated units                    1.000\nNo. Control pool                    16.000\nEffective no. controls               8.668\nNo. Post-treatment periods          14.000\nNo. Pre-treatment periods           30.000\nEffective no. pre-treatment periods  1.000\nNo. Outcomes                         3.000\n\nmsdid_curve &lt;- multi_synthdid_curves(multi_sdid$tau, complete = T)"
   },
   {
     "objectID": "multisynthdid/multi_comp.html#comparison-of-gdp",
