@@ -7,7 +7,7 @@ title: "Papers"
 - *Measuring the long-run performance of mergers and acquisitions* - joint work with Sudheer Chava
     - [working paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4742401#paper-references-widget)
 - *Modelling with Discretized Variables* - joint work with [Felix Chan](https://staffportal.curtin.edu.au/staff/profile/view/felix-chan-885a727c/) and [László Mátyás](http://www.personal.ceu.hu/staff/matyas/)
-	- [working paper](), [codes](https://github.com/regulyagoston/Split-sampling), [online supplement](./papers/MDV_online_supplement.pdf)
+	- [working paper](), [codes](https://github.com/regulyagoston/Split-sampling), [online supplement](./papers/MSV_online_supplement.pdf)
 - *Heterogeneous treatment effects in regression discontinuity designs*
    - [working paper](https://arxiv.org/abs/2106.11640), [codes](https://github.com/regulyagoston/RD_tree)
 
