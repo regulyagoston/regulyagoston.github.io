@@ -14,31 +14,34 @@ title: "Ágoston Reguly"
 
 :::
 ::: {.column width="70%"}
-I am an Assistant Professor at the [Institute of Economics, Corvinus University of Budapest](https://www.uni-corvinus.hu/elerhetosegek/reguly-agoston/) (Corvinus), an affiliated researcher at [Financial Services Innovation Lab (FSIL)](https://fintech.gatech.edu/#/) part of Scheller College of Business at Georgia Institute of Technology and a visiting faculty at Central European University (CEU).
+I am an Assistant Professor at the [Institute of Economics, Corvinus University of Budapest](https://www.uni-corvinus.hu/elerhetosegek/reguly-agoston/) (Corvinus), an affiliated researcher at [Financial Services Innovation Lab (FSIL)](https://fintech.gatech.edu/#/) part of Scheller College of Business at Georgia Institute of Technology.
 
-My research interests are in empirical finance and econometrics. My ongoing research covers topics on 
+My research interests are in empirical corporate economics and econometrics. My ongoing research covers topics on the mergers and acquisitions, firms' technology adoption, policy evaluation with machine learning techniques and traditional econometrics. 
 
-- the long-run market performance of mergers and acquisitions, 
-- policy evaluation with machine learning techniques, and 
-- traditional econometrics. 
+Some selected works:
+
+- [Discovering Heterogeneous Treatment Effects in Regression Discontinuity Designs](https://arxiv.org/abs/2106.11640)
+- [The Long-Run Stock Market Performance of Mergers and Acquisitions](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4742401) - joint with Sudheer Chava
+- [Modelling with Sensitive Variables](https://arxiv.org/abs/2403.15220) - joint with Felix Chan and Laszlo Matyas
+- [When and How Much Do Fixed Effects Matter?](https://link.springer.com/chapter/10.1007/978-3-031-49849-7_2) - joint with Felix Chan and Laszlo Matyas. This is a book chapter from [The Econometrics of Multi-dimensional Panels](https://link.springer.com/book/10.1007/978-3-031-49849-7) (2024)  (Editor: Matyas, Publisher: Springer)
 
 See more on my research [here](./papers.html).
 
 ::: 
 :::
 
-## News
+## Codes(./codes.html)
 
-- [2024-05-07] Beta version of `multisynthdid` package, which runs Synthetic Diff-in-Diffs with **multiple outcomes**. See more here [`multisynthdid`](./multisynthdid.html).
-- [2024-03-22] New working paper version of [Modelling with Discretized Varaibles](https://arxiv.org/abs/2403.15220) is available on arxiv!
-- [2024-03-15] Our working paper on [The Long-Run Stock Market Performance of Mergers and Acquisitions](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4742401) is now available on SSRN!
-- [2024-02-02] Electronic version of [
-When and How Much Do Fixed Effects Matter?](https://link.springer.com/chapter/10.1007/978-3-031-49849-7_2) is now available. This is a book chapter from [The Econometrics of Multi-dimensional Panels](https://link.springer.com/book/10.1007/978-3-031-49849-7) (2024)  (Editor: Matyas, Publisher: Springer)
+- Beta version of [`multisynthdid`](./multisynthdid.html) R-package, which runs Synthetic Diff-in-Diffs with **multiple outcomes**. See more here [`multisynthdid`](./multisynthdid.html).
+- [`RD-tree`](https://github.com/regulyagoston/RD_tree) implements the machine learning algorithm from [Discovering Heterogeneous Treatment Effects in Regression Discontinuity Designs](https://arxiv.org/abs/2106.11640). This is a MatLab implementation. There is a [python](https://www.firat-yaman.de/Codes.html) implementation by [Firat Yaman](https://www.firat-yaman.de/), however this only implements the parametric version.
+- [Split-sampling](https://github.com/regulyagoston/Split-sampling) method which allows data-protection for sensitive variables discussed in [Modelling with Sensitive Variables](https://arxiv.org/abs/2403.15220)
+
 
 ## [Teaching](./teaching.html)
 
 - [Econometrics I for Applied Economists (BA)](./teaching/Econometrics_I/econ_I_AE_2425.html) at Corvinus.
-- Prediction with Machine Learning methods -- Data Analysis 3 for Business Analitics (MSc) at CEU.
+
+- Previously I have taught various Data Analysis courses at CEU.
 
 - Learn coding & data analysis with R
   - This course material guides you from basic statistics towards machine learning methods.
@@ -47,11 +50,6 @@ When and How Much Do Fixed Effects Matter?](https://link.springer.com/chapter/10
   - Thanks to Péter Duronelly and Ádám Víg you can access the same material in python as well [here](https://github.com/gabors-data-analysis/da-coding-python).
 
 More information on the courses is available [here](./teaching.html).
-
-## [Codes](./codes.html)
-
-- Multiple outcomes with synthetic difference-in-difference estimation. See more here [`multisynthdid`](./multisynthdid.html).
-  - Implements method used by [Chava and Reguly (2024)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4742401)
 
 
 ## Contact

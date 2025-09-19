@@ -25,7 +25,7 @@
     "href": "multisynthdid.html#example-with-german-reunification-data",
     "title": "The multisynthdid package",
     "section": "Example with German Reunification Data",
-    "text": "Example with German Reunification Data\nA simple example is to estimate the effect of German Reunification.\n\nlibrary(multisynthdid)\n\nGet the imputed data for German reunification.\n\ndata(\"german_reunification\")\n\nOne can easily run the estimation via the main function:\n\nres &lt;- multi_sdid( gdp + infrate + trade ~ 1, 'W', 'country', 'year', german_reunification )\n\nThe summary command will summarise the main estimates\n\nsummary.multisynthdid(res)\n\n$estimate\n[1] \"multi_synthdid_obj\"\n\n$tau\n                     gdp  infrate     trade\nAvg. Treatment -1526.459 1.397776 0.3985817\nSE              1426.881 1.520277 4.4136682\n\n$dimensions\n                                      [,1]\nNo. Treated units                    1.000\nNo. Control pool                    16.000\nEffective no. controls               8.668\nNo. Post-treatment periods          14.000\nNo. Pre-treatment periods           30.000\nEffective no. pre-treatment periods  1.000\nNo. Outcomes                         3.000\n\n\nTo check the outcome variables and its synthetic counterparts visual investigation has been the norm with synthetic controls.\n\nplot_outcomes( res )\n\n`geom_line()`: Each group consists of only one observation.\nℹ Do you need to adjust the group aesthetic?\n`geom_line()`: Each group consists of only one observation.\nℹ Do you need to adjust the group aesthetic?\n`geom_line()`: Each group consists of only one observation.\nℹ Do you need to adjust the group aesthetic?\n\n\n\n\n\nFinally one can check the treatment/gap plots with ot without placebo effects for inference.\n\nplot_gaps( res, placebo = T )"
+    "text": "Example with German Reunification Data\nA simple example is to estimate the effect of German Reunification.\n\nlibrary(multisynthdid)\n\nGet the imputed data for German reunification.\n\ndata(\"german_reunification\")\n\nOne can easily run the estimation via the main function:\n\nres &lt;- multi_sdid( gdp + infrate + trade ~ 1, 'W', 'country', 'year', german_reunification )\n\nThe summary command will summarise the main estimates\n\nsummary.multisynthdid(res)\n\n$estimate\n[1] \"multi_synthdid_obj\"\n\n$tau\n                     gdp  infrate     trade\nAvg. Treatment -1526.459 1.397776 0.3985817\nSE              1340.071 1.417177 4.2782289\n\n$dimensions\n                                      [,1]\nNo. Treated units                    1.000\nNo. Control pool                    16.000\nEffective no. controls               8.668\nNo. Post-treatment periods          14.000\nNo. Pre-treatment periods           30.000\nEffective no. pre-treatment periods  1.000\nNo. Outcomes                         3.000\n\n\nTo check the outcome variables and its synthetic counterparts visual investigation has been the norm with synthetic controls.\n\nplot_outcomes( res )\n\n`geom_line()`: Each group consists of only one observation.\nℹ Do you need to adjust the group aesthetic?\n`geom_line()`: Each group consists of only one observation.\nℹ Do you need to adjust the group aesthetic?\n`geom_line()`: Each group consists of only one observation.\nℹ Do you need to adjust the group aesthetic?\n\n\n\n\n\n\n\n\n\nFinally one can check the treatment/gap plots with ot without placebo effects for inference.\n\nplot_gaps( res, placebo = T )"
   },
   {
     "objectID": "multisynthdid.html#comparison-to-other-methods",
@@ -39,21 +39,21 @@
     "href": "multisynthdid/synthdid_comp.html",
     "title": "Comparison of the multisynthdid package with the classical synthdid package",
     "section": "",
-    "text": "We will compare the effect of German Reunification on GDP with the classical synthdid package and our extended version for multiple outcomes.\nFirst, install the original package.\n\ndevtools::install_github(\"synth-inference/synthdid\")\n\nLoad the packages.\n\nlibrary(multisynthdid)\nlibrary(synthdid)\nlibrary(kableExtra)\n\nGet the imputed data for German reunification.\n\ndata(\"german_reunification\")\n\nWe estimate three models:\n\nSynthetic Diff-in-Diffs using gdp as the outcome only\nMultiple Synthetic Diff-in-Diff using gdp, infrate (inflation) and trade to get the weights\nMultiple Synthetic Diff-in-Diff using gdp only to get a comparison to the original package result.\n\n\n# Original\nsetup_sdid = panel.matrices(as.data.frame( german_reunification ), unit = 'country', time = 'year', outcome = 'gdp', treatment = 'W')\nsdid_tau = synthdid_estimate(setup_sdid$Y, setup_sdid$N0, setup_sdid$T0)\nsdid_se = sqrt(vcov(sdid_tau, method='placebo'))\n\n# Multi-outcome package estimated on GDP only -- should give the same result\nmulti_chk &lt;- multi_sdid( gdp ~ 1, 'W', 'country', 'year', german_reunification )\n\n# Multi estimated on multiple outcomes\nmulti &lt;- multi_sdid( gdp + infrate + trade ~ 1, 'W', 'country', 'year', german_reunification )\n\nSummaries the results\n\n\n\n\n\n\n\n\n\n\n\n\nOriginal SDiD\nMulti-outcome SDiD replicate\nMulti-outcome SDiD\n\n\n\n\nAvg. Effect\n-1471.39\n-1471.39\n-1526.46\n\n\nSE\n1434.65\n1552.74\n1474.69\n\n\n\n\n\nNote that the SE-s are slightly different for Original and replicated as it uses randomization with 200 replication. In case one uses higher replication number for the placebo SEs, the values converge to each other."
+    "text": "We will compare the effect of German Reunification on GDP with the classical synthdid package and our extended version for multiple outcomes.\nFirst, install the original package.\n\ndevtools::install_github(\"synth-inference/synthdid\")\n\nLoad the packages.\n\nlibrary(multisynthdid)\nlibrary(synthdid)\nlibrary(kableExtra)\n\nGet the imputed data for German reunification.\n\ndata(\"german_reunification\")\n\nWe estimate three models:\n\nSynthetic Diff-in-Diffs using gdp as the outcome only\nMultiple Synthetic Diff-in-Diff using gdp, infrate (inflation) and trade to get the weights\nMultiple Synthetic Diff-in-Diff using gdp only to get a comparison to the original package result.\n\n\n# Original\nsetup_sdid = panel.matrices(as.data.frame( german_reunification ), unit = 'country', time = 'year', outcome = 'gdp', treatment = 'W')\nsdid_tau = synthdid_estimate(setup_sdid$Y, setup_sdid$N0, setup_sdid$T0)\nsdid_se = sqrt(vcov(sdid_tau, method='placebo'))\n\n# Multi-outcome package estimated on GDP only -- should give the same result\nmulti_chk &lt;- multi_sdid( gdp ~ 1, 'W', 'country', 'year', german_reunification )\n\n# Multi estimated on multiple outcomes\nmulti &lt;- multi_sdid( gdp + infrate + trade ~ 1, 'W', 'country', 'year', german_reunification )\n\nSummaries the results\n\n\n\n\n\n\n\n\n\n\n\n\nOriginal SDiD\nMulti-outcome SDiD replicate\nMulti-outcome SDiD\n\n\n\n\nAvg. Effect\n-1471.39\n-1471.39\n-1526.46\n\n\nSE\n1362.44\n1464.27\n1348.76\n\n\n\n\n\nNote that the SE-s are slightly different for Original and replicated as it uses randomization with 200 replication. In case one uses higher replication number for the placebo SEs, the values converge to each other."
   },
   {
     "objectID": "multisynthdid/synthdid_comp.html#comparison-with-german-reunification-data",
     "href": "multisynthdid/synthdid_comp.html#comparison-with-german-reunification-data",
     "title": "Comparison of the multisynthdid package with the classical synthdid package",
     "section": "",
-    "text": "We will compare the effect of German Reunification on GDP with the classical synthdid package and our extended version for multiple outcomes.\nFirst, install the original package.\n\ndevtools::install_github(\"synth-inference/synthdid\")\n\nLoad the packages.\n\nlibrary(multisynthdid)\nlibrary(synthdid)\nlibrary(kableExtra)\n\nGet the imputed data for German reunification.\n\ndata(\"german_reunification\")\n\nWe estimate three models:\n\nSynthetic Diff-in-Diffs using gdp as the outcome only\nMultiple Synthetic Diff-in-Diff using gdp, infrate (inflation) and trade to get the weights\nMultiple Synthetic Diff-in-Diff using gdp only to get a comparison to the original package result.\n\n\n# Original\nsetup_sdid = panel.matrices(as.data.frame( german_reunification ), unit = 'country', time = 'year', outcome = 'gdp', treatment = 'W')\nsdid_tau = synthdid_estimate(setup_sdid$Y, setup_sdid$N0, setup_sdid$T0)\nsdid_se = sqrt(vcov(sdid_tau, method='placebo'))\n\n# Multi-outcome package estimated on GDP only -- should give the same result\nmulti_chk &lt;- multi_sdid( gdp ~ 1, 'W', 'country', 'year', german_reunification )\n\n# Multi estimated on multiple outcomes\nmulti &lt;- multi_sdid( gdp + infrate + trade ~ 1, 'W', 'country', 'year', german_reunification )\n\nSummaries the results\n\n\n\n\n\n\n\n\n\n\n\n\nOriginal SDiD\nMulti-outcome SDiD replicate\nMulti-outcome SDiD\n\n\n\n\nAvg. Effect\n-1471.39\n-1471.39\n-1526.46\n\n\nSE\n1434.65\n1552.74\n1474.69\n\n\n\n\n\nNote that the SE-s are slightly different for Original and replicated as it uses randomization with 200 replication. In case one uses higher replication number for the placebo SEs, the values converge to each other."
+    "text": "We will compare the effect of German Reunification on GDP with the classical synthdid package and our extended version for multiple outcomes.\nFirst, install the original package.\n\ndevtools::install_github(\"synth-inference/synthdid\")\n\nLoad the packages.\n\nlibrary(multisynthdid)\nlibrary(synthdid)\nlibrary(kableExtra)\n\nGet the imputed data for German reunification.\n\ndata(\"german_reunification\")\n\nWe estimate three models:\n\nSynthetic Diff-in-Diffs using gdp as the outcome only\nMultiple Synthetic Diff-in-Diff using gdp, infrate (inflation) and trade to get the weights\nMultiple Synthetic Diff-in-Diff using gdp only to get a comparison to the original package result.\n\n\n# Original\nsetup_sdid = panel.matrices(as.data.frame( german_reunification ), unit = 'country', time = 'year', outcome = 'gdp', treatment = 'W')\nsdid_tau = synthdid_estimate(setup_sdid$Y, setup_sdid$N0, setup_sdid$T0)\nsdid_se = sqrt(vcov(sdid_tau, method='placebo'))\n\n# Multi-outcome package estimated on GDP only -- should give the same result\nmulti_chk &lt;- multi_sdid( gdp ~ 1, 'W', 'country', 'year', german_reunification )\n\n# Multi estimated on multiple outcomes\nmulti &lt;- multi_sdid( gdp + infrate + trade ~ 1, 'W', 'country', 'year', german_reunification )\n\nSummaries the results\n\n\n\n\n\n\n\n\n\n\n\n\nOriginal SDiD\nMulti-outcome SDiD replicate\nMulti-outcome SDiD\n\n\n\n\nAvg. Effect\n-1471.39\n-1471.39\n-1526.46\n\n\nSE\n1362.44\n1464.27\n1348.76\n\n\n\n\n\nNote that the SE-s are slightly different for Original and replicated as it uses randomization with 200 replication. In case one uses higher replication number for the placebo SEs, the values converge to each other."
   },
   {
     "objectID": "multisynthdid/synthdid_comp.html#increase-number-of-repetition-for-ses",
     "href": "multisynthdid/synthdid_comp.html#increase-number-of-repetition-for-ses",
     "title": "Comparison of the multisynthdid package with the classical synthdid package",
     "section": "Increase number of repetition for SEs",
-    "text": "Increase number of repetition for SEs\n\n# Increase the replication with Original package\nsdid_se_large = sqrt(vcov(sdid_tau, method='placebo', replications = 1000 ))\n\n# With multiple outcome package\nmulti_chk_large &lt;- multi_sdid( gdp ~ 1, 'W', 'country', 'year', german_reunification, SE = T, se_replication = 1000 )\n\nWith 1000 replication we got a closer estimates to each other:\n\n\n\n\n\n\nOriginal SDiD\nMulti-SDiD\nAbs. Diff\n\n\n\n\n200\n1434.65\n1552.74\n118.09\n\n\n1000\n1522.92\n1466.60\n56.32"
+    "text": "Increase number of repetition for SEs\n\n# Increase the replication with Original package\nsdid_se_large = sqrt(vcov(sdid_tau, method='placebo', replications = 1000 ))\n\n# With multiple outcome package\nmulti_chk_large &lt;- multi_sdid( gdp ~ 1, 'W', 'country', 'year', german_reunification, SE = T, se_replication = 1000 )\n\nWith 1000 replication we got a closer estimates to each other:\n\n\n\n\n\n\nOriginal SDiD\nMulti-SDiD\nAbs. Diff\n\n\n\n\n200\n1362.44\n1464.27\n101.83\n\n\n1000\n1522.04\n1477.02\n45.03"
   },
   {
     "objectID": "teaching/Econometrics_I/econ_I_AE_2425.html",
@@ -63,18 +63,11 @@
     "text": "Please submit your codes to Moodle. This page aims to enhance your learning experience by displaying your homework assignments and providing an autograding option to help you improve your work and receive feedback before the submission deadline.\nRules:\n\nname your R-script as ’‘neptuncode_hwXX.R’’.\nE.g., ’‘asd123_hw01.R’’ for the first homework with neptun code asd123.\nAutograding is to give you feedback, not to evaluate your codes. We do not track or store your codes on the provided website."
   },
   {
-    "objectID": "teaching/Econometrics_I/econ_I_AE_2425.html#econometrics-i-for-applied-economics-at-cub-202425-fall",
-    "href": "teaching/Econometrics_I/econ_I_AE_2425.html#econometrics-i-for-applied-economics-at-cub-202425-fall",
+    "objectID": "teaching/Econometrics_I/econ_I_AE_2425.html#econometrics-i-for-applied-economics-at-cub",
+    "href": "teaching/Econometrics_I/econ_I_AE_2425.html#econometrics-i-for-applied-economics-at-cub",
     "title": "Econometrics I",
     "section": "",
     "text": "Please submit your codes to Moodle. This page aims to enhance your learning experience by displaying your homework assignments and providing an autograding option to help you improve your work and receive feedback before the submission deadline.\nRules:\n\nname your R-script as ’‘neptuncode_hwXX.R’’.\nE.g., ’‘asd123_hw01.R’’ for the first homework with neptun code asd123.\nAutograding is to give you feedback, not to evaluate your codes. We do not track or store your codes on the provided website."
-  },
-  {
-    "objectID": "teaching/Econometrics_I/econ_I_AE_2425.html#homework-with-r",
-    "href": "teaching/Econometrics_I/econ_I_AE_2425.html#homework-with-r",
-    "title": "Econometrics I",
-    "section": "Homework with R",
-    "text": "Homework with R\n\nHomework I"
   },
   {
     "objectID": "teaching/Econometrics_I/econ_I_AE_2425.html#autograding-homeworks-with-r",
@@ -91,88 +84,109 @@
     "text": "Back\nTeaching\nHomepage"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Ágoston Reguly",
+    "objectID": "codes.html",
+    "href": "codes.html",
+    "title": "Codes",
     "section": "",
-    "text": "I am an Assistant Professor at the Institute of Economics, Corvinus University of Budapest (Corvinus), an affiliated researcher at Financial Services Innovation Lab (FSIL) part of Scheller College of Business at Georgia Institute of Technology and a visiting faculty at Central European University (CEU).\nMy research interests are in empirical finance and econometrics. My ongoing research covers topics on\n\nthe long-run market performance of mergers and acquisitions,\npolicy evaluation with machine learning techniques, and\ntraditional econometrics.\n\nSee more on my research here."
-  },
-  {
-    "objectID": "index.html#quick-bio",
-    "href": "index.html#quick-bio",
-    "title": "Ágoston Reguly",
-    "section": "",
-    "text": "I am an Assistant Professor at the Institute of Economics, Corvinus University of Budapest (Corvinus), an affiliated researcher at Financial Services Innovation Lab (FSIL) part of Scheller College of Business at Georgia Institute of Technology and a visiting faculty at Central European University (CEU).\nMy research interests are in empirical finance and econometrics. My ongoing research covers topics on\n\nthe long-run market performance of mergers and acquisitions,\npolicy evaluation with machine learning techniques, and\ntraditional econometrics.\n\nSee more on my research here."
-  },
-  {
-    "objectID": "index.html#news",
-    "href": "index.html#news",
-    "title": "Ágoston Reguly",
-    "section": "News",
-    "text": "News\n\n[2024-05-07] Beta version of multisynthdid package, which runs Synthetic Diff-in-Diffs with multiple outcomes. See more here multisynthdid.\n[2024-03-22] New working paper version of Modelling with Discretized Varaibles is available on arxiv!\n[2024-03-15] Our working paper on The Long-Run Stock Market Performance of Mergers and Acquisitions is now available on SSRN!\n[2024-02-02] Electronic version of When and How Much Do Fixed Effects Matter? is now available. This is a book chapter from The Econometrics of Multi-dimensional Panels (2024) (Editor: Matyas, Publisher: Springer)"
-  },
-  {
-    "objectID": "index.html#teaching",
-    "href": "index.html#teaching",
-    "title": "Ágoston Reguly",
-    "section": "Teaching",
-    "text": "Teaching\n\nEconometrics I for Applied Economists (BA) at Corvinus.\nPrediction with Machine Learning methods – Data Analysis 3 for Business Analitics (MSc) at CEU.\nLearn coding & data analysis with R\n\nThis course material guides you from basic statistics towards machine learning methods.\nSee my course material and problem description with tasks+solutions at the following github repo: Coding for Data Analysis in R.\nThis supplements the book Data Analysis for Business, Economics, and Policy by Gábor Békés (CEU) and Gábor Kézdi (U. Michigan) Published on 6 May 2021 by Cambridge University Press, and developed for Data Analytics courses at CEU. Check out gabors-data-analysis.com for more detial.\nThanks to Péter Duronelly and Ádám Víg you can access the same material in python as well here.\n\n\nMore information on the courses is available here."
-  },
-  {
-    "objectID": "index.html#codes",
-    "href": "index.html#codes",
-    "title": "Ágoston Reguly",
-    "section": "Codes",
-    "text": "Codes\n\nMultiple outcomes with synthetic difference-in-difference estimation. See more here multisynthdid.\n\nImplements method used by Chava and Reguly (2024)"
-  },
-  {
-    "objectID": "index.html#contact",
-    "href": "index.html#contact",
-    "title": "Ágoston Reguly",
-    "section": "Contact",
-    "text": "Contact\nemail: agoston.reguly-at-uni-corvinus.hu or areguly6-at-gatech.edu"
-  },
-  {
-    "objectID": "papers.html",
-    "href": "papers.html",
-    "title": "Papers",
-    "section": "",
-    "text": "Last update: 2024/03/22\n\nWorking Papers\n\nMeasuring the long-run performance of mergers and acquisitions - joint work with Sudheer Chava\n\nworking paper\n\nModelling with Discretized Variables - joint work with Felix Chan and László Mátyás\n\nworking paper, codes, online supplement\n\nHeterogeneous treatment effects in regression discontinuity designs\n\nworking paper, codes\n\n\n\n\nPublished papers\n\nWhen and How Much Do Fixed Effects Matter? (2024) - joint work with with Felix Chan (Curtin) and László Mátyás (CEU)\n\npublished book chapter, in Matyas, L. (eds) The Econometrics of Multi-dimensional Panels. Advanced Studies in Theoretical and Applied Econometrics, vol 54. Springer, Cham.\n\nThe Use of Machine Learning in Treatment Effect Estimation (2022) - joint work with Robert Lieli (CEU) and Yu-Chin Hsu (National Central University and National Chengchi University)\n\npublished book chapter, in: Chan, F., Matyas, L. (eds), Econometrics with Machine Learning. Advanced Studies in Theoretical and Applied Econometrics, vol 53. Springer, pp. 79-109\n\n\n\nPublication from my BA/MA studies\n\nConstructing Hungarian Zero-Coupon Yield Curve Models, Using Global Optimalization Methods (2015)\n\npublished paper - only in Hungarian\n\nMacroeconometric Modelling of Inflation, Wages and Money Supply: Implementing David F. Hendry’s reduction theory to the Hungarian Economy between 1995 and 2014 (2015)\n\nMA thesis - only in Hungarian\n\nForecasting the Hungarian Nelson-Siegel Yield Curve with Mixed Factor Model (2014)\n\nConference Paper: Hungarian Society of Economist Yearly Conference (2014, December 19) - only in Hungarian\n\nHappiness of Economic Man (2014) – joint work with Katalin Martinás, Zsolt Gilányi, Veronika Poór – The Happiness Compass, Chapter 19 Nova Science Publishers, editors: Francesco Sarracino\nReappraisal of Rational Choice Theory (2013) – joint work with Katalin Martinás\n\nInterdisciplinary Description of Complex Systems (INDECS), 11(1)\n\nBehavioral models of pension systems, part II. (2013)\n\nEconomists’ Forum - only in Hungarian\n\nBehavioral models of pension systems, part I. (2012)\n\nEconomists’ Forum - only in Hungarian\n\nBehavioral models of pension systems (2012)\n\nBA Thesis - only in Hungarian"
+    "text": "multisynthdid package\n\nInstallation and basic usage: multisynthdid.qmd\nComparison with univariate Synthetic Diff-in-Diffs: synthdid_comp.qmd\nComparison with other multi-outcome Synthetic Control methods: multi_comp.qmd\n\n\nBack",
+    "crumbs": [
+      "Codes",
+      "Codes"
+    ]
   },
   {
     "objectID": "teaching.html",
     "href": "teaching.html",
     "title": "Courses",
     "section": "",
-    "text": "Updated: 2024/07/29"
+    "text": "Updated: 2024/07/29",
+    "crumbs": [
+      "Teaching",
+      "Courses"
+    ]
   },
   {
     "objectID": "teaching.html#courses-at-corvinus-cub",
     "href": "teaching.html#courses-at-corvinus-cub",
     "title": "Courses",
     "section": "Courses at Corvinus (CUB)",
-    "text": "Courses at Corvinus (CUB)\n\nEconometrics I for Applied Economics\n\nCurrent teaching materials HERE"
+    "text": "Courses at Corvinus (CUB)\n\nEconometrics I for Applied Economics\n\nCurrent teaching materials HERE",
+    "crumbs": [
+      "Teaching",
+      "Courses"
+    ]
   },
   {
     "objectID": "teaching.html#teaching-at-central-european-university-ceu",
     "href": "teaching.html#teaching-at-central-european-university-ceu",
     "title": "Courses",
     "section": "Teaching at Central European University (CEU)",
-    "text": "Teaching at Central European University (CEU)\n\nData Analysis 1, 2 or 3 for Business Analytics at CEU\n\nBased on Békés-Kézdi (2021): Data Analysis for Business, Ecnonomics and Policy - CUP\nCourse descriptions for DA-1 (2020-21), DA-2 (2020-21, 2024-25) or DA-3 (2023-24)\n\nCoding 1: Data Management and Analysis with R for Business Analytics at CEU (2020/21 and 2021/22 Fall)\n\nMaterials and codes, course description\nIn 2021/22 Fall I have tought similar material for Finance students.\n\nData course for Executive MBA at CEU (2020 Summer) - Jointly with Anand Murugesan\n\nwebpage for EMBA at CEU\n\nMathematics and Informatics Pre-session for MS in Finance at CEU (2019/20 and 2020/21 Fall)\n\ncourse description"
+    "text": "Teaching at Central European University (CEU)\n\nData Analysis 1, 2 or 3 for Business Analytics at CEU\n\nBased on Békés-Kézdi (2021): Data Analysis for Business, Ecnonomics and Policy - CUP\nCourse descriptions for DA-1 (2020-21), DA-2 (2020-21, 2024-25) or DA-3 (2023-24)\n\nCoding 1: Data Management and Analysis with R for Business Analytics at CEU (2020/21 and 2021/22 Fall)\n\nMaterials and codes, course description\nIn 2021/22 Fall I have tought similar material for Finance students.\n\nData course for Executive MBA at CEU (2020 Summer) - Jointly with Anand Murugesan\n\nwebpage for EMBA at CEU\n\nMathematics and Informatics Pre-session for MS in Finance at CEU (2019/20 and 2020/21 Fall)\n\ncourse description",
+    "crumbs": [
+      "Teaching",
+      "Courses"
+    ]
   },
   {
-    "objectID": "codes.html",
-    "href": "codes.html",
-    "title": "Codes",
+    "objectID": "papers.html",
+    "href": "papers.html",
+    "title": "Papers",
     "section": "",
-    "text": "multisynthdid package\n\nInstallation and basic usage: multisynthdid.qmd\nComparison with univariate Synthetic Diff-in-Diffs: synthdid_comp.qmd\nComparison with other multi-outcome Synthetic Control methods: multi_comp.qmd\n\n\nBack"
+    "text": "Last update: 2024/03/22\n\nWorking Papers\n\nMeasuring the long-run performance of mergers and acquisitions - joint work with Sudheer Chava\n\nworking paper\n\nModelling with Discretized Variables - joint work with Felix Chan and László Mátyás\n\nworking paper, codes, online supplement\n\nHeterogeneous treatment effects in regression discontinuity designs\n\nworking paper, codes\n\n\n\n\nPublished papers\n\nWhen and How Much Do Fixed Effects Matter? (2024) - joint work with with Felix Chan (Curtin) and László Mátyás (CEU)\n\npublished book chapter, in Matyas, L. (eds) The Econometrics of Multi-dimensional Panels. Advanced Studies in Theoretical and Applied Econometrics, vol 54. Springer, Cham.\n\nThe Use of Machine Learning in Treatment Effect Estimation (2022) - joint work with Robert Lieli (CEU) and Yu-Chin Hsu (National Central University and National Chengchi University)\n\npublished book chapter, in: Chan, F., Matyas, L. (eds), Econometrics with Machine Learning. Advanced Studies in Theoretical and Applied Econometrics, vol 53. Springer, pp. 79-109\n\n\n\nPublication from my BA/MA studies\n\nConstructing Hungarian Zero-Coupon Yield Curve Models, Using Global Optimalization Methods (2015)\n\npublished paper - only in Hungarian\n\nMacroeconometric Modelling of Inflation, Wages and Money Supply: Implementing David F. Hendry’s reduction theory to the Hungarian Economy between 1995 and 2014 (2015)\n\nMA thesis - only in Hungarian\n\nForecasting the Hungarian Nelson-Siegel Yield Curve with Mixed Factor Model (2014)\n\nConference Paper: Hungarian Society of Economist Yearly Conference (2014, December 19) - only in Hungarian\n\nHappiness of Economic Man (2014) – joint work with Katalin Martinás, Zsolt Gilányi, Veronika Poór – The Happiness Compass, Chapter 19 Nova Science Publishers, editors: Francesco Sarracino\nReappraisal of Rational Choice Theory (2013) – joint work with Katalin Martinás\n\nInterdisciplinary Description of Complex Systems (INDECS), 11(1)\n\nBehavioral models of pension systems, part II. (2013)\n\nEconomists’ Forum - only in Hungarian\n\nBehavioral models of pension systems, part I. (2012)\n\nEconomists’ Forum - only in Hungarian\n\nBehavioral models of pension systems (2012)\n\nBA Thesis - only in Hungarian",
+    "crumbs": [
+      "Research",
+      "Papers"
+    ]
   },
   {
-    "objectID": "teaching/Econometrics_I/homework_I.html",
-    "href": "teaching/Econometrics_I/homework_I.html",
-    "title": "Homework I – Econometrics I 2024/25 Fall",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Ágoston Reguly",
     "section": "",
-    "text": "Homework I – Econometrics I 2024/25 Fall\nQ-01) Add the command which clears the environment\n\n# Clear environment\n\nQ-02) Create a string variable, which states: This is my first assignment in R!\n\nstr_var &lt;-\n\nQ-03) Create vector gdppc, which contains the values of: 12, 18, 25, 13, 16 and 14\n\ngdppc &lt;-\n\nQ-04) Multiply this vector with 10,000 and name it as gdppc_10\n\ngdppc_10 &lt;-\n\nQ-05) Create an other vector called lifeexp with values of: 62, 68, 73, 65, 66 and 69\n\nlifeexp &lt;-\n\nQ-06) Calculate the average of lifeexp as avg_le\n\navg_le &lt;-\n\nQ-07) Calculate the average of gdppc as avg_gdppc\n\navg_gdppc &lt;-\n\nQ-08) Store the two vectors in a data.frame() object and call it df. Use their names for colnames.\n\ndf &lt;-\n\nQ-09) Calculate the covariance matrix of df with the function cov() and name it as vcov.\n\nvcov &lt;-\n\nQ-10) Take the covariance of lifeexp and gdppc and divide by the variance of the gdppc. Name it beta! Hint: check your vcov variable and use indexing to get the appropropriate elements.\n\nbeta &lt;-\n\nBack to homeworks"
+    "text": "I am an Assistant Professor at the Institute of Economics, Corvinus University of Budapest (Corvinus), an affiliated researcher at Financial Services Innovation Lab (FSIL) part of Scheller College of Business at Georgia Institute of Technology.\nMy research interests are in empirical corporate economics and econometrics. My ongoing research covers topics on the mergers and acquisitions, firms’ technology adoption, policy evaluation with machine learning techniques and traditional econometrics.\nSome selected works:\n\nDiscovering Heterogeneous Treatment Effects in Regression Discontinuity Designs\nThe Long-Run Stock Market Performance of Mergers and Acquisitions - joint with Sudheer Chava\nModelling with Sensitive Variables - joint with Felix Chan and Laszlo Matyas\nWhen and How Much Do Fixed Effects Matter? - joint with Felix Chan and Laszlo Matyas. This is a book chapter from The Econometrics of Multi-dimensional Panels (2024) (Editor: Matyas, Publisher: Springer)\n\nSee more on my research here.",
+    "crumbs": [
+      "Ágoston Reguly"
+    ]
+  },
+  {
+    "objectID": "index.html#quick-bio",
+    "href": "index.html#quick-bio",
+    "title": "Ágoston Reguly",
+    "section": "",
+    "text": "I am an Assistant Professor at the Institute of Economics, Corvinus University of Budapest (Corvinus), an affiliated researcher at Financial Services Innovation Lab (FSIL) part of Scheller College of Business at Georgia Institute of Technology.\nMy research interests are in empirical corporate economics and econometrics. My ongoing research covers topics on the mergers and acquisitions, firms’ technology adoption, policy evaluation with machine learning techniques and traditional econometrics.\nSome selected works:\n\nDiscovering Heterogeneous Treatment Effects in Regression Discontinuity Designs\nThe Long-Run Stock Market Performance of Mergers and Acquisitions - joint with Sudheer Chava\nModelling with Sensitive Variables - joint with Felix Chan and Laszlo Matyas\nWhen and How Much Do Fixed Effects Matter? - joint with Felix Chan and Laszlo Matyas. This is a book chapter from The Econometrics of Multi-dimensional Panels (2024) (Editor: Matyas, Publisher: Springer)\n\nSee more on my research here.",
+    "crumbs": [
+      "Ágoston Reguly"
+    ]
+  },
+  {
+    "objectID": "index.html#codes.codes.html",
+    "href": "index.html#codes.codes.html",
+    "title": "Ágoston Reguly",
+    "section": "Codes(./codes.html)",
+    "text": "Codes(./codes.html)\n\nBeta version of multisynthdid R-package, which runs Synthetic Diff-in-Diffs with multiple outcomes. See more here multisynthdid.\nRD-tree implements the machine learning algorithm from Discovering Heterogeneous Treatment Effects in Regression Discontinuity Designs. This is a MatLab implementation. There is a python implementation by Firat Yaman, however this only implements the parametric version.\nSplit-sampling method which allows data-protection for sensitive variables discussed in Modelling with Sensitive Variables",
+    "crumbs": [
+      "Ágoston Reguly"
+    ]
+  },
+  {
+    "objectID": "index.html#teaching",
+    "href": "index.html#teaching",
+    "title": "Ágoston Reguly",
+    "section": "Teaching",
+    "text": "Teaching\n\nEconometrics I for Applied Economists (BA) at Corvinus.\nPreviously I have taught various Data Analysis courses at CEU.\nLearn coding & data analysis with R\n\nThis course material guides you from basic statistics towards machine learning methods.\nSee my course material and problem description with tasks+solutions at the following github repo: Coding for Data Analysis in R.\nThis supplements the book Data Analysis for Business, Economics, and Policy by Gábor Békés (CEU) and Gábor Kézdi (U. Michigan) Published on 6 May 2021 by Cambridge University Press, and developed for Data Analytics courses at CEU. Check out gabors-data-analysis.com for more detial.\nThanks to Péter Duronelly and Ádám Víg you can access the same material in python as well here.\n\n\nMore information on the courses is available here.",
+    "crumbs": [
+      "Ágoston Reguly"
+    ]
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "Ágoston Reguly",
+    "section": "Contact",
+    "text": "Contact\nemail: agoston.reguly-at-uni-corvinus.hu or areguly6-at-gatech.edu",
+    "crumbs": [
+      "Ágoston Reguly"
+    ]
   },
   {
     "objectID": "multisynthdid/multi_comp.html",
@@ -193,14 +207,14 @@
     "href": "multisynthdid/multi_comp.html#mscmt-package",
     "title": "Compare Synthetic Control methods which allows multiple outcomes",
     "section": "MSCMT package",
-    "text": "MSCMT package\n\ndf_m &lt;- listFromLong(german_reunification, unit.variable=\"index\", time.variable=\"year\", unit.names.variable=\"country\")\n\n# define the sum of all cases\n\ntreatment.identifier &lt;- \"West Germany\"\ncontrols.identifier  &lt;- setdiff(colnames(df_m[[1]]),\n                                c(treatment.identifier))\ntimes.dep  &lt;- cbind(\"gdp\"            = c(1960,1989),\n                    \"trade\"          = c(1960,1989),\n                    \"infrate\"        = c(1960,1989))\ntimes.pred &lt;- times.dep\n\nmscmt_res &lt;- mscmt(df_m, treatment.identifier, controls.identifier, times.dep, times.pred, seed=1)\n\n14:27:55: Number of 'sunny' donors: 16 out of 16\n14:27:55: Unrestricted outer optimum (obtained by ignoring all predictors) is \n14:27:55: FEASIBLE even when respecting the predictors.\nFinal rmspe: 0.03346181, mspe (loss v): 0.001119693\nOptimal weights:\n        USA     Austria Switzerland       Japan \n 0.26457047  0.49918982  0.17248101  0.06375869"
+    "text": "MSCMT package\n\ndf_m &lt;- listFromLong(german_reunification, unit.variable=\"index\", time.variable=\"year\", unit.names.variable=\"country\")\n\n# define the sum of all cases\n\ntreatment.identifier &lt;- \"West Germany\"\ncontrols.identifier  &lt;- setdiff(colnames(df_m[[1]]),\n                                c(treatment.identifier))\ntimes.dep  &lt;- cbind(\"gdp\"            = c(1960,1989),\n                    \"trade\"          = c(1960,1989),\n                    \"infrate\"        = c(1960,1989))\ntimes.pred &lt;- times.dep\n\nmscmt_res &lt;- mscmt(df_m, treatment.identifier, controls.identifier, times.dep, times.pred, seed=1)\n\n16:30:15: Number of 'sunny' donors: 16 out of 16\n16:30:15: Unrestricted outer optimum (obtained by ignoring all predictors) is \n16:30:15: FEASIBLE even when respecting the predictors.\nFinal rmspe: 0.03346181, mspe (loss v): 0.001119693\nOptimal weights:\n        USA     Austria Switzerland       Japan \n 0.26457047  0.49918982  0.17248101  0.06375869"
   },
   {
     "objectID": "multisynthdid/multi_comp.html#augmented-synthetic-control",
     "href": "multisynthdid/multi_comp.html#augmented-synthetic-control",
     "title": "Compare Synthetic Control methods which allows multiple outcomes",
     "section": "Augmented Synthetic Control",
-    "text": "Augmented Synthetic Control\n\naug_syn &lt;- augsynth( gdp + trade + infrate ~ W, index, year, \n                     german_reunification, progfunc = 'none', scm = T  )\n\nMultiple outcomes and one treatment time found. Running augsynth_multiout.\n\nsummary(aug_syn)\n\n\nCall:\naugsynth_multiout(form = form, unit = !!enquo(unit), time = !!enquo(time), \n    t_int = t_int, data = data, progfunc = \"none\", scm = ..2)\n\nOverall L2 Imbalance (Scaled):0.450  (0.296)\n\nAverage ATT Estimate:\n  Outcome      Estimate lower_bound upper_bound p_val   Pre.RMSE\n1     gdp -2360.7643331          NA          NA     0 310.710322\n2   trade     8.0726848          NA          NA     0   7.290110\n3 infrate    -0.4014653          NA          NA     0   1.930879\n\n# Treatment\naugsyn_tau = predict(aug_syn,att=T)\n\n\nmulti_sdid &lt;- multi_sdid( gdp + infrate + trade ~ 1, 'W', 'country', 'year', german_reunification )\n\nsummary.multisynthdid(multi_sdid)\n\n$estimate\n[1] \"multi_synthdid_obj\"\n\n$tau\n                     gdp  infrate     trade\nAvg. Treatment -1526.459 1.397776 0.3985817\nSE              1340.875 1.588531 4.2371690\n\n$dimensions\n                                      [,1]\nNo. Treated units                    1.000\nNo. Control pool                    16.000\nEffective no. controls               8.668\nNo. Post-treatment periods          14.000\nNo. Pre-treatment periods           30.000\nEffective no. pre-treatment periods  1.000\nNo. Outcomes                         3.000\n\nmsdid_curve &lt;- multi_synthdid_curves(multi_sdid$tau, complete = T)"
+    "text": "Augmented Synthetic Control\n\naug_syn &lt;- augsynth( gdp + trade + infrate ~ W, index, year, \n                     german_reunification, progfunc = 'none', scm = T  )\n\nMultiple outcomes and one treatment time found. Running augsynth_multiout.\n\nsummary(aug_syn)\n\n\nCall:\naugsynth_multiout(form = form, unit = !!enquo(unit), time = !!enquo(time), \n    t_int = t_int, data = data, progfunc = \"none\", scm = ..2)\n\nOverall L2 Imbalance (Scaled):0.450  (0.296)\n\nAverage ATT Estimate:\n  Outcome      Estimate lower_bound upper_bound p_val   Pre.RMSE\n1     gdp -2360.7643331          NA          NA     0 310.710322\n2   trade     8.0726848          NA          NA     0   7.290110\n3 infrate    -0.4014653          NA          NA     0   1.930879\n\n# Treatment\naugsyn_tau = predict(aug_syn,att=T)\n\n\nmulti_sdid &lt;- multi_sdid( gdp + infrate + trade ~ 1, 'W', 'country', 'year', german_reunification )\n\nsummary.multisynthdid(multi_sdid)\n\n$estimate\n[1] \"multi_synthdid_obj\"\n\n$tau\n                     gdp  infrate     trade\nAvg. Treatment -1526.459 1.397776 0.3985817\nSE              1327.341 1.451783 4.3638620\n\n$dimensions\n                                      [,1]\nNo. Treated units                    1.000\nNo. Control pool                    16.000\nEffective no. controls               8.668\nNo. Post-treatment periods          14.000\nNo. Pre-treatment periods           30.000\nEffective no. pre-treatment periods  1.000\nNo. Outcomes                         3.000\n\nmsdid_curve &lt;- multi_synthdid_curves(multi_sdid$tau, complete = T)"
   },
   {
     "objectID": "multisynthdid/multi_comp.html#comparison-of-gdp",
@@ -214,97 +228,139 @@
     "href": "cv.html",
     "title": "CV",
     "section": "",
-    "text": "Last update: 2024/01/09\nDownload CV\n\n\nApplied econometrics in finance with special attention on using and improving machine learning methods. Currently, I am working on corporate events to better understand the implications of events.\n\n\n\n\nAssistant Professor – Corvinus University at Budapest, Institute of Economics\nAffiliated Researcher – Georgia Institute of Technology (GT), FSIL at Scheller College of Business\nVisiting Professor – Central European University (CEU), Department of Business and Economics\n\n\n\n\n\nPostdoctoral research fellow – Georgia Institute of Technology (GT), FSIL at Scheller College of Business (2022-2023)\nJunior Researcher – Institute of Economics, Centre for Economic and Regional Studies (CERS)\nResearch Assistant - at CEU, collaborating with University of College London.\n\nConducted research on econometric theory and applications of models where the dependent or explanatory variables are discretized due to surveys, but in fact, they are continuous. During the research, I have collaborated with MaaSLab at the University of College London, a research group focusing on public transportation and faces challenges due to discretization when modeling.\n\n\n\n\n\n\nLong-term market performance of merger and acquisitions (WP) - Joint with Sudheer Chava\nWhen and How Much Do Fixed Effects Matter? - Joint with Felix Chan and László Mátyás\n\nIn: Matyas, L. (eds),The Econometrics of Multi-dimensional Panels 2nd Edition, Springer (2024), Chapter 2, pp. 39-60.\n\nHeterogeneous Treatment Effects in Regression Discontinuity Designs\n\nThe paper proposes a causal supervised machine learning algorithm to uncover treatment effect heterogeneity in classical regression discontinuity designs. Extending Athey and Imbens (2016) with leaf-by-leaf regression, I develop a criterion for building an honest “regression discontinuity tree”, where each leaf of the tree contains the RD estimate of treatment conditional on the values of some pre-treatment covariates.\n\nThe Use of Machine Learning in Treatment Effect Estimation (Published) 2022 – jointly with Robert Lieli (CEU) and Yu-Chin Hsu (National Central University and National Chengchi University)\n\nIn: Chan, F., Matyas, L. (eds), Econometrics with Machine Learning. Advanced Studies in Theoretical and Applied Econometrics, vol 53. Springer, Cham (2022), pp. 79-109.\n\nModelling with Discretized Continuous Dependent Variable - Joint with Felix Chan and László Mátyás\n\nExtends the split sampling methodology of Reguly et. al. (2020) to linear models, when the outcome variable is observed through a discretization process.\n\nModelling with Discretized Ordered Choice Covariates - 2020 - Joint with Felix Chan and László Mátyás\n\nIntroduces a new data gathering method the so-called ‘split sampling’, which allows point identification and consistent estimation of parameters via least squares, when the covariates are discretized interval data.\n\n\n\n\n\n\nEuropean Economic Association (EEA) and Econometric Society European Meeting (ESEM) 2021 Summer Conference\n\nEEA: Heterogeneous Treatment Effects in Regression Discontinuity Designs\nESEM: Modelling with Discretized Continuous Dependent Variable\n\nInternational Association for Applied Econometrics\n\n2021: Heterogeneous Treatment Effects in Regression Discontinuity Designs\n2019: Modelling with Discretized Ordered Choice Covariates - Cyprus\n\nBrownbag Seminar Series at the Department of Economics and Business\n\n2021: Heterogeneous treatment effects in regression discontinuity designs\n2020: Ordered Choice Modelling with Discretized Continuous Dependent Variable\n2019: Modelling with Discretized Ordered Choice Covariates\n\nHungarian Society of Economist Yearly Conference\n\n2014: Forecasting the Hungarian Nelson-Siegel Yield Curve with Mixed Factor Model - Budapest\n\n\n\n\n\n\nOrganizer of the Econometrics Reading Group at the Department of Economics and Business at CEU.\n\nOrganized reading group events for Ph.D. students and faculty members, covering various papers from the field of econometrics. We held meetings in two weeks frequency.\n\n\n\n\n\n\nData Analysis - MS in Business Analytics at CEU\n\n2020/21 - Lecturer for Data Analysis 1 and 2\n2018/19 – Teaching Assistant for Data Analysis 3 and 4. (lecturer: Gábor Békés)\n\nCoding 1: Data Management and Analysis with R - MS in Business Analytics at CEU\n\n2020/21 and 2021/22 - Lecturer\n\nData course - Executive Master of Business Art (EMBA) at CEU\n\n2020/21 - Joint lecturer with Anand Murugesan\n\nMathematics and Advanced Excel Pre-session MS in Finance at CEU\n\n2019/20, 2020/21 and 2021/22 - Lecturer\n\nMathematical Methods for Economists - MA in Economics\n\n2017/18 - Teaching Assistant\n\n\n\n\n\n\n2016-2021: Central European University, Budapest and Vienna, Ph.D. in Economics\n\nAdvisors: Róbert Lieli and László Mátyás\nGraduated with Summa Cum Laude\nPhD Thesis: Three Essays on Econometrics\n\n2012-2015: MA in Economic Analysis at Budapest University of Technology and Economics (BME)\n\nGraduated with Summa Cum Laude, ECTS weighted average: 4.65/5; ECTS: 162 of 120\n\n2012 Sept – 2013 Feb: ERASMUS scholarship in Germany\n\nOtto-Friedrich Universität Bamberg, focusing on behavioral economics\n\n2009-2012: BA in Management and Business Administration at BME\n\nGraduated with excellent degree, ECTS weighted average 4.02/5; ECTS: 256 of 210\n\n2003-2009 Franciscan High School of Szentendre, Hungary\n\n\n\n\n\nAward for Advanced Doctoral Studies, 2019 CEU’s rector award for outstanding Ph.D. students\nPro Scientia Golden Medal, 2013 academic award for young scholars, given at the Hungarian Academy of Sciences.\nNational Scientific Students’ Association Conference Awards (OTDK)\n\n2015 1st Prize in economics section\n2013 3rd Prize in economics section\n2011 1st Prize in economics section\n2011 Award of the Hungarian Economic Review\n2011 Short listed for the best presentation\n\nUniversity Scientific Students’ Association Conference Awards\n\n2014 Academic award of Rector Magnificus\n2014 1st Prize in economics section\n2014 1st Prize in finance section, selected for National Scientific Students’ Association Conference\n2011 Memorial award of Heller Farkas by Heller Farkas Foundation\n2011 1st Prize, in economics section, selected for National Scientific Students’ Association Conference\n2010 Award of Pro Progressio Fundation for enhancing young scholars\n2010 1st Prize, in economics section, selected for National Scientific Students’ Association Conference\n\nOther Awards\n\n2013 Economist’s Forum’s Young Scientist Award for the best article of the year\n2013 Felkai András Memorial Scholarship for support training of young talents\n2013 Outstanding students’ award at the Budapest University of Technology and Economics\n2012 & 2013 Special Extended Scholarship of Economy and Social Sciences Faculty of Budapest University of Technology and Economics\n2012 Hungarian Republic Fellowship (József Nádor)\n\n\n\n\n\n\n\n\nConstructing Hungarian Zero-Coupon Yield Curve Models - 2015\n\nNational Scientific Students’ Association Conference (in Hungarian)\n\nForecasting the Hungarian Nelson-Siegel Yield Curve with Mixed Factor Model - 2014\n\nConference Paper: Hungarian Society of Economist Yearly Conference (in Hungarian)\n\nHappiness of Economic Man - 2014, joint with: K. Martin´as, Zs. Gilányi and V. Poór\n\nIn Francesco Sarracino (Eds): The Happiness Compass, Chapter 19 Nova Science Publishers\n\nReappraisal of Rational Choice Theory - 2013, joint with K. Martinás\n\nInterdisciplinary Description of Complex Systems (INDECS), 11(1)\n\nBehavioral models of pension systems, part II. - 2013\n\nEconomists’ Forum, 2013. April\n\nBehavioral models of pension systems, part I. - 2012\n\nEconomists’ Forum, 2012. February\n\n\n\n\n\n\n\nConsultancy\n\nAnalysis on government security market for Hungarian State Treasury (2019)\n\nHungarian Government Debt Management Agency (2013 - 2016)\n\nI was responsible for periodical reports of the government security market and developing new methodologies for analyzing and forecasting the Hungarian government yield curve. Furthermore, I have contributed to the development of the new portfolio model.\n\n\n\n\n\n\n2015 July: Cambridge Econometrics Summer School, Timberlake Ltd.\n2014 July: Oxford Econometrics Summer School at Aix-en-Provance, Timberlake Ltd.\n\n\n\n\n\nLanguage\n\nEnglish: TOEFL ibt: 104; B2 certificates: general (2008) and economics specific (2011)\nGerman: B2 certificate, general, 2014\n\nIT skills:\n\nProficient: MatLab, R\nAdvanced: Python, Microsoft Office programs\nIntermediate: Stata, Eviews, SPSS, Mathematica\n\nDriving license:\n\nA and B categories\n\nHobbies:\n\nI have been sailing for fourteen years, and achieved 1st award in the National Competition of Jolle 25 class in 2007, 2009 and 2010.\nNowadays in my spare time I have turned to mountaineering and rock climbing. Among many peaks in the Tatras and the Austrian Alps, in 2018 I have climbed Mount Blanc via the Cosmiques route.\n\n\n Download CV\nback"
+    "text": "Last update: 2024/01/09\nDownload CV\n\n\nApplied econometrics in finance with special attention on using and improving machine learning methods. Currently, I am working on corporate events to better understand the implications of events.\n\n\n\n\nAssistant Professor – Corvinus University at Budapest, Institute of Economics\nAffiliated Researcher – Georgia Institute of Technology (GT), FSIL at Scheller College of Business\nVisiting Professor – Central European University (CEU), Department of Business and Economics\n\n\n\n\n\nPostdoctoral research fellow – Georgia Institute of Technology (GT), FSIL at Scheller College of Business (2022-2023)\nJunior Researcher – Institute of Economics, Centre for Economic and Regional Studies (CERS)\nResearch Assistant - at CEU, collaborating with University of College London.\n\nConducted research on econometric theory and applications of models where the dependent or explanatory variables are discretized due to surveys, but in fact, they are continuous. During the research, I have collaborated with MaaSLab at the University of College London, a research group focusing on public transportation and faces challenges due to discretization when modeling.\n\n\n\n\n\n\nLong-term market performance of merger and acquisitions (WP) - Joint with Sudheer Chava\nWhen and How Much Do Fixed Effects Matter? - Joint with Felix Chan and László Mátyás\n\nIn: Matyas, L. (eds),The Econometrics of Multi-dimensional Panels 2nd Edition, Springer (2024), Chapter 2, pp. 39-60.\n\nHeterogeneous Treatment Effects in Regression Discontinuity Designs\n\nThe paper proposes a causal supervised machine learning algorithm to uncover treatment effect heterogeneity in classical regression discontinuity designs. Extending Athey and Imbens (2016) with leaf-by-leaf regression, I develop a criterion for building an honest “regression discontinuity tree”, where each leaf of the tree contains the RD estimate of treatment conditional on the values of some pre-treatment covariates.\n\nThe Use of Machine Learning in Treatment Effect Estimation (Published) 2022 – jointly with Robert Lieli (CEU) and Yu-Chin Hsu (National Central University and National Chengchi University)\n\nIn: Chan, F., Matyas, L. (eds), Econometrics with Machine Learning. Advanced Studies in Theoretical and Applied Econometrics, vol 53. Springer, Cham (2022), pp. 79-109.\n\nModelling with Discretized Continuous Dependent Variable - Joint with Felix Chan and László Mátyás\n\nExtends the split sampling methodology of Reguly et. al. (2020) to linear models, when the outcome variable is observed through a discretization process.\n\nModelling with Discretized Ordered Choice Covariates - 2020 - Joint with Felix Chan and László Mátyás\n\nIntroduces a new data gathering method the so-called ‘split sampling’, which allows point identification and consistent estimation of parameters via least squares, when the covariates are discretized interval data.\n\n\n\n\n\n\nEuropean Economic Association (EEA) and Econometric Society European Meeting (ESEM) 2021 Summer Conference\n\nEEA: Heterogeneous Treatment Effects in Regression Discontinuity Designs\nESEM: Modelling with Discretized Continuous Dependent Variable\n\nInternational Association for Applied Econometrics\n\n2021: Heterogeneous Treatment Effects in Regression Discontinuity Designs\n2019: Modelling with Discretized Ordered Choice Covariates - Cyprus\n\nBrownbag Seminar Series at the Department of Economics and Business\n\n2021: Heterogeneous treatment effects in regression discontinuity designs\n2020: Ordered Choice Modelling with Discretized Continuous Dependent Variable\n2019: Modelling with Discretized Ordered Choice Covariates\n\nHungarian Society of Economist Yearly Conference\n\n2014: Forecasting the Hungarian Nelson-Siegel Yield Curve with Mixed Factor Model - Budapest\n\n\n\n\n\n\nOrganizer of the Econometrics Reading Group at the Department of Economics and Business at CEU.\n\nOrganized reading group events for Ph.D. students and faculty members, covering various papers from the field of econometrics. We held meetings in two weeks frequency.\n\n\n\n\n\n\nData Analysis - MS in Business Analytics at CEU\n\n2020/21 - Lecturer for Data Analysis 1 and 2\n2018/19 – Teaching Assistant for Data Analysis 3 and 4. (lecturer: Gábor Békés)\n\nCoding 1: Data Management and Analysis with R - MS in Business Analytics at CEU\n\n2020/21 and 2021/22 - Lecturer\n\nData course - Executive Master of Business Art (EMBA) at CEU\n\n2020/21 - Joint lecturer with Anand Murugesan\n\nMathematics and Advanced Excel Pre-session MS in Finance at CEU\n\n2019/20, 2020/21 and 2021/22 - Lecturer\n\nMathematical Methods for Economists - MA in Economics\n\n2017/18 - Teaching Assistant\n\n\n\n\n\n\n2016-2021: Central European University, Budapest and Vienna, Ph.D. in Economics\n\nAdvisors: Róbert Lieli and László Mátyás\nGraduated with Summa Cum Laude\nPhD Thesis: Three Essays on Econometrics\n\n2012-2015: MA in Economic Analysis at Budapest University of Technology and Economics (BME)\n\nGraduated with Summa Cum Laude, ECTS weighted average: 4.65/5; ECTS: 162 of 120\n\n2012 Sept – 2013 Feb: ERASMUS scholarship in Germany\n\nOtto-Friedrich Universität Bamberg, focusing on behavioral economics\n\n2009-2012: BA in Management and Business Administration at BME\n\nGraduated with excellent degree, ECTS weighted average 4.02/5; ECTS: 256 of 210\n\n2003-2009 Franciscan High School of Szentendre, Hungary\n\n\n\n\n\nAward for Advanced Doctoral Studies, 2019 CEU’s rector award for outstanding Ph.D. students\nPro Scientia Golden Medal, 2013 academic award for young scholars, given at the Hungarian Academy of Sciences.\nNational Scientific Students’ Association Conference Awards (OTDK)\n\n2015 1st Prize in economics section\n2013 3rd Prize in economics section\n2011 1st Prize in economics section\n2011 Award of the Hungarian Economic Review\n2011 Short listed for the best presentation\n\nUniversity Scientific Students’ Association Conference Awards\n\n2014 Academic award of Rector Magnificus\n2014 1st Prize in economics section\n2014 1st Prize in finance section, selected for National Scientific Students’ Association Conference\n2011 Memorial award of Heller Farkas by Heller Farkas Foundation\n2011 1st Prize, in economics section, selected for National Scientific Students’ Association Conference\n2010 Award of Pro Progressio Fundation for enhancing young scholars\n2010 1st Prize, in economics section, selected for National Scientific Students’ Association Conference\n\nOther Awards\n\n2013 Economist’s Forum’s Young Scientist Award for the best article of the year\n2013 Felkai András Memorial Scholarship for support training of young talents\n2013 Outstanding students’ award at the Budapest University of Technology and Economics\n2012 & 2013 Special Extended Scholarship of Economy and Social Sciences Faculty of Budapest University of Technology and Economics\n2012 Hungarian Republic Fellowship (József Nádor)\n\n\n\n\n\n\n\n\nConstructing Hungarian Zero-Coupon Yield Curve Models - 2015\n\nNational Scientific Students’ Association Conference (in Hungarian)\n\nForecasting the Hungarian Nelson-Siegel Yield Curve with Mixed Factor Model - 2014\n\nConference Paper: Hungarian Society of Economist Yearly Conference (in Hungarian)\n\nHappiness of Economic Man - 2014, joint with: K. Martin´as, Zs. Gilányi and V. Poór\n\nIn Francesco Sarracino (Eds): The Happiness Compass, Chapter 19 Nova Science Publishers\n\nReappraisal of Rational Choice Theory - 2013, joint with K. Martinás\n\nInterdisciplinary Description of Complex Systems (INDECS), 11(1)\n\nBehavioral models of pension systems, part II. - 2013\n\nEconomists’ Forum, 2013. April\n\nBehavioral models of pension systems, part I. - 2012\n\nEconomists’ Forum, 2012. February\n\n\n\n\n\n\n\nConsultancy\n\nAnalysis on government security market for Hungarian State Treasury (2019)\n\nHungarian Government Debt Management Agency (2013 - 2016)\n\nI was responsible for periodical reports of the government security market and developing new methodologies for analyzing and forecasting the Hungarian government yield curve. Furthermore, I have contributed to the development of the new portfolio model.\n\n\n\n\n\n\n2015 July: Cambridge Econometrics Summer School, Timberlake Ltd.\n2014 July: Oxford Econometrics Summer School at Aix-en-Provance, Timberlake Ltd.\n\n\n\n\n\nLanguage\n\nEnglish: TOEFL ibt: 104; B2 certificates: general (2008) and economics specific (2011)\nGerman: B2 certificate, general, 2014\n\nIT skills:\n\nProficient: MatLab, R\nAdvanced: Python, Microsoft Office programs\nIntermediate: Stata, Eviews, SPSS, Mathematica\n\nDriving license:\n\nA and B categories\n\nHobbies:\n\nI have been sailing for fourteen years, and achieved 1st award in the National Competition of Jolle 25 class in 2007, 2009 and 2010.\nNowadays in my spare time I have turned to mountaineering and rock climbing. Among many peaks in the Tatras and the Austrian Alps, in 2018 I have climbed Mount Blanc via the Cosmiques route.\n\n\n Download CV\nback",
+    "crumbs": [
+      "CV"
+    ]
   },
   {
     "objectID": "cv.html#research-interest",
     "href": "cv.html#research-interest",
     "title": "CV",
     "section": "",
-    "text": "Applied econometrics in finance with special attention on using and improving machine learning methods. Currently, I am working on corporate events to better understand the implications of events."
+    "text": "Applied econometrics in finance with special attention on using and improving machine learning methods. Currently, I am working on corporate events to better understand the implications of events.",
+    "crumbs": [
+      "CV"
+    ]
   },
   {
     "objectID": "cv.html#current-positions",
     "href": "cv.html#current-positions",
     "title": "CV",
     "section": "",
-    "text": "Assistant Professor – Corvinus University at Budapest, Institute of Economics\nAffiliated Researcher – Georgia Institute of Technology (GT), FSIL at Scheller College of Business\nVisiting Professor – Central European University (CEU), Department of Business and Economics"
+    "text": "Assistant Professor – Corvinus University at Budapest, Institute of Economics\nAffiliated Researcher – Georgia Institute of Technology (GT), FSIL at Scheller College of Business\nVisiting Professor – Central European University (CEU), Department of Business and Economics",
+    "crumbs": [
+      "CV"
+    ]
   },
   {
     "objectID": "cv.html#previous-positions-and-research-experiences",
     "href": "cv.html#previous-positions-and-research-experiences",
     "title": "CV",
     "section": "",
-    "text": "Postdoctoral research fellow – Georgia Institute of Technology (GT), FSIL at Scheller College of Business (2022-2023)\nJunior Researcher – Institute of Economics, Centre for Economic and Regional Studies (CERS)\nResearch Assistant - at CEU, collaborating with University of College London.\n\nConducted research on econometric theory and applications of models where the dependent or explanatory variables are discretized due to surveys, but in fact, they are continuous. During the research, I have collaborated with MaaSLab at the University of College London, a research group focusing on public transportation and faces challenges due to discretization when modeling."
+    "text": "Postdoctoral research fellow – Georgia Institute of Technology (GT), FSIL at Scheller College of Business (2022-2023)\nJunior Researcher – Institute of Economics, Centre for Economic and Regional Studies (CERS)\nResearch Assistant - at CEU, collaborating with University of College London.\n\nConducted research on econometric theory and applications of models where the dependent or explanatory variables are discretized due to surveys, but in fact, they are continuous. During the research, I have collaborated with MaaSLab at the University of College London, a research group focusing on public transportation and faces challenges due to discretization when modeling.",
+    "crumbs": [
+      "CV"
+    ]
   },
   {
     "objectID": "cv.html#published-and-working-papers",
     "href": "cv.html#published-and-working-papers",
     "title": "CV",
     "section": "",
-    "text": "Long-term market performance of merger and acquisitions (WP) - Joint with Sudheer Chava\nWhen and How Much Do Fixed Effects Matter? - Joint with Felix Chan and László Mátyás\n\nIn: Matyas, L. (eds),The Econometrics of Multi-dimensional Panels 2nd Edition, Springer (2024), Chapter 2, pp. 39-60.\n\nHeterogeneous Treatment Effects in Regression Discontinuity Designs\n\nThe paper proposes a causal supervised machine learning algorithm to uncover treatment effect heterogeneity in classical regression discontinuity designs. Extending Athey and Imbens (2016) with leaf-by-leaf regression, I develop a criterion for building an honest “regression discontinuity tree”, where each leaf of the tree contains the RD estimate of treatment conditional on the values of some pre-treatment covariates.\n\nThe Use of Machine Learning in Treatment Effect Estimation (Published) 2022 – jointly with Robert Lieli (CEU) and Yu-Chin Hsu (National Central University and National Chengchi University)\n\nIn: Chan, F., Matyas, L. (eds), Econometrics with Machine Learning. Advanced Studies in Theoretical and Applied Econometrics, vol 53. Springer, Cham (2022), pp. 79-109.\n\nModelling with Discretized Continuous Dependent Variable - Joint with Felix Chan and László Mátyás\n\nExtends the split sampling methodology of Reguly et. al. (2020) to linear models, when the outcome variable is observed through a discretization process.\n\nModelling with Discretized Ordered Choice Covariates - 2020 - Joint with Felix Chan and László Mátyás\n\nIntroduces a new data gathering method the so-called ‘split sampling’, which allows point identification and consistent estimation of parameters via least squares, when the covariates are discretized interval data."
+    "text": "Long-term market performance of merger and acquisitions (WP) - Joint with Sudheer Chava\nWhen and How Much Do Fixed Effects Matter? - Joint with Felix Chan and László Mátyás\n\nIn: Matyas, L. (eds),The Econometrics of Multi-dimensional Panels 2nd Edition, Springer (2024), Chapter 2, pp. 39-60.\n\nHeterogeneous Treatment Effects in Regression Discontinuity Designs\n\nThe paper proposes a causal supervised machine learning algorithm to uncover treatment effect heterogeneity in classical regression discontinuity designs. Extending Athey and Imbens (2016) with leaf-by-leaf regression, I develop a criterion for building an honest “regression discontinuity tree”, where each leaf of the tree contains the RD estimate of treatment conditional on the values of some pre-treatment covariates.\n\nThe Use of Machine Learning in Treatment Effect Estimation (Published) 2022 – jointly with Robert Lieli (CEU) and Yu-Chin Hsu (National Central University and National Chengchi University)\n\nIn: Chan, F., Matyas, L. (eds), Econometrics with Machine Learning. Advanced Studies in Theoretical and Applied Econometrics, vol 53. Springer, Cham (2022), pp. 79-109.\n\nModelling with Discretized Continuous Dependent Variable - Joint with Felix Chan and László Mátyás\n\nExtends the split sampling methodology of Reguly et. al. (2020) to linear models, when the outcome variable is observed through a discretization process.\n\nModelling with Discretized Ordered Choice Covariates - 2020 - Joint with Felix Chan and László Mátyás\n\nIntroduces a new data gathering method the so-called ‘split sampling’, which allows point identification and consistent estimation of parameters via least squares, when the covariates are discretized interval data.",
+    "crumbs": [
+      "CV"
+    ]
   },
   {
     "objectID": "cv.html#conferences-and-presentations",
     "href": "cv.html#conferences-and-presentations",
     "title": "CV",
     "section": "",
-    "text": "European Economic Association (EEA) and Econometric Society European Meeting (ESEM) 2021 Summer Conference\n\nEEA: Heterogeneous Treatment Effects in Regression Discontinuity Designs\nESEM: Modelling with Discretized Continuous Dependent Variable\n\nInternational Association for Applied Econometrics\n\n2021: Heterogeneous Treatment Effects in Regression Discontinuity Designs\n2019: Modelling with Discretized Ordered Choice Covariates - Cyprus\n\nBrownbag Seminar Series at the Department of Economics and Business\n\n2021: Heterogeneous treatment effects in regression discontinuity designs\n2020: Ordered Choice Modelling with Discretized Continuous Dependent Variable\n2019: Modelling with Discretized Ordered Choice Covariates\n\nHungarian Society of Economist Yearly Conference\n\n2014: Forecasting the Hungarian Nelson-Siegel Yield Curve with Mixed Factor Model - Budapest"
+    "text": "European Economic Association (EEA) and Econometric Society European Meeting (ESEM) 2021 Summer Conference\n\nEEA: Heterogeneous Treatment Effects in Regression Discontinuity Designs\nESEM: Modelling with Discretized Continuous Dependent Variable\n\nInternational Association for Applied Econometrics\n\n2021: Heterogeneous Treatment Effects in Regression Discontinuity Designs\n2019: Modelling with Discretized Ordered Choice Covariates - Cyprus\n\nBrownbag Seminar Series at the Department of Economics and Business\n\n2021: Heterogeneous treatment effects in regression discontinuity designs\n2020: Ordered Choice Modelling with Discretized Continuous Dependent Variable\n2019: Modelling with Discretized Ordered Choice Covariates\n\nHungarian Society of Economist Yearly Conference\n\n2014: Forecasting the Hungarian Nelson-Siegel Yield Curve with Mixed Factor Model - Budapest",
+    "crumbs": [
+      "CV"
+    ]
   },
   {
     "objectID": "cv.html#administrative-experience",
     "href": "cv.html#administrative-experience",
     "title": "CV",
     "section": "",
-    "text": "Organizer of the Econometrics Reading Group at the Department of Economics and Business at CEU.\n\nOrganized reading group events for Ph.D. students and faculty members, covering various papers from the field of econometrics. We held meetings in two weeks frequency."
+    "text": "Organizer of the Econometrics Reading Group at the Department of Economics and Business at CEU.\n\nOrganized reading group events for Ph.D. students and faculty members, covering various papers from the field of econometrics. We held meetings in two weeks frequency.",
+    "crumbs": [
+      "CV"
+    ]
   },
   {
     "objectID": "cv.html#teaching-experience",
     "href": "cv.html#teaching-experience",
     "title": "CV",
     "section": "",
-    "text": "Data Analysis - MS in Business Analytics at CEU\n\n2020/21 - Lecturer for Data Analysis 1 and 2\n2018/19 – Teaching Assistant for Data Analysis 3 and 4. (lecturer: Gábor Békés)\n\nCoding 1: Data Management and Analysis with R - MS in Business Analytics at CEU\n\n2020/21 and 2021/22 - Lecturer\n\nData course - Executive Master of Business Art (EMBA) at CEU\n\n2020/21 - Joint lecturer with Anand Murugesan\n\nMathematics and Advanced Excel Pre-session MS in Finance at CEU\n\n2019/20, 2020/21 and 2021/22 - Lecturer\n\nMathematical Methods for Economists - MA in Economics\n\n2017/18 - Teaching Assistant"
+    "text": "Data Analysis - MS in Business Analytics at CEU\n\n2020/21 - Lecturer for Data Analysis 1 and 2\n2018/19 – Teaching Assistant for Data Analysis 3 and 4. (lecturer: Gábor Békés)\n\nCoding 1: Data Management and Analysis with R - MS in Business Analytics at CEU\n\n2020/21 and 2021/22 - Lecturer\n\nData course - Executive Master of Business Art (EMBA) at CEU\n\n2020/21 - Joint lecturer with Anand Murugesan\n\nMathematics and Advanced Excel Pre-session MS in Finance at CEU\n\n2019/20, 2020/21 and 2021/22 - Lecturer\n\nMathematical Methods for Economists - MA in Economics\n\n2017/18 - Teaching Assistant",
+    "crumbs": [
+      "CV"
+    ]
   },
   {
     "objectID": "cv.html#education",
     "href": "cv.html#education",
     "title": "CV",
     "section": "",
-    "text": "2016-2021: Central European University, Budapest and Vienna, Ph.D. in Economics\n\nAdvisors: Róbert Lieli and László Mátyás\nGraduated with Summa Cum Laude\nPhD Thesis: Three Essays on Econometrics\n\n2012-2015: MA in Economic Analysis at Budapest University of Technology and Economics (BME)\n\nGraduated with Summa Cum Laude, ECTS weighted average: 4.65/5; ECTS: 162 of 120\n\n2012 Sept – 2013 Feb: ERASMUS scholarship in Germany\n\nOtto-Friedrich Universität Bamberg, focusing on behavioral economics\n\n2009-2012: BA in Management and Business Administration at BME\n\nGraduated with excellent degree, ECTS weighted average 4.02/5; ECTS: 256 of 210\n\n2003-2009 Franciscan High School of Szentendre, Hungary"
+    "text": "2016-2021: Central European University, Budapest and Vienna, Ph.D. in Economics\n\nAdvisors: Róbert Lieli and László Mátyás\nGraduated with Summa Cum Laude\nPhD Thesis: Three Essays on Econometrics\n\n2012-2015: MA in Economic Analysis at Budapest University of Technology and Economics (BME)\n\nGraduated with Summa Cum Laude, ECTS weighted average: 4.65/5; ECTS: 162 of 120\n\n2012 Sept – 2013 Feb: ERASMUS scholarship in Germany\n\nOtto-Friedrich Universität Bamberg, focusing on behavioral economics\n\n2009-2012: BA in Management and Business Administration at BME\n\nGraduated with excellent degree, ECTS weighted average 4.02/5; ECTS: 256 of 210\n\n2003-2009 Franciscan High School of Szentendre, Hungary",
+    "crumbs": [
+      "CV"
+    ]
   },
   {
     "objectID": "cv.html#awards-and-scholarships",
     "href": "cv.html#awards-and-scholarships",
     "title": "CV",
     "section": "",
-    "text": "Award for Advanced Doctoral Studies, 2019 CEU’s rector award for outstanding Ph.D. students\nPro Scientia Golden Medal, 2013 academic award for young scholars, given at the Hungarian Academy of Sciences.\nNational Scientific Students’ Association Conference Awards (OTDK)\n\n2015 1st Prize in economics section\n2013 3rd Prize in economics section\n2011 1st Prize in economics section\n2011 Award of the Hungarian Economic Review\n2011 Short listed for the best presentation\n\nUniversity Scientific Students’ Association Conference Awards\n\n2014 Academic award of Rector Magnificus\n2014 1st Prize in economics section\n2014 1st Prize in finance section, selected for National Scientific Students’ Association Conference\n2011 Memorial award of Heller Farkas by Heller Farkas Foundation\n2011 1st Prize, in economics section, selected for National Scientific Students’ Association Conference\n2010 Award of Pro Progressio Fundation for enhancing young scholars\n2010 1st Prize, in economics section, selected for National Scientific Students’ Association Conference\n\nOther Awards\n\n2013 Economist’s Forum’s Young Scientist Award for the best article of the year\n2013 Felkai András Memorial Scholarship for support training of young talents\n2013 Outstanding students’ award at the Budapest University of Technology and Economics\n2012 & 2013 Special Extended Scholarship of Economy and Social Sciences Faculty of Budapest University of Technology and Economics\n2012 Hungarian Republic Fellowship (József Nádor)"
+    "text": "Award for Advanced Doctoral Studies, 2019 CEU’s rector award for outstanding Ph.D. students\nPro Scientia Golden Medal, 2013 academic award for young scholars, given at the Hungarian Academy of Sciences.\nNational Scientific Students’ Association Conference Awards (OTDK)\n\n2015 1st Prize in economics section\n2013 3rd Prize in economics section\n2011 1st Prize in economics section\n2011 Award of the Hungarian Economic Review\n2011 Short listed for the best presentation\n\nUniversity Scientific Students’ Association Conference Awards\n\n2014 Academic award of Rector Magnificus\n2014 1st Prize in economics section\n2014 1st Prize in finance section, selected for National Scientific Students’ Association Conference\n2011 Memorial award of Heller Farkas by Heller Farkas Foundation\n2011 1st Prize, in economics section, selected for National Scientific Students’ Association Conference\n2010 Award of Pro Progressio Fundation for enhancing young scholars\n2010 1st Prize, in economics section, selected for National Scientific Students’ Association Conference\n\nOther Awards\n\n2013 Economist’s Forum’s Young Scientist Award for the best article of the year\n2013 Felkai András Memorial Scholarship for support training of young talents\n2013 Outstanding students’ award at the Budapest University of Technology and Economics\n2012 & 2013 Special Extended Scholarship of Economy and Social Sciences Faculty of Budapest University of Technology and Economics\n2012 Hungarian Republic Fellowship (József Nádor)",
+    "crumbs": [
+      "CV"
+    ]
   },
   {
     "objectID": "cv.html#publications",
     "href": "cv.html#publications",
     "title": "CV",
     "section": "",
-    "text": "Constructing Hungarian Zero-Coupon Yield Curve Models - 2015\n\nNational Scientific Students’ Association Conference (in Hungarian)\n\nForecasting the Hungarian Nelson-Siegel Yield Curve with Mixed Factor Model - 2014\n\nConference Paper: Hungarian Society of Economist Yearly Conference (in Hungarian)\n\nHappiness of Economic Man - 2014, joint with: K. Martin´as, Zs. Gilányi and V. Poór\n\nIn Francesco Sarracino (Eds): The Happiness Compass, Chapter 19 Nova Science Publishers\n\nReappraisal of Rational Choice Theory - 2013, joint with K. Martinás\n\nInterdisciplinary Description of Complex Systems (INDECS), 11(1)\n\nBehavioral models of pension systems, part II. - 2013\n\nEconomists’ Forum, 2013. April\n\nBehavioral models of pension systems, part I. - 2012\n\nEconomists’ Forum, 2012. February"
+    "text": "Constructing Hungarian Zero-Coupon Yield Curve Models - 2015\n\nNational Scientific Students’ Association Conference (in Hungarian)\n\nForecasting the Hungarian Nelson-Siegel Yield Curve with Mixed Factor Model - 2014\n\nConference Paper: Hungarian Society of Economist Yearly Conference (in Hungarian)\n\nHappiness of Economic Man - 2014, joint with: K. Martin´as, Zs. Gilányi and V. Poór\n\nIn Francesco Sarracino (Eds): The Happiness Compass, Chapter 19 Nova Science Publishers\n\nReappraisal of Rational Choice Theory - 2013, joint with K. Martinás\n\nInterdisciplinary Description of Complex Systems (INDECS), 11(1)\n\nBehavioral models of pension systems, part II. - 2013\n\nEconomists’ Forum, 2013. April\n\nBehavioral models of pension systems, part I. - 2012\n\nEconomists’ Forum, 2012. February",
+    "crumbs": [
+      "CV"
+    ]
   },
   {
     "objectID": "cv.html#working-experience",
     "href": "cv.html#working-experience",
     "title": "CV",
     "section": "",
-    "text": "Consultancy\n\nAnalysis on government security market for Hungarian State Treasury (2019)\n\nHungarian Government Debt Management Agency (2013 - 2016)\n\nI was responsible for periodical reports of the government security market and developing new methodologies for analyzing and forecasting the Hungarian government yield curve. Furthermore, I have contributed to the development of the new portfolio model."
+    "text": "Consultancy\n\nAnalysis on government security market for Hungarian State Treasury (2019)\n\nHungarian Government Debt Management Agency (2013 - 2016)\n\nI was responsible for periodical reports of the government security market and developing new methodologies for analyzing and forecasting the Hungarian government yield curve. Furthermore, I have contributed to the development of the new portfolio model.",
+    "crumbs": [
+      "CV"
+    ]
   },
   {
     "objectID": "cv.html#summer-schools",
     "href": "cv.html#summer-schools",
     "title": "CV",
     "section": "",
-    "text": "2015 July: Cambridge Econometrics Summer School, Timberlake Ltd.\n2014 July: Oxford Econometrics Summer School at Aix-en-Provance, Timberlake Ltd."
+    "text": "2015 July: Cambridge Econometrics Summer School, Timberlake Ltd.\n2014 July: Oxford Econometrics Summer School at Aix-en-Provance, Timberlake Ltd.",
+    "crumbs": [
+      "CV"
+    ]
   },
   {
     "objectID": "cv.html#skills",
     "href": "cv.html#skills",
     "title": "CV",
     "section": "",
-    "text": "Language\n\nEnglish: TOEFL ibt: 104; B2 certificates: general (2008) and economics specific (2011)\nGerman: B2 certificate, general, 2014\n\nIT skills:\n\nProficient: MatLab, R\nAdvanced: Python, Microsoft Office programs\nIntermediate: Stata, Eviews, SPSS, Mathematica\n\nDriving license:\n\nA and B categories\n\nHobbies:\n\nI have been sailing for fourteen years, and achieved 1st award in the National Competition of Jolle 25 class in 2007, 2009 and 2010.\nNowadays in my spare time I have turned to mountaineering and rock climbing. Among many peaks in the Tatras and the Austrian Alps, in 2018 I have climbed Mount Blanc via the Cosmiques route.\n\n\n Download CV\nback"
+    "text": "Language\n\nEnglish: TOEFL ibt: 104; B2 certificates: general (2008) and economics specific (2011)\nGerman: B2 certificate, general, 2014\n\nIT skills:\n\nProficient: MatLab, R\nAdvanced: Python, Microsoft Office programs\nIntermediate: Stata, Eviews, SPSS, Mathematica\n\nDriving license:\n\nA and B categories\n\nHobbies:\n\nI have been sailing for fourteen years, and achieved 1st award in the National Competition of Jolle 25 class in 2007, 2009 and 2010.\nNowadays in my spare time I have turned to mountaineering and rock climbing. Among many peaks in the Tatras and the Austrian Alps, in 2018 I have climbed Mount Blanc via the Cosmiques route.\n\n\n Download CV\nback",
+    "crumbs": [
+      "CV"
+    ]
   }
 ]
