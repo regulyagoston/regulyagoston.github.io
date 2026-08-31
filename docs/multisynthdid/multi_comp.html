@@ -295,49 +295,28 @@ gtag('config', 'G-BGV4MVV5TE', { 'anonymize_ip': true});
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>synth_out <span class="ot">&lt;-</span> <span class="fu">synth</span>(dataprep_out)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-X1, X0, Z1, Z0 all come directly from dataprep object.
-
-
-**************** 
- searching for synthetic control unit  
- 
-
-**************** 
-**************** 
-**************** 
-
-MSPE (LOSS V): 25490.84 
-
-solution.v:
- 0.8782577 0.1213023 0.0004399473 
-
-solution.w:
- 0.009213684 0.03014281 0.01528837 0.01577015 0.01249197 0.007024813 0.009557229 0.3023965 0.1640184 0.009600453 0.01275447 0.007048682 0.008689053 0.2884409 0.01233855 0.095224 </code></pre>
-</div>
 </div>
 </section>
 <section id="mscmt-package" class="level2">
 <h2 class="anchored" data-anchor-id="mscmt-package">MSCMT package</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df_m <span class="ot">&lt;-</span> <span class="fu">listFromLong</span>(german_reunification, <span class="at">unit.variable=</span><span class="st">"index"</span>, <span class="at">time.variable=</span><span class="st">"year"</span>, <span class="at">unit.names.variable=</span><span class="st">"country"</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># define the sum of all cases</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>treatment.identifier <span class="ot">&lt;-</span> <span class="st">"West Germany"</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>controls.identifier  <span class="ot">&lt;-</span> <span class="fu">setdiff</span>(<span class="fu">colnames</span>(df_m[[<span class="dv">1</span>]]),</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>                                <span class="fu">c</span>(treatment.identifier))</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>times.dep  <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="st">"gdp"</span>            <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1960</span>,<span class="dv">1989</span>),</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"trade"</span>          <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1960</span>,<span class="dv">1989</span>),</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"infrate"</span>        <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1960</span>,<span class="dv">1989</span>))</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>times.pred <span class="ot">&lt;-</span> times.dep</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>mscmt_res <span class="ot">&lt;-</span> <span class="fu">mscmt</span>(df_m, treatment.identifier, controls.identifier, times.dep, times.pred, <span class="at">seed=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df_m <span class="ot">&lt;-</span> <span class="fu">listFromLong</span>(german_reunification, <span class="at">unit.variable=</span><span class="st">"index"</span>, <span class="at">time.variable=</span><span class="st">"year"</span>, <span class="at">unit.names.variable=</span><span class="st">"country"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># define the sum of all cases</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>treatment.identifier <span class="ot">&lt;-</span> <span class="st">"West Germany"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>controls.identifier  <span class="ot">&lt;-</span> <span class="fu">setdiff</span>(<span class="fu">colnames</span>(df_m[[<span class="dv">1</span>]]),</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                                <span class="fu">c</span>(treatment.identifier))</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>times.dep  <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="st">"gdp"</span>            <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1960</span>,<span class="dv">1989</span>),</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"trade"</span>          <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1960</span>,<span class="dv">1989</span>),</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"infrate"</span>        <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1960</span>,<span class="dv">1989</span>))</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>times.pred <span class="ot">&lt;-</span> times.dep</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>mscmt_res <span class="ot">&lt;-</span> <span class="fu">mscmt</span>(df_m, treatment.identifier, controls.identifier, times.dep, times.pred, <span class="at">seed=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>17:07:45: Number of 'sunny' donors: 16 out of 16
-17:07:45: Unrestricted outer optimum (obtained by ignoring all predictors) is 
-17:07:45: FEASIBLE even when respecting the predictors.
+<pre><code>14:15:04: Number of 'sunny' donors: 16 out of 16
+14:15:04: Unrestricted outer optimum (obtained by ignoring all predictors) is 
+14:15:04: FEASIBLE even when respecting the predictors.
 Final rmspe: 0.03346181, mspe (loss v): 0.001119693
 Optimal weights:
         USA     Austria Switzerland       Japan 
@@ -348,12 +327,12 @@ Optimal weights:
 <section id="augmented-synthetic-control" class="level2">
 <h2 class="anchored" data-anchor-id="augmented-synthetic-control">Augmented Synthetic Control</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>aug_syn <span class="ot">&lt;-</span> <span class="fu">augsynth</span>( gdp <span class="sc">+</span> trade <span class="sc">+</span> infrate <span class="sc">~</span> W, index, year, </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                     german_reunification, <span class="at">progfunc =</span> <span class="st">'none'</span>, <span class="at">scm =</span> T  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>aug_syn <span class="ot">&lt;-</span> <span class="fu">augsynth</span>( gdp <span class="sc">+</span> trade <span class="sc">+</span> infrate <span class="sc">~</span> W, index, year, </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                     german_reunification, <span class="at">progfunc =</span> <span class="st">'none'</span>, <span class="at">scm =</span> T  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Multiple outcomes and one treatment time found. Running augsynth_multiout.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(aug_syn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(aug_syn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -364,17 +343,17 @@ Overall L2 Imbalance (Scaled):0.450  (0.296)
 
 Average ATT Estimate:
   Outcome      Estimate lower_bound upper_bound p_val   Pre.RMSE
-1     gdp -2360.7643331          NA          NA     0 310.710322
-2   trade     8.0726848          NA          NA     0   7.290110
+1     gdp -2360.7643320          NA          NA     0 310.710337
+2   trade     8.0726851          NA          NA     0   7.290110
 3 infrate    -0.4014653          NA          NA     0   1.930879</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Treatment</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>augsyn_tau <span class="ot">=</span> <span class="fu">predict</span>(aug_syn,<span class="at">att=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Treatment</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>augsyn_tau <span class="ot">=</span> <span class="fu">predict</span>(aug_syn,<span class="at">att=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>multi_sdid <span class="ot">&lt;-</span> <span class="fu">multi_sdid</span>( gdp <span class="sc">+</span> infrate <span class="sc">+</span> trade <span class="sc">~</span> <span class="dv">1</span>, <span class="st">'W'</span>, <span class="st">'country'</span>, <span class="st">'year'</span>, german_reunification )</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary.multisynthdid</span>(multi_sdid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>multi_sdid <span class="ot">&lt;-</span> <span class="fu">multi_sdid</span>( gdp <span class="sc">+</span> infrate <span class="sc">+</span> trade <span class="sc">~</span> <span class="dv">1</span>, <span class="st">'W'</span>, <span class="st">'country'</span>, <span class="st">'year'</span>, german_reunification )</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary.multisynthdid</span>(multi_sdid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$estimate
 [1] "multi_synthdid_obj"
@@ -382,7 +361,7 @@ Average ATT Estimate:
 $tau
                      gdp  infrate     trade
 Avg. Treatment -1526.459 1.397776 0.3985817
-SE              1126.141 1.499631 4.5454234
+SE              1363.078 1.492040 4.4038597
 
 $dimensions
                                       [,1]
@@ -394,32 +373,32 @@ No. Pre-treatment periods           30.000
 Effective no. pre-treatment periods  1.000
 No. Outcomes                         3.000</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>msdid_curve <span class="ot">&lt;-</span> <span class="fu">multi_synthdid_curves</span>(multi_sdid<span class="sc">$</span>tau, <span class="at">complete =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>msdid_curve <span class="ot">&lt;-</span> <span class="fu">multi_synthdid_curves</span>(multi_sdid<span class="sc">$</span>tau, <span class="at">complete =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="comparison-of-gdp" class="level2">
 <h2 class="anchored" data-anchor-id="comparison-of-gdp">Comparison of GDP</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df_plot <span class="ot">&lt;-</span> german_reunification <span class="sc">%&gt;%</span> </span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>( country <span class="sc">==</span> <span class="st">'West Germany'</span> ) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>( year ) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>( <span class="st">`</span><span class="at">Realized GDP</span><span class="st">`</span> <span class="ot">=</span> gdp )</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>df_plot <span class="ot">&lt;-</span> <span class="fu">cbind</span>(df_plot,</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">tibble</span>(<span class="at">SC =</span> dataprep_out<span class="sc">$</span>Y0plot <span class="sc">%*%</span> synth_out<span class="sc">$</span>solution.w ),</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">tibble</span>(<span class="at">MSCMT =</span> <span class="fu">as.vector</span>( mscmt_res<span class="sc">$</span>data.synth<span class="sc">$</span>gdp) ),</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">tibble</span>(<span class="at">Aug_Synth =</span> df_plot<span class="sc">$</span><span class="st">`</span><span class="at">Realized GDP</span><span class="st">`</span><span class="sc">-</span>augsyn_tau[,<span class="dv">1</span>] ),</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">tibble</span>(<span class="at">Multi_SDiD =</span> df_plot<span class="sc">$</span><span class="st">`</span><span class="at">Realized GDP</span><span class="st">`</span> <span class="sc">-</span> msdid_curve<span class="sc">$</span>tau_curve[<span class="dv">1</span>,]) )</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>df_plot2 <span class="ot">&lt;-</span> df_plot <span class="sc">%&gt;%</span> </span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>( year, <span class="st">`</span><span class="at">Realized GDP</span><span class="st">`</span>, SC, MSCMT, Aug_Synth, Multi_SDiD ) <span class="sc">%&gt;%</span>  <span class="co">#</span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">!</span>year, <span class="at">names_to =</span> <span class="st">'Method'</span>, <span class="at">values_to =</span> <span class="st">'GDP'</span> )</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( df_plot2, <span class="fu">aes</span>( <span class="at">x =</span> year, <span class="at">color =</span> Method, <span class="at">y =</span> GDP )) <span class="sc">+</span> </span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>( <span class="at">linewidth =</span> <span class="dv">1</span> ) <span class="sc">+</span></span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"rect"</span>, <span class="at">xmin =</span> <span class="dv">1960</span>, <span class="at">xmax =</span> <span class="dv">1990</span>, <span class="at">ymin =</span> <span class="dv">0</span>, <span class="at">ymax =</span> <span class="dv">35000</span>,</span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>           <span class="at">alpha =</span> .<span class="dv">2</span>)<span class="sc">+</span></span>
-<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df_plot <span class="ot">&lt;-</span> german_reunification <span class="sc">%&gt;%</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>( country <span class="sc">==</span> <span class="st">'West Germany'</span> ) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>( year ) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>( <span class="st">`</span><span class="at">Realized GDP</span><span class="st">`</span> <span class="ot">=</span> gdp )</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>df_plot <span class="ot">&lt;-</span> <span class="fu">cbind</span>(df_plot,</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">tibble</span>(<span class="at">SC =</span> dataprep_out<span class="sc">$</span>Y0plot <span class="sc">%*%</span> synth_out<span class="sc">$</span>solution.w ),</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">tibble</span>(<span class="at">MSCMT =</span> <span class="fu">as.vector</span>( mscmt_res<span class="sc">$</span>data.synth<span class="sc">$</span>gdp) ),</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">tibble</span>(<span class="at">Aug_Synth =</span> df_plot<span class="sc">$</span><span class="st">`</span><span class="at">Realized GDP</span><span class="st">`</span><span class="sc">-</span>augsyn_tau[,<span class="dv">1</span>] ),</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">tibble</span>(<span class="at">Multi_SDiD =</span> df_plot<span class="sc">$</span><span class="st">`</span><span class="at">Realized GDP</span><span class="st">`</span> <span class="sc">-</span> msdid_curve<span class="sc">$</span>tau_curve[<span class="dv">1</span>,]) )</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>df_plot2 <span class="ot">&lt;-</span> df_plot <span class="sc">%&gt;%</span> </span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>( year, <span class="st">`</span><span class="at">Realized GDP</span><span class="st">`</span>, SC, MSCMT, Aug_Synth, Multi_SDiD ) <span class="sc">%&gt;%</span>  <span class="co">#</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">!</span>year, <span class="at">names_to =</span> <span class="st">'Method'</span>, <span class="at">values_to =</span> <span class="st">'GDP'</span> )</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( df_plot2, <span class="fu">aes</span>( <span class="at">x =</span> year, <span class="at">color =</span> Method, <span class="at">y =</span> GDP )) <span class="sc">+</span> </span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>( <span class="at">linewidth =</span> <span class="dv">1</span> ) <span class="sc">+</span></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"rect"</span>, <span class="at">xmin =</span> <span class="dv">1960</span>, <span class="at">xmax =</span> <span class="dv">1990</span>, <span class="at">ymin =</span> <span class="dv">0</span>, <span class="at">ymax =</span> <span class="dv">35000</span>,</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>           <span class="at">alpha =</span> .<span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">

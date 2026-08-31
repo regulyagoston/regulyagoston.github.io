@@ -7,7 +7,7 @@ Updated: 2024/07/29
 ## Courses at Corvinus (CUB)
 
 - Econometrics I for Applied Economics
-    - Current teaching materials [HERE](./teaching/Econometrics_I/econ_I_AE_2425.html)
+- Project 3 for Applied Economics, this is a thesis writing course for BA students
 
 ## Teaching at Central European University (CEU)
 
@@ -21,3 +21,7 @@ Updated: 2024/07/29
     - [webpage](https://emba.ceu.edu/) for EMBA at CEU
 - Mathematics and Informatics Pre-session for MS in Finance at CEU (2019/20 and 2020/21 Fall)
     - [course description](https://courses.ceu.edu/courses/2020-2021/presession-finance-mathematics-excel-4)
+
+## Other teaching experiences
+
+- Machine Learning for Financial Markets course, that is a [Vertically Integrated Project](https://vip.gatech.edu/), now a similar course is run under the name of [AI for Financial Markets](https://vip.gatech.edu/teams/entry/1279/), which also includes NLP methods.

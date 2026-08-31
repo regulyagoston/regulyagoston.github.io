@@ -1,19 +1,28 @@
 ---
 title: "Papers"
 ---
-*Last update: 2024/03/22*
+*Last update: 2026/08/31*
 
 # Working Papers
-- *Measuring the long-run performance of mergers and acquisitions* - joint work with Sudheer Chava
-    - [working paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4742401#paper-references-widget)
-- *Modelling with Discretized Variables* - joint work with [Felix Chan](https://staffportal.curtin.edu.au/staff/profile/view/felix-chan-885a727c/) and [László Mátyás](http://www.personal.ceu.hu/staff/matyas/)
-	- [working paper](), [codes](https://github.com/regulyagoston/Split-sampling), [online supplement](./papers/MSV_online_supplement.pdf)
-- *Heterogeneous treatment effects in regression discontinuity designs*
-   - [working paper](https://arxiv.org/abs/2106.11640), [codes](https://github.com/regulyagoston/RD_tree)
+
+- *Central Bank Communication in a Small Open (Unorthodox) Economy* - joint with Marton Kovacs
+	- [working paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7344804) 
+- *Perverse Effects of Imperfectly Enforced Price Controls* - joint with [Boris Knapp](https://sites.google.com/view/borisknapp)
+	-[working paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6436778) 
+- *The Long-run Performance of Mergers and Acquisitions* - joint with [Sudheer Chava](https://scholar.google.com/citations?user=AXYf-i8AAAAJ&hl=en)
+	-[working paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4742401)
+- *Discovering Heterogeneous Treatment Effects in Regression Discontinuity Designs* - R&R at Journal of Applied Econometrics
+	-[working paper](https://arxiv.org/abs/2106.11640), [MatLab codes](https://github.com/regulyagoston/RD_tree)
+- *Machine Learning* - joint with [László Mátyás (CEU)](https://laszlo.matyas.ceu.edu/) & [Essie Maasoumi (Emory)](https://sites.google.com/view/esfandiarmaasoumi/home)
+	-[book chapter WIP] in *A History of Econometrics: The Challenge of Remaining Relevant* Editors: Matyas L, Pirotte A, Publisher: Springer, Expected publication: 2027 Spring
+- *Data Privacy* - joint with [Zsigmond Pálvölgyi (CUB)](https://zsigmond-palvolgyi.github.io/)
+	-[book chapter WIP] in *A History of Econometrics: The Challenge of Remaining Relevant* Editors: Matyas L, Pirotte A, Publisher: Springer, Expected publication: 2027 Spring
 
 # Published papers
 
-- *When and How Much Do Fixed Effects Matter?* (2024) - joint work with with Felix Chan (Curtin) and László Mátyás (CEU)
+- *Modelling with Sensitive Variables* - joint work with with [Felix Chan (Curtin)](https://profiles.curtin.edu.au/3929-felix-chan) and [László Mátyás (CEU)](https://laszlo.matyas.ceu.edu/)
+	- [publised in AStA Advances in Statistical Analysis](https://doi.org/10.1007/s10182-026-00566-5)
+- *When and How Much Do Fixed Effects Matter?* (2024) - joint work with with [Felix Chan (Curtin)](https://profiles.curtin.edu.au/3929-felix-chan) and [László Mátyás (CEU)](https://laszlo.matyas.ceu.edu/)
 	- [published book chapter](https://link.springer.com/chapter/10.1007/978-3-031-49849-7_2), in Matyas, L. (eds) The Econometrics of Multi-dimensional Panels. Advanced Studies in Theoretical and Applied Econometrics, vol 54. Springer, Cham.
 - *The Use of Machine Learning in Treatment Effect Estimation* (2022) - joint work with Robert Lieli (CEU) and Yu-Chin Hsu (National Central University and National Chengchi University)
   - [published book chapter](https://link.springer.com/chapter/10.1007/978-3-031-15149-1_3), in: Chan, F., Matyas, L. (eds), Econometrics with Machine Learning. Advanced Studies in Theoretical and Applied Econometrics, vol 53. Springer, pp. 79-109
