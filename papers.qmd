@@ -8,15 +8,15 @@ title: "Papers"
 - *Central Bank Communication in a Small Open (Unorthodox) Economy* - joint with Marton Kovacs
 	- [working paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7344804) 
 - *Perverse Effects of Imperfectly Enforced Price Controls* - joint with [Boris Knapp](https://sites.google.com/view/borisknapp)
-	-[working paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6436778) 
+	- [working paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6436778) 
 - *The Long-run Performance of Mergers and Acquisitions* - joint with [Sudheer Chava](https://scholar.google.com/citations?user=AXYf-i8AAAAJ&hl=en)
-	-[working paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4742401)
+	- working paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4742401)
 - *Discovering Heterogeneous Treatment Effects in Regression Discontinuity Designs* - R&R at Journal of Applied Econometrics
 	-[working paper](https://arxiv.org/abs/2106.11640), [MatLab codes](https://github.com/regulyagoston/RD_tree)
 - *Machine Learning* - joint with [László Mátyás (CEU)](https://laszlo.matyas.ceu.edu/) & [Essie Maasoumi (Emory)](https://sites.google.com/view/esfandiarmaasoumi/home)
-	-[book chapter WIP] in *A History of Econometrics: The Challenge of Remaining Relevant* Editors: Matyas L, Pirotte A, Publisher: Springer, Expected publication: 2027 Spring
+	- [book chapter WIP] in *A History of Econometrics: The Challenge of Remaining Relevant* Editors: Matyas L, Pirotte A, Publisher: Springer, Expected publication: 2027 Spring
 - *Data Privacy* - joint with [Zsigmond Pálvölgyi (CUB)](https://zsigmond-palvolgyi.github.io/)
-	-[book chapter WIP] in *A History of Econometrics: The Challenge of Remaining Relevant* Editors: Matyas L, Pirotte A, Publisher: Springer, Expected publication: 2027 Spring
+	- [book chapter WIP] in *A History of Econometrics: The Challenge of Remaining Relevant* Editors: Matyas L, Pirotte A, Publisher: Springer, Expected publication: 2027 Spring
 
 # Published papers
 
